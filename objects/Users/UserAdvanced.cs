@@ -1,0 +1,30 @@
+﻿using System.Collections.Generic;
+
+namespace trakit.objects {
+	/// <summary>
+	/// Permissions and group membership defined for a user.
+	/// </summary>
+	/// <category>Users and Groups</category>
+	public class UserAdvanced : Subscribable, IBelongCompany, IHavePermissions {
+		/// <summary>
+		/// The unique public email address used to access the system.
+		/// </summary>
+		/// <seealso cref="User.login" />
+		/// <override min-length="6" max-length="254" format="email" />
+		public string login { get; set; }
+		/// <summary>
+		/// The company to which this user belongs.
+		/// </summary>
+		/// <seealso cref="Company.id" />
+		public ulong company { get; set; }
+		/// <summary>
+		/// A list of groups to which this user belongs.
+		/// </summary>
+		/// <seealso cref="UserGroup.id" />
+		public List<ulong> groups { get; set; }
+		/// <summary>
+		/// Individual permission rules which override the group rules.
+		/// </summary>
+		public List<Permission> permissions { get; set; }
+	}
+}
