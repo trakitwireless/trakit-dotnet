@@ -13,10 +13,10 @@
 		/// Which assets are targeted by this hosting rule
 		/// </summary>
 		/// <override type="System.String" format="expression" />
-		public SearchPattern[] targets;
+		public string targets;
 		/// <summary>
 		/// Does this hosting rule apply to suspended resources
 		/// </summary>
 		public bool suspended { get; set; }
-			}
+	}
 }

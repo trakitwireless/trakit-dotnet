@@ -65,7 +65,7 @@ namespace trakit.objects {
 		/// A list of targeting expressions.  These expressions are defaults for derived Behaviours.
 		/// </summary>
 		/// <override type="System.String" format="expression" />
-		public SearchPattern[] filters;
+		public string filters;
 		/// <summary>
 		/// Listed parameters for the Behaviour function.
 		/// </summary>
