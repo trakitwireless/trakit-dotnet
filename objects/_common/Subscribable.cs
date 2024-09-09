@@ -6,6 +6,6 @@
 		/// <summary>
 		/// Object version keys used to validate synchronization for all object properties.
 		/// </summary>
-		public uint[] version;
+		public uint[] v;
 	}
 }

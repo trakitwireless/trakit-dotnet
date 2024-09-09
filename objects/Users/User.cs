@@ -1,41 +1,89 @@
-﻿namespace trakit.objects {
+﻿using System.Collections.Generic;
+
+namespace trakit.objects {
 	/// <summary>
 	/// A grouping of credentials, information, preferences, and permissions for a person or machine to login to the system and access its resources.
 	/// </summary>
-	/// <category>Users and Groups</category>
-	/// <override complex="true">
-	/// <merge type="Vorgon.UserGeneral" />
-	/// <merge type="Vorgon.UserAdvanced" />
-	/// </override>
-	public class User {
+	public class User : Subscribable, IDeletable, IEnabled, IBelongCompany, IHavePreferences {
 		/// <summary>
-		/// General details about this user.
+		/// The unique public email address used to access the system.
 		/// </summary>
-		/// <override skip="true" />
-		public UserGeneral general;
+		/// <seealso cref="User.login" />
+		/// <override min-length="6" max-length="254" format="email" />
+		public string login { get; set; }
 		/// <summary>
-		/// Advanced details about this user.
+		/// The company to which this user belongs.
 		/// </summary>
-		/// <override skip="true" />
-		public UserAdvanced advanced;
+		/// <seealso cref="Company.id" />
+		public ulong company { get; set; }
+		/// <summary>
+		/// Indicated whether the credentials have expired according to the company's policy.
+		/// </summary>
+		public bool passwordExpired;
+		/// <summary>
+		/// Indicates whether system access is disabled.
+		/// </summary>
+		public bool enabled { get; set; }
+		public bool deleted { get; set; }
+		/// <summary>
+		/// Human friendly name for these credentials
+		/// </summary>
+		/// <override max-length="100" />
+		public string nickname;
+		/// <summary>
+		/// Contact information for this user.
+		/// </summary>
+		/// <seealso cref="Contact.id" />
+		public ulong? contact;
+		/// <summary>
+		/// The user's local timezone.
+		/// </summary>
+		/// <seealso cref="Timezone.code" />
+		/// <override type="System.String" format="codified" />
+		public string timezone { get; set; }
+		/// <summary>
+		/// Preferred region/language for the UI and notifications.
+		/// Valid formats use &lt;ISO 639-1&gt;&lt;dash&gt;&lt;ISO 3166-2&gt; such as "fr-CA" or "en-US".
+		/// </summary>
+		/// <override min-length="2" max-length="5" format="codified" />
+		public string language { get; set; }
+		/// <summary>
+		/// The format strings defining the preferred way to display ambiguous values.
+		/// </summary>
+		/// <override>
+		/// <keys format="codified" />
+		/// <values max-length="20" format="datetimetemplate" />
+		/// </override>
+		public Dictionary<string, string> formats { get; set; }
+		/// <summary>
+		/// Preferred way of displaying ambiguous numbers in the context of measurements.
+		/// </summary>
+		/// <override>
+		/// <keys format="codified" />
+		/// </override>
+		public Dictionary<string, SystemsOfUnits> measurements { get; set; }
+		/// <summary>
+		/// Additional options which do not fit in with the formats or measurements preferences.
+		/// </summary>
+		/// <override>
+		/// <keys format="codified" />
+		/// <values max-length="20" />
+		/// </override>
+		public Dictionary<string, string> options { get; set; }
+		/// <summary>
+		/// Definition of how and when to send alerts to the user.
+		/// </summary>
+		/// <override max-count="7" />
+		public List<UserNotifications> notify;
 
 		/// <summary>
-		/// Unique identifier of this user.
+		/// A list of groups to which this user belongs.
 		/// </summary>
-		/// <override min-length="6" max-length="254" format="email" readonly="true" />
-		public string login => this.general?.login
-						?? this.advanced?.login
-						?? null;
+		/// <seealso cref="UserGroup.id" />
+		public List<ulong> groups { get; set; }
 		/// <summary>
-		/// Object version keys used to validate synchronization for all object properties.
+		/// Individual permission rules which override the group rules.
 		/// </summary>
-		/// <override name="v" count="2" readonly="true">
-		/// <element key="0">The first element is for the general properties</element>
-		/// <element key="1">The second element is for the advanced properties</element>
-		/// </override>
-		public int[] version => new int[] {
-			(int?)this.general?.version[0] ?? -1,
-			(int?)this.advanced?.version[0] ?? -1,
-		};
+		public List<Permission> permissions { get; set; }
 	}
 }

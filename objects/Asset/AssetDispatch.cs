@@ -33,9 +33,6 @@ namespace trakit.objects {
 		/// </summary>
 		public List<DispatchDirection> directions;
 		/// <summary>
-		/// Timestamp from the last update to this object, or an assigned <see cref="DispatchJob"/>.
-		/// </summary>
-		/// <summary>
 		/// Timestamp from the last update to this <see cref="AssetDispatch"/> by a <see cref="User"/>, <see cref="Machine"/>, <see cref="Asset"/>, or an assigned <see cref="DispatchJob"/>.
 		/// </summary>
 		public DateTime lastDispatched;

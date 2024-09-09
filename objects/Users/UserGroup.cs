@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Xml.Linq;
-using Microsoft.ApplicationServer.Caching;
-using Newtonsoft.Json;
+﻿using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -18,12 +10,12 @@ namespace trakit.objects {
 		/// <summary>
 		/// Unique identifier of this group.
 		/// </summary>
-		public ulong id{ get; set; }
+		public ulong id { get; set; }
 		/// <summary>
 		/// The company to which this group belongs.
 		/// </summary>
 		/// <seealso cref="Company.id" />
-		public ulong company{ get; set; }
+		public ulong company { get; set; }
 		/// <summary>
 		/// A name given to this group.
 		/// </summary>

@@ -1,49 +1,143 @@
-﻿namespace trakit.objects {
+﻿using System.Collections.Generic;
+using System;
+using System.Net;
+
+namespace trakit.objects {
 	/// <summary>
 	/// A device, modem, or service which provides events from the field.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
-	/// <override complex="true">
-	/// <merge type="Vorgon.ProviderGeneral" />
-	/// <merge type="Vorgon.ProviderAdvanced" />
-	/// <merge type="Vorgon.ProviderControl" />
-	/// </override>
-	public class Provider {
+	public class Provider : Subscribable, INamed, IDeletable, ISuspendable, IBelongCompany {
 		/// <summary>
-		/// General details about this provider.
+		/// Unique identifier of this device.
 		/// </summary>
-		/// <override skip="true" />
-		public ProviderGeneral general;
+		/// <seealso cref="Provider.id" />
+		/// <override min-length="10" max-length="50" />
+		public string id { get; set; }
 		/// <summary>
-		/// Advanced details about this provider.
+		/// The company to which this device belongs.
 		/// </summary>
-		/// <override skip="true" />
-		public ProviderAdvanced advanced;
+		/// <seealso cref="Company.id" />
+		public ulong company { get; set; }
 		/// <summary>
-		/// Managing and controlling communication with this provider.
+		/// A nickname given to the device/hardware.
 		/// </summary>
-		public ProviderControl control;
+		/// <override max-length="100" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes!
+		/// </summary>
+		public string notes { get; set; }
+		public bool deleted { get; set; }
+		/// <summary>
+		/// The kind of communication protocol this device uses.
+		/// </summary>
+		public ProviderType kind;
+		/// <summary>
+		/// The asset for which this device provides field data.
+		/// </summary>
+		/// <seealso cref="Asset.id" />
+		public ulong? asset;
+		/// <summary>
+		/// The provider's current (or pending) configuration profile.
+		/// </summary>
+		/// <seealso cref="ProviderConfig.id" />
+		/// <seealso cref="ProviderConfiguration.id" />
+		public ulong configuration;
+		/// <summary>
+		/// A timestamp from when the provider last checked for a new script or new geofences.
+		/// </summary>
+		public DateTime? lastCheckIn;
+		/// <summary>
+		/// A timestamp from when the script status was updated by a <see cref="User"/> or a <see cref="Provider"/>.
+		/// </summary>
+		public DateTime? scriptLast;
+		/// <summary>
+		/// A timestamp from when the geofence list was updated by a <see cref="User"/> or a <see cref="Provider"/>.
+		/// </summary>
+		public DateTime? geofenceLast;
 
 		/// <summary>
-		/// Unique identifier of this provider.
+		/// The system's progress of updating the device's programming.
 		/// </summary>
-		/// <override min-length="10" max-length="50" readonly="true" />
-		public string id => this.general?.id
-						?? this.advanced?.id
-						?? this.control?.id
-						?? null;
+		public ProvisioningStatus scriptStatus;
 		/// <summary>
-		/// Object version keys used to validate synchronization for all object properties.
+		/// The system's progress of updating the device's on-board geofence definitions.
 		/// </summary>
-		/// <override name="v" count="3" readonly="true">
-		/// <element key="0">The first element is for the general properties</element>
-		/// <element key="1">The second element is for the advanced properties</element>
-		/// <element key="2">The third element is for the control properties</element>
+		public ProvisioningStatus geofenceStatus;
+		/// <summary>
+		/// The system's progress of updating the device's firmware/application.
+		/// </summary>
+		public ProvisioningStatus firmwareStatus;
+		/// <summary>
+		/// The password programmed on the device used to ensure the system is the only client authorized to make changes.
+		/// </summary>
+		/// <override max-length="50" />
+		public string password;
+		/// <summary>
+		/// The short-name of the kind of PND attached to this device.
+		/// Leave blank if none.
+		/// </summary>
+		/// <override max-length="50" />
+		public string pnd;
+		/// <summary>
+		/// The firmware/application version number.
+		/// </summary>
+		/// <override max-length="100" />
+		public string firmware;
+		/// <summary>
+		/// The phone number of this device.
+		/// </summary>
+		/// <override format="phone" />
+		public ulong? phoneNumber;
+		/// <summary>
+		/// A list of read-only values about the device like IMEI, ESN, firmware version, hardware revision, etc...
+		/// </summary>
+		/// <override>
+		/// <keys>
+		/// <seealso cref="DataName" />
+		/// </keys>
 		/// </override>
-		public int[] version => new int[] {
-			(int?)this.general?.version[0] ?? -1,
-			(int?)this.advanced?.version[0] ?? -1,
-			(int?)this.control?.version[0] ?? -1,
-		};
+		public Dictionary<string, string> information;
+		/// <summary>
+		/// Indicates whether this Provider is suspended from event processing.
+		/// </summary>
+		public bool suspended { get; set; }
+		/// <summary>
+		/// Timestamp that indicates when the provider was suspended or revived.
+		/// </summary>
+		public DateTime suspendedUtc { get; set; }
+		/// <summary>
+		/// ICCID of the SIM card installed in this provider
+		/// </summary>
+		public string sim;
+
+		/// <summary>
+		/// The last IP address of the device.
+		/// </summary>
+		/// <override type="System.String" format="ipv4" />
+		public IPEndPoint lastIP;
+		/// <summary>
+		/// Often changing values like latitude, longitude, speed, wiring state, VBus information, etc...
+		/// </summary>
+		/// <override>
+		/// <keys>
+		/// <seealso cref="GroupName" />
+		/// </keys>
+		/// <values>
+		/// <keys>
+		/// <seealso cref="DataName" />
+		/// </keys>
+		/// </values>
+		/// </override>
+		public Dictionary<string, Dictionary<string, ProviderData>> attributes;
+		/// <summary>
+		/// Store-and-forward information like last sequence number of SnF window
+		/// </summary>
+		public Dictionary<string, string> snf;
+
+		/// <summary>
+		/// Collection of commands for this provider.
+		/// </summary>
+		public Dictionary<ProviderCommandType, ProviderCommand> commands;
 	}
 }
