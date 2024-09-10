@@ -43,7 +43,7 @@ namespace trakit.objects {
 	/// A profile used to generate billable orders for a customer.
 	/// </summary>
 	/// <category>Billing</category>
-	public class BillingProfile : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany {
+	public class BillingProfile : Subscribable, IIdUlong, INamed,  IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this billing profile
 		/// </summary>
@@ -74,7 +74,6 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="1000" />
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// SMS messaging tiers
 		/// </summary>
