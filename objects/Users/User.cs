@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A grouping of credentials, information, preferences, and permissions for a person or machine to login to the system and access its resources.
 	/// </summary>
-	public class User : Subscribable, IDeletable, IEnabled, IBelongCompany, IHavePreferences {
+	public class User : Subscribable,  IEnabled, IBelongCompany, IHavePreferences {
 		/// <summary>
 		/// The unique public email address used to access the system.
 		/// </summary>
@@ -24,7 +24,6 @@ namespace trakit.objects {
 		/// Indicates whether system access is disabled.
 		/// </summary>
 		public bool enabled { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Human friendly name for these credentials
 		/// </summary>

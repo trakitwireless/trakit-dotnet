@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// Credentials, information, and preferences about a user.
 	/// </summary>
 	/// <category>Users and Groups</category>
-	public class UserGeneral : Subscribable, IDeletable, IEnabled, IBelongCompany, IHavePreferences {
+	public class UserGeneral : Subscribable,  IEnabled, IBelongCompany, IHavePreferences {
 		/// <summary>
 		/// The unique public email address used to access the system.
 		/// </summary>
@@ -25,7 +25,6 @@ namespace trakit.objects {
 		/// Indicates whether system access is disabled.
 		/// </summary>
 		public bool enabled { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Human friendly name for these credentials
 		/// </summary>

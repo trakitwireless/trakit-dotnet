@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A service account that allowes for API access of system services.
 	/// </summary>
-	public class Machine : IDeletable, IEnabled, IBelongCompany, IHavePreferences, IHavePermissions {
+	public class Machine : Subscribable, IEnabled, IBelongCompany, IHavePreferences, IHavePermissions {
 		/// <summary>
 		/// The unique idenifier used to access the system.
 		/// </summary>
@@ -20,7 +20,6 @@ namespace trakit.objects {
 		/// Indicates whether system access is disable.
 		/// </summary>
 		public bool enabled { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// A token used to encode or validate requests.
 		/// </summary>
