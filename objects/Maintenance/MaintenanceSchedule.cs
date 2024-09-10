@@ -6,7 +6,7 @@ namespace trakit.objects {
 	/// Recurring service work
 	/// </summary>
 	/// <category>Maintenance</category>
-	public class MaintenanceSchedule : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IVisual {
+	public class MaintenanceSchedule : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual {
 		/// <summary>
 		/// Default prediction day threshold for new schedules.
 		/// </summary>
@@ -38,7 +38,6 @@ namespace trakit.objects {
 		/// Notes about the work to be done.  Like "change the oil and oil filter".
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The targeting expression to select which Vehicles and Trailers require this maintenance work.
 		/// </summary>

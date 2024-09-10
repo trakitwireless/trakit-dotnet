@@ -29,7 +29,7 @@ namespace trakit.objects {
 	/// Historical service work performed on a Vehicle or Trailer
 	/// </summary>
 	/// <category>Maintenance</category>
-	public class MaintenanceJob : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IBelongAsset, IPictured {
+	public class MaintenanceJob : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongAsset, IPictured {
 		/// <summary>
 		/// Default threshold (in minutes) for the valid completion date of jobs.
 		/// </summary>
@@ -63,7 +63,6 @@ namespace trakit.objects {
 		/// Notes about the job.  Like "changed the oil and filter".
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The status of this job.
 		/// </summary>
