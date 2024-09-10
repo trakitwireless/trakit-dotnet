@@ -33,7 +33,7 @@ namespace trakit.objects {
 	/// Report generated per billee company.
 	/// </summary>
 	/// <category>Billing</category>
-	public class BillingReport : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IBelongBillingProfile {
+	public class BillingReport : Subscribable, IIdUlong, INamed,  IBelongCompany, IBelongBillingProfile {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -62,10 +62,6 @@ namespace trakit.objects {
 		/// Notes about this report.
 		/// </summary>
 		public string notes { get; set; }
-		/// <summary>
-		/// Indicates whether this report is deleted.
-		/// </summary>
-		public bool deleted { get; set; }
 		/// <summary>
 		/// First day of the billing cycle
 		/// </summary>

@@ -33,7 +33,7 @@ namespace trakit.objects {
 	/// Some work that needs to be done by performing one or more <see cref="DispatchStep"/>s.
 	/// </summary>
 	/// <category>Dispatch</category>
-	public class DispatchJob : Subscribable, IIdUlong, ILabelled, IDeletable, IBelongCompany {
+	public class DispatchJob : Subscribable, IIdUlong, ILabelled,  IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this job.
 		/// </summary>
@@ -49,7 +49,6 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Asset.id" />
 		public ulong? asset;
-		public bool deleted { get; set; }
 		/// <summary>
 		/// A name for the work needed to be performed.
 		/// </summary>

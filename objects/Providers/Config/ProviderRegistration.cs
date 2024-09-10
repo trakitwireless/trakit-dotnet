@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// The temporary reference to a device whose ownership is pending.
 	/// </summary>
 	/// <category>Providers and Configurations</category>
-	public class ProviderRegistration : INamed, IBelongCompany, IDeletable {
+	public class ProviderRegistration : INamed, IBelongCompany {
 		/// <summary>
 		/// A unique six digit code.
 		/// </summary>
@@ -30,10 +30,6 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string? password;
-		/// <summary>
-		/// Indicates whether this ProviderRegistration is expired.
-		/// </summary>
-		public bool deleted => this.expires < DateTime.UtcNow;
 		/// <summary>
 		/// The unique identifier the user who generated this registration.
 		/// </summary>

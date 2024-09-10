@@ -6,7 +6,7 @@ namespace trakit.objects {
 	/// Defines the seller company's details for white-labelling.
 	/// </summary>
 	/// <category>White-labelling</category>
-	public class CompanyReseller : Subscribable, IIdUlong, IAmCompany, IDeletable {
+	public class CompanyReseller : Subscribable, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
@@ -17,7 +17,6 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Company.id" />
 		public ulong parent { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// A list of Contacts for company specific things like Technical Support, Billing, etc...
 		/// </summary>

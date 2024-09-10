@@ -59,7 +59,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// <category>Dispatch</category>
 	[Obsolete("Use DispatchJob instead")]
-	public class DispatchTask : Subscribable, IIdUlong, IDeletable, IBelongCompany, IBelongAsset {
+	public class DispatchTask : Subscribable, IIdUlong,  IBelongCompany, IBelongAsset {
 		/// <summary>
 		/// Unique identifier of this task.
 		/// </summary>
@@ -101,7 +101,6 @@ namespace trakit.objects {
 		/// The lat/long coordinates of where the task must be completed.
 		/// </summary>
 		public LatLng latlng;
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The progress of this task.
 		/// </summary>

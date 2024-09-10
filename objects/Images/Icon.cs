@@ -40,7 +40,7 @@ namespace trakit.objects {
 	/// A visual representation of a thing on a map or in a list.
 	/// </summary>
 	/// <category>File Hosting</category>
-	public class Icon : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IGlobal {
+	public class Icon : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal {
 		/// <summary>
 		/// Unique identifier of this icon.
 		/// </summary>
@@ -65,7 +65,6 @@ namespace trakit.objects {
 		/// Notes.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Indicates whether this icon is available to child companies.
 		/// </summary>

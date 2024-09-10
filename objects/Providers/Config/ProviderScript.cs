@@ -25,7 +25,7 @@ namespace trakit.objects {
 	/// A script will generate a file which is loaded onto a provider in the field.
 	/// </summary>
 	/// <category>Providers and Configurations</category>
-	public class ProviderScript : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IGlobal, IVisual {
+	public class ProviderScript : Subscribable, IIdUlong, INamed,  IBelongCompany, IGlobal, IVisual {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>
@@ -44,7 +44,6 @@ namespace trakit.objects {
 		/// Simple details about how the providers are expected to behave.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 
 		/// <summary>
 		/// The fill/background colour of the icon.

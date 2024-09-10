@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// The configured script loaded onto the provider over-the-air to control it's reporting schedule and behaviour.
 	/// </summary>
 	/// <category>Providers and Configurations</category>
-	public class ProviderConfig : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany {
+	public class ProviderConfig : Subscribable, IIdUlong, INamed,  IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>
@@ -29,7 +29,6 @@ namespace trakit.objects {
 		/// Simple details about how the providers are expected to behave.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The list of defined variable name/value pairs that the script requires.
 		/// </summary>
