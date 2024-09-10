@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Possible data-types given to ProviderScriptParameter.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public enum ProviderScriptParameterType : byte {
 		/// <summary>
 		/// True or false.
@@ -24,7 +23,6 @@ namespace trakit.objects {
 	/// This class describes a type of logic applied to a provider.
 	/// A script will generate a file which is loaded onto a provider in the field.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderScript : Subscribable, IIdUlong, INamed,  IBelongCompany, IGlobal, IVisual {
 		/// <summary>
 		/// Unique identifier of this configuration.
@@ -83,7 +81,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition of an argument passed to a ProviderScript.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderScriptParameter {
 		/// <summary>
 		/// Simple type information for the gateway to process.
@@ -115,7 +112,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A chunk of script and variables used to assemble a working ProviderScript.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderScriptBlock {
 		/// <summary>
 		/// A chunk of the file loaded onto a provider with it's variables replaced with configurable variables.

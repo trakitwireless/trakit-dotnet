@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Full breakdown of licensing details per targeted provider.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingReportLicenseBreakdown : INamed {
 		/// <summary>
 		/// The provider to which this breakdown instance belongs.

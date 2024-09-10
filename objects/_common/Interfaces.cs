@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects with a ulong "id".
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface IIdUlong {
 		/// <summary>
 		/// Unique identifier of this object.
@@ -16,7 +15,6 @@ namespace trakit.objects {
 	/// An interface for objects that can be marked as "deleted".
 	/// "Deleted" objects can be restored, but are otherwise treated as "not there".
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface IDeletable {
 		/// <summary>
 		/// Marked as true for objects that have been deleted.
@@ -31,7 +29,6 @@ namespace trakit.objects {
 	/// An interface for objects that can be marked as "enabled".
 	/// "Enabled" objects remain in the system, but are inactive.
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface IEnabled {
 		/// <summary>
 		/// Marked as true for objects that have been deleted.
@@ -42,7 +39,6 @@ namespace trakit.objects {
 	/// An interface for objects that can be marked as "suspended".
 	/// "Suspended" objects can be "revived", but are otherwise treated as "achived" or "inert" (events are not processed).
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface ISuspendable {
 		/// <summary>
 		/// Marked as true for objects that have been suspended.
@@ -57,7 +53,6 @@ namespace trakit.objects {
 	/// An interface for objects that can be marked as "global".
 	/// "Global" objects can be listed in child companies.
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface IGlobal : IBelongCompany {
 		/// <summary>
 		/// Indicates whether this icon is available to child companies.
@@ -90,7 +85,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that have "labels".
 	/// </summary>
-	/// <category>API Definitions</category>
 	/// <seealso cref="CompanyStyles.labels" />
 	public interface ILabelled {
 		/// <summary>
@@ -101,7 +95,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that have "pictures".
 	/// </summary>
-	/// <category>API Definitions</category>
 	/// <seealso cref="Picture.id" />
 	public interface IPictured {
 		/// <summary>
@@ -112,7 +105,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that make them more easily visually identifiable.
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface IVisual {
 		/// <summary>
 		/// The background colour of the graphic.
@@ -133,7 +125,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for an object's size on a disk.
 	/// </summary>
-	/// <category>API Definitions</category>
 	public interface IFileSize {
 		/// <summary>
 		/// Size (in bytes) of the object on the HDD or SSD.
@@ -144,7 +135,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for all the Company___ classes.
 	/// </summary>
-	/// <category>Companies</category>
 	public interface IAmCompany : IIdUlong {
 		/// <summary>
 		/// The <see cref="Company"/> to which this <see cref="Company"/> belongs.
@@ -154,7 +144,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that belong to a single company.
 	/// </summary>
-	/// <category>Companies</category>
 	public interface IBelongCompany {
 		/// <summary>
 		/// The <see cref="Company"/> to which this object belongs.
@@ -164,7 +153,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that belong to a single asset.
 	/// </summary>
-	/// <category>Assets</category>
 	public interface IBelongAsset {
 		/// <summary>
 		/// The <see cref="Asset"/> to which this object belongs.
@@ -174,7 +162,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that belong to a single billing profile.
 	/// </summary>
-	/// <category>Billing</category>
 	public interface IBelongBillingProfile {
 		/// <summary>
 		/// The <see cref="BillingProfile"/> to which this object belongs.
@@ -184,7 +171,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// This interface exists so that I can work with Machine and UserAdvanced objects the same way.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public interface IHavePermissions {
 		/// <summary>
 		/// A list of groups to which this object.
@@ -199,7 +185,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// This interface exists so that I can work with Machine and UserGeneral objects the same way.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public interface IHavePreferences {
 		/// <summary>
 		/// The local timezone for this object.

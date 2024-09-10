@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// Members of a group (as set by a <see cref="User"/>'s <see cref="UserAdvanced.groups"/> or <see cref="Machine"/>'s <see cref="Machine.groups"/>)
 	/// allow for easy administration of permissions and levels of access.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public class UserGroup : Subscribable, IIdUlong, INamed,  IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this group.

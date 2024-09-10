@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Tasks have a lifetime and each status represents a task's progress through it's life.
 	/// </summary>
-	/// <category>Dispatch</category>
 	[Obsolete("Use DispatchStepStatus instead")]
 	public enum TaskStatus : byte {
 		/// <summary>
@@ -57,7 +56,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A task assigned to an asset which represents a coordinate on the map which must be visited.
 	/// </summary>
-	/// <category>Dispatch</category>
 	[Obsolete("Use DispatchJob instead")]
 	public class DispatchTask : Subscribable, IIdUlong,  IBelongCompany, IBelongAsset {
 		/// <summary>

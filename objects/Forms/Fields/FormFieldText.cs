@@ -2,7 +2,6 @@
 	/// <summary>
 	/// A text input control.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class FormFieldText : FormFieldBase {
 		/// <summary>
 		/// Just <see cref="FormFieldType.text"/> control type.

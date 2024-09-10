@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Current state of a session
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public enum SessionStatus : byte {
 		/// <summary>
 		/// Invalid session reference.
@@ -35,7 +34,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Information about other users' sessions.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	/// <override skip="true" />
 	public class Session {
 		/// <summary>

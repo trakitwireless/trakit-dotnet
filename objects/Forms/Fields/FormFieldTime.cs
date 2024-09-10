@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A control to choose a time or duration longer than 24 hours.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class FormFieldTime : FormFieldBase {
 		/// <summary>
 		/// These are the clock control types.

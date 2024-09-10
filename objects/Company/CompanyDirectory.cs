@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The list of Contacts from this and other companies broken down by contact role.
 	/// </summary>
-	/// <category>Companies</category>
 	/// <override skip="true" />
 	public class CompanyDirectory : Subscribable, IIdUlong, IAmCompany {
 		/// <summary>

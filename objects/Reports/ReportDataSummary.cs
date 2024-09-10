@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The kind of reason associated with the range caps for a summary instance.
 	/// </summary>
-	/// <category>Reports</category>
 	public enum ReportDataSummaryReason : byte {
 		/// <summary>
 		/// If the report starting/ending date range overlaps the actual start of the state.
@@ -34,7 +33,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Summarized asset details.
 	/// </summary>
-	/// <category>Reports</category>
 	/// <override name="ReportSummary" />
 	public class ReportDataSummaryInstance {
 		/// <summary>

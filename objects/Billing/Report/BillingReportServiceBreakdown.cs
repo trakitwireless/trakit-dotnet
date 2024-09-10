@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Full breakdown of billable details per targeted asset.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingReportServiceBreakdown : INamed, IBelongAsset {
 		/// <summary>
 		/// The asset to which this breakdown instance belongs.

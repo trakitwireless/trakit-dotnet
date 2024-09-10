@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// This tree-like structure is given to the script processor for the device type so that the device can follow a program.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	[Obsolete("Use ProviderScriptBlock instead")]
 	public class ProviderConfigurationNode {
 		/// <summary>
@@ -50,7 +49,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An abstract class used as a base for all Geofence type classes.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	[Obsolete]
 	public abstract class GeofenceType {
 		/// <summary>
@@ -65,7 +63,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A geofence whose boundary is defined by a non-overlapping series of coordinates.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	/// <override skip="false" name="" />
 	[Obsolete]
 	public class ProviderGeofencePolygon : GeofenceType {
@@ -77,7 +74,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A geofence defined by a centre coordinate and a threshold value to indicate the boundary around that point.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	/// <override skip="false" name="" />
 	[Obsolete]
 	public class ProviderGeofenceCircular : GeofenceType {
@@ -93,7 +89,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A geofence whose boundary is a "rectangle" defined by corner coordinates.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	[Obsolete]
 	public class ProviderGeofenceRectangle : GeofenceType {
 		/// <summary>
@@ -110,7 +105,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// This is a point and not a geofence, so I don't know why this is defined.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	/// <override skip="false" name="" />
 	[Obsolete]
 	public class ProviderGeofencePoint : GeofenceType { }
@@ -119,7 +113,6 @@ namespace trakit.objects {
 	/// This read-only class describes a type of logic applied to a provider.
 	/// ProviderConfigurationTypes are used to help define a ProviderConfiguration.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	[Obsolete("Use ProviderScript instead")]
 	public class ProviderConfigurationType : Subscribable, IIdUlong, INamed {
 		/// <summary>

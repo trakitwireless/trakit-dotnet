@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Defines the behaviour of the system when a user creates multiple sessions.
 	/// </summary>
-	/// <category>Companies</category>
 	/// <override name="SessionMultiUser" />
 	public enum MultiUserPolicy : byte {
 		/// <summary>
@@ -23,7 +22,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Defines how User passwords expire.
 	/// </summary>
-	/// <category>Companies</category>
 	/// <override name="PasswordExpiryMode" />
 	public enum ExpiryModePolicy : byte {
 		/// <summary>
@@ -43,7 +41,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The password and session lifetime policies for this Company.
 	/// </summary>
-	/// <category>Companies</category>
 	public class CompanyPolicies : Subscribable, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
@@ -68,7 +65,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The password complexity and expiry policy.
 	/// </summary>
-	/// <category>Companies</category>
 	public class PasswordPolicy {
 		/// <summary>
 		/// The minimum number of characters required.
@@ -102,7 +98,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The session lifetime policy.
 	/// </summary>
-	/// <category>Companies</category>
 	public class SessionPolicy {
 		/// <summary>
 		/// The list of applications users are allowed to use to create sessions.

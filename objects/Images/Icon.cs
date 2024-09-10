@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The layers of the map used to visualize the icon.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public enum IconLayer : byte {
 		/// <summary>
 		/// An SVG only layer just above the roads used for solid Places and accuracy radius fill.
@@ -39,7 +38,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A visual representation of a thing on a map or in a list.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class Icon : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal {
 		/// <summary>
 		/// Unique identifier of this icon.
@@ -91,7 +89,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition for the name bubble above the icon on a map.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class IconLabel {
 		/// <summary>
 		/// The offset from the lat/long in pixels.
@@ -109,7 +106,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The image source and defined status tags which need to be applied to an asset in order to show the image.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class IconGlyph {
 		/// <summary>
 		/// A list of codified status tag names.  Any of the tags must be applied to the asset for the image to appear.

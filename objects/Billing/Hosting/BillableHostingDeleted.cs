@@ -2,7 +2,6 @@
 	/// <summary>
 	/// Hosted things share a lot of common attributes.
 	/// </summary>
-	/// <category>Billing</category>
 	public abstract class BillableHostingDeleted : BillableBase {
 		/// <summary>
 		/// The number of units to which this billing rule applies.

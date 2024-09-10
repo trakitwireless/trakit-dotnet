@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The colours and styles used by this company to tag and label Assets, Places, and other things.
 	/// </summary>
-	/// <category>Companies</category>
 	public class CompanyStyles : Subscribable, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
@@ -36,7 +35,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Visual style identification helper.
 	/// </summary>
-	/// <category>Companies</category>
 	public class LabelStyle : INamed, IVisual {
 		/// <summary>
 		/// The name of this visual style.

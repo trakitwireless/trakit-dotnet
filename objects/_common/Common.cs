@@ -2,7 +2,6 @@
 	/// <summary>
 	/// Timezone definition
 	/// </summary>
-	/// <category>API Definitions</category>
 	public class Timezone {
 		/// <summary>
 		/// Unique timezone code
@@ -29,7 +28,6 @@
 	/// <summary>
 	/// Part of the White-labelling profile definitions.
 	/// </summary>
-	/// <category>White-labelling</category>
 	public class ColourStyle {
 		/// <summary>
 		/// The colour of the background.

@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Drill-down mechanism for highlighting only those places and regions desired in report results.
 	/// </summary>
-	/// <category>Reports</category>
 	public enum ReportFilterMode : byte {
 		/// <summary>
 		/// Filtering is not enabled for the report.
@@ -23,7 +22,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The options used by the report runner to process results.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportOptions {
 		/// <summary>
 		/// A list of parameters to better shape the results.

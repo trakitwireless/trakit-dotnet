@@ -2,7 +2,6 @@
 	/// <summary>
 	/// A true/false (or either-or) input control.
 	/// </summary>
-	/// <category>File Hosting</category>
 	/// <remarks>
 	/// For choices, the field definition will be an array of three values.
 	/// The first value is the "true", second is the "false", and third is "indeterminate".

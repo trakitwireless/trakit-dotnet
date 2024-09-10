@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The lifetime of building a <see cref="BillingReport"/>.
 	/// </summary>
-	/// <category>Billing</category>
 	public enum BillingReportStatus : byte {
 		/// <summary>
 		/// The <see cref="BillingReport"/> has been requested, but not yet begun processing.
@@ -32,7 +31,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report generated per billee company.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingReport : Subscribable, IIdUlong, INamed,  IBelongCompany, IBelongBillingProfile {
 		/// <summary>
 		/// Unique identifier

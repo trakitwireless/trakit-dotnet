@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The type of logic used by the report runner.
 	/// </summary>
-	/// <category>Reports</category>
 	public enum ReportType : byte {
 		/// <summary>
 		/// Invalid report type
@@ -54,7 +53,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The lifetime of building a <see cref="ReportResult"/>.
 	/// </summary>
-	/// <category>Reports</category>
 	public enum ReportStatus : byte {
 		/// <summary>
 		/// The <see cref="ReportResult"/> has been requested, but not yet begun processing.
@@ -85,7 +83,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report results
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportResult : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier

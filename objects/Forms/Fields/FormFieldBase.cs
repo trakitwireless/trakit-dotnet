@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The supported types of user interface modules for a <see cref="FormTemplate"/>.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public enum FormFieldType : byte {
 		/// <summary>
 		/// Any text input.
@@ -135,7 +134,6 @@
 	/// <summary>
 	/// A base class for the common form field UI members.
 	/// </summary>
-	/// <category>File Hosting</category>
 	/// <override skip="false" />
 	public abstract class FormFieldBase : IIdUlong, INamed {
 		/// <summary>

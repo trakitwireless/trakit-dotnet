@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The kind of command for the device/modem.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public enum ProviderCommandType : byte {
 		/// <summary>
 		/// If the type of command has not yet been determined, or there was an error determining its type.
@@ -43,7 +42,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Progress lifetime of command for the device/modem.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public enum ProviderCommandStatus : byte {
 		/// <summary>
 		/// The new command has been created, but not yet sent to the provider.
@@ -74,7 +72,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Details regarding a provider command
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderCommand {
 		/// <summary>
 		/// Current status of this command.
@@ -97,7 +94,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Managing communication with Device/hardware.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderControl : Subscribable, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.

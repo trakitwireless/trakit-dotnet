@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The kinds of parameters required and optional to build Report Results
 	/// </summary>
-	/// <category>Reports</category>
 	public enum ReportParameterType : byte {
 		/// <summary>
 		/// The staring date/time range for events to be included in the results.
@@ -63,7 +62,6 @@
 	/// <summary>
 	/// An argument passed to the report runner.
 	/// </summary>
-	/// <category>Reports</category>
 	public struct ReportParameter {
 		/// <summary>
 		/// The type of argument.

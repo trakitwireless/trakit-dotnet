@@ -2,7 +2,6 @@
 	/// <summary>
 	/// A context hint for the size of a measurements.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public enum FormFieldNumericSize : byte {
 		/// <summary>
 		/// A small measurement.
@@ -39,7 +38,6 @@
 	/// <remarks>
 	/// For this field, the <see cref="FormFieldBase.kind"/> is just a helper for the UI, and does not affect input validation.
 	/// </remarks>
-	/// <category>File Hosting</category>
 	public class FormFieldNumeric : FormFieldBase {
 		/// <summary>
 		/// These are the numeric control types.

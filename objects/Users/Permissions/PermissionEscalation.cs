@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition for the kinds of permission escalations.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	/// <override name="PermissionEscalationType" />
 	public enum EscalationType : byte {
 		/// <summary>
@@ -20,7 +19,6 @@ namespace trakit.objects {
 	/// Used to throw permission escalation exceptions, this is similar to a <see cref="Permission"/>,
 	/// but defines a <see cref="before"/> and <see cref="after"/> for a proposed change.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	/// <override name="PermissionEscalation" />
 	public class PermissionEscalation {
 		/// <summary>
@@ -49,7 +47,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Describes the changes in state that raised the escalation.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	/// <override name="PermissionEscalationState" />
 	public class PermissionEscalationState {
 		/// <summary>

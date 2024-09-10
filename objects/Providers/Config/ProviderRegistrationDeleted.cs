@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The temporary reference to a device whose ownership is pending.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderRegistrationDeleted : IBelongCompany, IDeletable {
 		/// <summary>
 		/// A unique six digit code.

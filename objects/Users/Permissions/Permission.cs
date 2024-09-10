@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The levels of permission available.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public enum PermissionLevel : byte {
 		/// <summary>
 		/// Read-only access, no changes allowed.
@@ -23,7 +22,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// How a permission is applied.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public enum PermissionMethod : byte {
 		/// <summary>
 		/// Permission is given.
@@ -37,7 +35,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The kinds of permissions available for a UserPermission.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public enum PermissionType : byte {
 		/// <summary sort="Company">
 		/// Basic information about a <see cref="Company"/>.
@@ -341,7 +338,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A defined permission for <see cref="User"/>s, <see cref="UserGroup"/>s, and <see cref="Machine"/>s.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public class Permission {
 		/// <summary>
 		/// The <see cref="Company"/> that this permission targets.

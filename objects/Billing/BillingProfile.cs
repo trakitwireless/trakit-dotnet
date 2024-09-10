@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Used for invoices.
 	/// </summary>
-	/// <category>Billing</category>
 	public enum BillingCurrency : byte {
 		/// <summary>
 		/// Canadian dollars
@@ -23,7 +22,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The type of repeating cycle used for generating bills.
 	/// </summary>
-	/// <category>Billing</category>
 	public enum BillingCycle : byte {
 		/// <summary>
 		/// Once a month
@@ -42,7 +40,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A profile used to generate billable orders for a customer.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingProfile : Subscribable, IIdUlong, INamed,  IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this billing profile
@@ -106,7 +103,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Description of a tiered SMS messaging limit
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillableSmsProfile {
 		/// <summary>
 		/// The maximum number of messages sent per cycle

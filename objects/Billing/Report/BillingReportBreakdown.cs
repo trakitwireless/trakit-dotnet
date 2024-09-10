@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Billing breakdown per target company.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingReportBreakdown {
 		/// <summary>
 		/// The target company to which this breakdown instance belongs.

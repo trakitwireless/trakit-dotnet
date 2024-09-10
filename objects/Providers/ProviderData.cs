@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A fragment of data given by a device.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public struct ProviderData {
 		/// <summary>
 		/// The value of the data given like true, 17.3, "asdf", etc...

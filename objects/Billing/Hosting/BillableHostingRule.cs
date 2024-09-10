@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The kind of service being billed.
 	/// </summary>
-	/// <category>Billing</category>
 	public enum BillableHostingType : byte {
 		/// <summary>
 		/// Employee/driver tracking
@@ -49,7 +48,6 @@
 	/// <summary>
 	/// A billing rule for assets
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillableHostingRule : BillableHostingBase {
 		/// <summary>
 		/// The type of service being billed.

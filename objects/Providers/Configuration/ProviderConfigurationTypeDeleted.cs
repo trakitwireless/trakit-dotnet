@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// This read-only class describes a type of logic applied to a provider.
 	/// ProviderConfigurationTypes are used to help define a ProviderConfiguration.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	[Obsolete("Use ProviderScript instead")]
 	public class ProviderConfigurationTypeDeleted : Subscribable, IIdUlong, IDeletable {
 		/// <summary>

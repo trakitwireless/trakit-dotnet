@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The lifetime of a Maintenance Job
 	/// </summary>
-	/// <category>Maintenance</category>
 	public enum MaintenanceJobStatus : byte {
 		/// <summary>
 		/// The work will need to be performed soon.
@@ -28,7 +27,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Historical service work performed on a Vehicle or Trailer
 	/// </summary>
-	/// <category>Maintenance</category>
 	public class MaintenanceJob : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongAsset, IPictured {
 		/// <summary>
 		/// Default threshold (in minutes) for the valid completion date of jobs.

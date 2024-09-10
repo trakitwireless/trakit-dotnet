@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Memos have a lifetime and each status represents a memos's progress through it's life.
 	/// </summary>
-	/// <category>Messaging</category>
 	public enum MessageStatus : byte {
 		/// <summary>
 		/// Waiting to be sent.
@@ -34,7 +33,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The kind of protocol used for this memo.
 	/// </summary>
-	/// <category>Messaging</category>
 	public enum MessageType : byte {
 		/// <summary>
 		/// If the type of memo has not yet been determined, or there was an error determining its type.
@@ -69,7 +67,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A base class for Alerts and Messages.
 	/// </summary>
-	/// <category>Messaging</category>
 	public abstract class MessageBase : Subscribable, IIdUlong, IBelongCompany, IBelongAsset {
 		/// <summary>
 		/// Unique identifier of this memo.

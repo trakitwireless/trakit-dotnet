@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Summarized bill per target.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingReportSummary : INamed {
 		/// <summary>
 		/// The target company to which this summary instance belongs.

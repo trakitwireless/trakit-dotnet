@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The applied behaviour which includes all parameters and targets specific assets.
 	/// </summary>
-	/// <category>Behaviours</category>
 	public class Behaviour : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this behaviour.

@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The current state of an asset's <see cref="DispatchJob"/> route progress.
 	/// </summary>
-	/// <category>Dispatch</category>
 	/// <override>
 	/// <property name="tasks" type="System.Array" obsolete="true">
 	/// <summary>The current list of tasks assigned to this asset.</summary>

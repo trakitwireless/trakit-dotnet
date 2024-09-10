@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Possible data-types given to BehaviourParameters.
 	/// </summary>
-	/// <category>Behaviours</category>
 	public enum BehaviourParameterType : byte {
 		/// <summary>
 		/// True or false.
@@ -27,7 +26,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Business logic run by the system to react to GPS events and device information.
 	/// </summary>
-	/// <category>Behaviours</category>
 	public class BehaviourScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual {
 		/// <summary>
 		/// Unique identifier of this script.
@@ -89,7 +87,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition of an argument passed to a Behaviour Script.
 	/// </summary>
-	/// <category>Behaviours</category>
 	public class BehaviourParameter {
 		/// <summary>
 		/// Simple type information for the compiler.

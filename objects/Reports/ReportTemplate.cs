@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A partially created report used to quickly build results.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual {
 		/// <summary>
 		/// Unique identifier

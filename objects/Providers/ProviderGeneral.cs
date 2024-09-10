@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Protocols supported by the system.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public enum ProviderType : byte {
 		/// <summary>
 		/// Your guess is as good as mine.
@@ -112,7 +111,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Progress lifetime of changing the on-board information of a remote device.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public enum ProvisioningStatus : byte {
 		/// <summary>
 		/// The new configuration has been created, but not yet sent to the provider.
@@ -159,7 +157,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Device/hardware information and configuration.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderGeneral : Subscribable, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.

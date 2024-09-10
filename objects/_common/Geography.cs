@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A coordinate on the globe
 	/// </summary>
-	/// <category>API Definitions</category>
 	public class LatLng {
 		/// <summary>
 		/// Let's consider the zero-zero coordinates to be invalid.
@@ -24,7 +23,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A boundary on the globe
 	/// </summary>
-	/// <category>API Definitions</category>
 	public class LatLngBounds {
 		/// <summary>
 		/// Northern latitude
@@ -47,7 +45,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// GPS position information
 	/// </summary>
-	/// <category>Assets</category>
 	public class Position {
 		/// <summary>Latitude</summary>
 		public double? lat;
@@ -76,7 +73,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A road segment description
 	/// </summary>
-	/// <category>Assets</category>
 	public class StreetAddress {
 		/// <summary>
 		/// House number.

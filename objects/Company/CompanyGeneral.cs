@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// General details about a company.
 	/// </summary>
-	/// <category>Companies</category>
 	public class CompanyGeneral : Subscribable, IIdUlong, INamed, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.

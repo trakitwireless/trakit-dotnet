@@ -6,7 +6,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The lifetime of all <see cref="DispatchStep"/>s (in order).
 	/// </summary>
-	/// <category>Dispatch</category>
 	public enum DispatchStepStatus : byte {
 		/// <summary>
 		/// The <see cref="DispatchStep"/> has not yet been started.
@@ -28,7 +27,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Details about the lifetime of a <see cref="DispatchStep"/>.
 	/// </summary>
-	/// <category>Dispatch</category>
 	public class DispatchStepState {
 		/// <summary>
 		/// A timestamp from when the lifetime was updated.
@@ -43,7 +41,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A portion of work for a <see cref="DispatchJob"/>.
 	/// </summary>
-	/// <category>Dispatch</category>
 	public class DispatchStep : IIdUlong, INamed {
 		/// <summary>
 		/// Identifier for this <see cref="DispatchStep"/>.

@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Recurring service work
 	/// </summary>
-	/// <category>Maintenance</category>
 	public class MaintenanceSchedule : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual {
 		/// <summary>
 		/// Default prediction day threshold for new schedules.

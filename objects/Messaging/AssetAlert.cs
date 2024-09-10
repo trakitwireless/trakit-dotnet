@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The priority of the alert.
 	/// </summary>
-	/// <category>Messaging</category>
 	public enum AlertPriority : byte {
 		/// <summary>
 		/// Sends when no other alerts are pending in the queue.
@@ -21,7 +20,6 @@
 	/// <summary>
 	/// An automatically generated notification sent to a user by the system.
 	/// </summary>
-	/// <category>Messaging</category>
 	public class AssetAlert : MessageBase {
 		/// <summary>
 		/// The priority for which this message must send.

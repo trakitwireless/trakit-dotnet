@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Driving directions and details like duration and distance.
 	/// </summary>
-	/// <category>Dispatch</category>
 	public class DispatchDirection {
 		/// <summary>
 		/// The total distance of these directions (including sub-directions if applicable).

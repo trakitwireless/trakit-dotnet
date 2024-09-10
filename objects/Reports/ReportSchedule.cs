@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Specifies how often a Report Template is automatically generates a Report Result.
 	/// </summary>
-	/// <category>Reports</category>
 	public enum ReportRecurrenceType : byte {
 		/// <summary>
 		/// Runs only once.  This type is used for large reports which need to run overnight.
@@ -41,7 +40,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Determines when and how often a report schedule runs automatically.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportSchedule : Subscribable, IIdUlong, INamed, IEnabled, IBelongCompany {
 		/// <summary>
 		/// Unique identifier
@@ -93,7 +91,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Determines when and how often a report schedule runs automatically.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportRecurrence {
 		/// <summary>
 		/// How often the report is automatically run.  Daily, weekly, monthly, etc...
@@ -163,7 +160,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A group of users and targeted assets which receive report notifications.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportNotifications {
 		/// <summary>
 		/// List of users to send emailed report.

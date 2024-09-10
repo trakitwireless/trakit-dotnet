@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Rules used for generating a scorecard.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportScorecardRules {
 		/// <summary>
 		/// Base score for the scorecard.
@@ -20,7 +19,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Infraction parameter used to generate scorecard
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportScorecardParameter {
 		/// <summary>
 		/// Type of exception, example speeding, idling, etc.
@@ -39,7 +37,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Scorecard generated from the results of this report.
 	/// </summary>
-	/// <category>Reports</category>
 	public class ReportScorecard {
 		/// <summary>
 		/// The asset to which this scorecard belongs.

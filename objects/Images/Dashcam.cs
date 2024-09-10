@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The type of dashcam data being stored.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public enum DashcamDataType : byte {
 		/// <summary>
 		/// Unknown or other.
@@ -23,7 +22,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A base class for Dashcam meta-data.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public abstract class DashcamBase : IFileSize {
 		/// <summary>
 		/// Number bytes in the dashcam media file.
@@ -77,7 +75,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An image or video received from a dashcam-enabled provider or asset.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class DashcamData : DashcamBase {
 		/// <summary>
 		/// Unique identifier of this resource.
@@ -115,7 +112,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An live snapshot a dashcam-enabled provider or asset.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class DashcamDataLive : DashcamBase {
 		/// <summary>
 		/// The type of data being stored.

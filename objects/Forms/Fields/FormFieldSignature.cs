@@ -6,7 +6,6 @@
 	/// The device making the capture must save the image to the server some other way.
 	/// When submitting the <see cref="FormResult"/>, the value must be a path to the signature file.
 	/// </remarks>
-	/// <category>File Hosting</category>
 	public class FormFieldSignature : FormFieldBase {
 		/// <summary>
 		/// Just <see cref="FormFieldType.signature"/> control type.

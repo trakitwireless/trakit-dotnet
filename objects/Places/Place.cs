@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The types of geography the system supports
 	/// </summary>
-	/// <category>Places</category>
 	/// <override name="PlaceType"/>
 	public enum PlaceType : byte {
 		/// <summary>
@@ -33,7 +32,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A POI (point-of-interest) saved to the system to help determine an asset's real-world position.
 	/// </summary>
-	/// <category>Places</category>
 	/// <override complex="true">
 	/// <property name="anchor" type="Vorgon.LatLng">
 	/// <summary>

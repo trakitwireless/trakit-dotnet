@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// This class describes a type of logic applied to a provider.
 	/// A script will generate a file which is loaded onto a provider in the field.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	public class ProviderScriptDeleted : Subscribable, IIdUlong, IDeletable, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this configuration.

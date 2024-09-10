@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The types of alerts used.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	/// <override name="NotificationMethod" />
 	public enum UserNotificationsMethod : byte {
 		/// <summary>
@@ -25,7 +24,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition of how and when to send alerts to the user.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public class UserNotifications : IEnabled {
 		/// <summary>
 		/// A common name like "Weekdays" or "Off Hours".

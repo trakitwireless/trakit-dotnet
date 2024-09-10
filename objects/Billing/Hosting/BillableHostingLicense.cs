@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The kind of license being billed.
 	/// </summary>
-	/// <category>Billing</category>
 	public enum BillableLicenseType : byte {
 		/// <summary>
 		/// SmartWitness data hosting fee
@@ -24,7 +23,6 @@
 	/// <summary>
 	/// A hardware license for providers
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillableHostingLicense : BillableHostingBase {
 		/// <summary>
 		/// The type of hardware license

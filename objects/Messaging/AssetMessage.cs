@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The name of folder where the message is stored.
 	/// </summary>
-	/// <category>Messaging</category>
 	public enum MessageFolder : byte {
 		/// <summary>
 		/// The inbox is loaded quickly from memory, but messages regularly move to the archive.
@@ -17,7 +16,6 @@
 	/// <summary>
 	/// A conversational message between users and assets.
 	/// </summary>
-	/// <category>Messaging</category>
 	public class AssetMessage : MessageBase {
 		/// <summary>
 		/// The folder under which this message is stored.

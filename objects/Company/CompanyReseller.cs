@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Defines the seller company's details for white-labelling.
 	/// </summary>
-	/// <category>White-labelling</category>
 	public class CompanyReseller : Subscribable, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
@@ -149,7 +148,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The server used for notification and conversational email messages sent and received by the system.
 	/// </summary>
-	/// <category>White-labelling</category>
 	public class NotificationServerEmail {
 		/// <summary>
 		/// The type of incoming protocol to use (IMAP or POP3).
@@ -204,7 +202,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition for load-balanced outbound SMS numbers for the White-labelling profile.
 	/// </summary>
-	/// <category>White-labelling</category>
 	public class NotificationServerSms {
 		/// <summary>
 		/// A per-number/per-day limit on the amount of Notifications sent.

@@ -9,7 +9,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Asset information used in calculating a summary instance.
 	/// </summary>
-	/// <category>Reports</category>
 	/// <override name="ReportBreakdown" />
 	public class ReportDataBreakdownInstance {
 		/// <summary>
@@ -36,7 +35,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Message information used in this report.
 	/// </summary>
-	/// <category>Reports</category>
 	/// <override skip="false" name="ReportBreakdownMessage" />
 	public class ReportDataBreakdownMessage : ReportDataBreakdownInstance {
 		/// <summary>
@@ -47,7 +45,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Dispatch Task information used in this report.
 	/// </summary>
-	/// <category>Reports</category>
 	/// <override skip="false" name="ReportBreakdownTask" />
 	public class ReportDataBreakdownTask : ReportDataBreakdownInstance {
 		/// <summary>
@@ -58,7 +55,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Dispatch Job information used in this report.
 	/// </summary>
-	/// <category>Reports</category>
 	/// <override skip="false" name="ReportBreakdownJob" />
 	public class ReportDataBreakdownJob : ReportDataBreakdownInstance {
 		/// <summary>

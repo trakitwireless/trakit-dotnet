@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A value assigned to <see cref="DispatchJob"/>s in order to weigh them when optimizing a route.
 	/// </summary>
-	/// <category>Dispatch</category>
 	public enum DispatchJobPriority : byte {
 		/// <summary>
 		/// Will be done last, after all others, if at all.
@@ -32,7 +31,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Some work that needs to be done by performing one or more <see cref="DispatchStep"/>s.
 	/// </summary>
-	/// <category>Dispatch</category>
 	public class DispatchJob : Subscribable, IIdUlong, ILabelled,  IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this job.

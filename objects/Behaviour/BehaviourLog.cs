@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The type of logged message.
 	/// </summary>
-	/// <category>Behaviours</category>
 	public enum BehaviourLogType : byte {
 		/// <summary>
 		/// Used for general information messages.
@@ -27,7 +26,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A debug message available to script writers to help debug and trace output from a BehaviourScript.
 	/// </summary>
-	/// <category>Behaviours</category>
 	public class BehaviourLog : Subscribable, IIdUlong, IBelongCompany, IBelongAsset {
 		/// <summary>
 		/// Unique identifier of this log message.

@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A coordinate on a flat surface
 	/// </summary>
-	/// <category>API Definitions</category>
 	public class Point {
 		/// <summary>
 		/// Horizontal coordinate
@@ -20,7 +19,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A boundary on a flat surface
 	/// </summary>
-	/// <category>API Definitions</category>
 	public class Square {
 		/// <summary>
 		/// Highest vertical coordinate
@@ -51,7 +49,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Dimensions on a flat surface
 	/// </summary>
-	/// <category>API Definitions</category>
 	public class Size {
 		/// <summary>
 		/// Width

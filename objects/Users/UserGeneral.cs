@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Credentials, information, and preferences about a user.
 	/// </summary>
-	/// <category>Users and Groups</category>
 	public class UserGeneral : Subscribable,  IEnabled, IBelongCompany, IHavePreferences {
 		/// <summary>
 		/// The unique public email address used to access the system.

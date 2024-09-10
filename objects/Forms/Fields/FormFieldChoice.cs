@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A single- or multiple-choice input control.
 	/// </summary>
-	/// <category>File Hosting</category>
 	public class FormFieldChoice : FormFieldBase {
 		/// <summary>
 		/// Just <see cref="FormFieldType.choice"/> control type.

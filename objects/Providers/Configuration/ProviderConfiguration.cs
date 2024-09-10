@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The configured logic loaded onto the provider over-the-air to control it's reporting schedule and behaviour.
 	/// </summary>
-	/// <category>Providers and Configurations</category>
 	[Obsolete("Use ProviderConfig instead")]
 	public class ProviderConfiguration : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>

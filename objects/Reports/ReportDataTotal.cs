@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Totalled information from all the results of the report.
 	/// </summary>
-	/// <category>Reports</category>
 	/// <override name="ReportTotal" />
 	public class ReportDataTotal {
 		/// <summary>

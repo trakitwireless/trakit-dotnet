@@ -2,7 +2,6 @@
 	/// <summary>
 	/// Amount billed for a type of hosting (service or license) per target company.
 	/// </summary>
-	/// <category>Billing</category>
 	public class BillingReportHostingSummary {
 		/// <summary>
 		/// SKU being billed
