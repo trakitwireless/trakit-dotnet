@@ -121,7 +121,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// <category>Providers and Configurations</category>
 	[Obsolete("Use ProviderScript instead")]
-	public class ProviderConfigurationType : Subscribable, IIdUlong, INamed, IDeletable {
+	public class ProviderConfigurationType : Subscribable, IIdUlong, INamed {
 		/// <summary>
 		/// Unique identifier.
 		/// </summary>
@@ -135,7 +135,6 @@ namespace trakit.objects {
 		/// Notes regarding the use of this configuration.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The applicable type of provider for which this configuration type can be created.
 		/// </summary>

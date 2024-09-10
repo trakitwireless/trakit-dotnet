@@ -7,7 +7,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// <category>Providers and Configurations</category>
 	[Obsolete("Use ProviderConfig instead")]
-	public class ProviderConfiguration : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany {
+	public class ProviderConfiguration : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>
@@ -26,7 +26,6 @@ namespace trakit.objects {
 		/// Simple details about how the providers are expected to behave.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The logic type which this configuration implements.
 		/// </summary>
