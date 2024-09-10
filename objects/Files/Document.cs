@@ -5,8 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A file stored temporarily by the system.
 	/// </summary>
-	/// <category>File Hosting</category>
-	public class Document : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IFileSize {
+	public class Document : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize {
 		/// <summary>
 		/// Unique identifier of this file.
 		/// </summary>
@@ -25,7 +24,6 @@ namespace trakit.objects {
 		/// Notes about this file.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The URL/path to find this file.
 		/// </summary>

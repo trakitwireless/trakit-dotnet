@@ -4,8 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The full definition of a form that needs to be filled out.
 	/// </summary>
-	/// <category>File Hosting</category>
-	public class FormTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IVisual, IDeletable {
+	public class FormTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IVisual {
 		/// <summary>
 		/// Unique identifier of this form.
 		/// </summary>
@@ -33,7 +32,6 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public List<string> labels { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The fill/background colour of the icon.
 		/// </summary>

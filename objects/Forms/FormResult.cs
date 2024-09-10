@@ -5,8 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A completed form submitted by a <see cref="User"/> or <see cref="Asset"/>.
 	/// </summary>
-	/// <category>File Hosting</category>
-	public class FormResult : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IDeletable {
+	public class FormResult : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled {
 		/// <summary>
 		/// Unique identifier of this form.
 		/// </summary>
@@ -43,7 +42,6 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public List<string> labels { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// All the values for fillable fields by index.
 		/// </summary>
