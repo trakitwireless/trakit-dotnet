@@ -5,7 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The kinds of interactions had with a Place.
 	/// </summary>
-	/// <category>Assets</category>
 	public enum AssetPlaceStatusType : byte {
 		/// <summary>
 		/// Occurs when an asset is outside a Place, then goes inside the boundary.
@@ -24,7 +23,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Often changing details about a thing.
 	/// </summary>
-	/// <category>Assets</category>
 	public class AssetAdvanced : Subscribable, IIdUlong, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this asset.
@@ -93,7 +91,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Often changing details about a vehicle.
 	/// </summary>
-	/// <category>Assets</category>
 	public class VehicleAdvanced : AssetAdvanced {
 		/// <summary>
 		/// The cumulative duration that the vehicle's engine has been running (in decimal hours).
@@ -104,7 +101,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// An attribute given to an asset by a behaviour script.
 	/// </summary>
-	/// <category>Assets</category>
 	public struct AssetAttribute {
 		/// <summary>
 		/// Display name of the attribute.
@@ -150,7 +146,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// A simple status for each place an Asset visits.
 	/// </summary>
-	/// <category>Assets</category>
 	public class AssetPlaceStatus {
 		/// <summary>
 		/// The kind of interaction.

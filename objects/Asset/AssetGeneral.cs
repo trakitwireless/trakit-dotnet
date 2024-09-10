@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a thing.
 	/// </summary>
-	/// <category>Assets</category>
-	/// <override suspendable="false" />
-	public class AssetGeneral : Subscribable, IIdUlong, INamed, IIconic, IDeletable, ISuspendable, IBelongCompany, ILabelled, IPictured {
+	public class AssetGeneral : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>
@@ -36,18 +33,6 @@ namespace trakit.objects {
 		/// Notes about it.
 		/// </summary>
 		public string notes { get; set; }
-		/// <summary>
-		/// Indicates whether this Asset is deleted.
-		/// </summary>
-		public bool deleted { get; set; }
-		/// <summary>
-		/// Indicates whether this Asset is suspended from event processing.
-		/// </summary>
-		public bool suspended { get; set; }
-		/// <summary>
-		/// Timestamp that indicates when the asset was suspended or revived.
-		/// </summary>
-		public DateTime suspendedUtc { get; set; }
 		/// <summary>
 		/// Codified label names.
 		/// </summary>
@@ -83,8 +68,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a person.
 	/// </summary>
-	/// <category>Assets</category>
-	/// <override deletable="false" />
 	public class PersonGeneral : AssetGeneral {
 		/// <summary>
 		/// A reference to their Company's Contact information.
@@ -95,8 +78,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a trailer.
 	/// </summary>
-	/// <category>Assets</category>
-	/// <override deletable="false" suspendable="false" />
 	public class TrailerGeneral : AssetGeneral {
 		/// <summary>
 		/// The license plate.
@@ -131,8 +112,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a vehicle.
 	/// </summary>
-	/// <category>Assets</category>
-	/// <override deletable="false" suspendable="false" />
 	public class VehicleGeneral : AssetGeneral {
 		/// <summary>
 		/// Manufacturer's unique identification number (Vehicle Identification Number).

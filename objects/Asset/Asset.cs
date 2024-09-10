@@ -3,9 +3,31 @@ using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
+	/// The four supported types of trackable things.
+	/// </summary>
+	public enum AssetType : byte {
+		/// <summary>
+		/// Generic thing.
+		/// </summary>
+		asset,
+		/// <summary>
+		/// Human (or alien) Person.
+		/// </summary>
+		person,
+		/// <summary>
+		/// A towed vehicle without an engine.
+		/// </summary>
+		trailer,
+		/// <summary>
+		/// A vehicle that moves with its own power.
+		/// </summary>
+		vehicle,
+	}
+
+	/// <summary>
 	/// The full details of an Asset, containing all the properties from the <see cref="AssetGeneral"/> and <see cref="AssetAdvanced"/> objects.
 	/// </summary>
-	public class Asset : Subscribable, IIdUlong, INamed, IIconic, IDeletable, ISuspendable, IBelongCompany, ILabelled, IPictured {
+	public class Asset : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>
@@ -34,18 +56,6 @@ namespace trakit.objects {
 		/// Notes about it.
 		/// </summary>
 		public string notes { get; set; }
-		/// <summary>
-		/// Indicates whether this Asset is deleted.
-		/// </summary>
-		public bool deleted { get; set; }
-		/// <summary>
-		/// Indicates whether this Asset is suspended from event processing.
-		/// </summary>
-		public bool suspended { get; set; }
-		/// <summary>
-		/// Timestamp that indicates when the asset was suspended or revived.
-		/// </summary>
-		public DateTime suspendedUtc { get; set; }
 		/// <summary>
 		/// Codified label names.
 		/// </summary>
