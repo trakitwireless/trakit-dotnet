@@ -2,20 +2,20 @@
 
 namespace trakit.objects {
 	/// <summary>
-	/// Hosted things share a lot of common attributes.
+	/// Report generated per billee company.
 	/// </summary>
-	public abstract class BillableHostingBase : Subscribable, IIdUlong, IBelongBillingProfile, IBelongCompany {
+	public class BillingReportDeleted : Subscribable, IIdUlong, IDeletable, IBelongCompany, IBelongBillingProfile {
 		/// <summary>
-		/// Unique identifier of this hosting rule.
+		/// Unique identifier
 		/// </summary>
 		public ulong id { get; set; }
 		/// <summary>
-		/// Unique identifier of the Company that owns this hosting rule.
+		/// The company to which this report belongs and is sending the bill.
 		/// </summary>
 		/// <seealso cref="Company.id" />
 		public ulong company { get; set; }
 		/// <summary>
-		/// Unique identifier of this rule's billing profile.
+		/// The profile to which this report belongs
 		/// </summary>
 		/// <seealso cref="BillingProfile.id" />
 		public ulong profile { get; set; }
@@ -24,7 +24,7 @@ namespace trakit.objects {
 		/// </summary>
 		public bool deleted => true;
 		/// <summary>
-		/// Timestamp from the action that deleted this rule.
+		/// Timestamp from the action that deleted this asset.
 		/// </summary>
 		public DateTime since { get; set; }
 	}

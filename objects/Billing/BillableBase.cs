@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.Linq;
 
 namespace trakit.objects {
 	/// <summary>
 	/// Most billable things share common attibutes.
 	/// </summary>
-	/// <category>Billing</category>
-	public abstract class BillableBase : Subscribable, IIdUlong, INamed, IDeletable, IBelongBillingProfile, IBelongCompany {
+	public abstract class BillableBase : Subscribable, IIdUlong, INamed,  IBelongBillingProfile, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this hosting rule.
 		/// </summary>
@@ -57,6 +52,5 @@ namespace trakit.objects {
 		/// Cost per cycle for this plan
 		/// </summary>
 		public double amount;
-		public bool deleted { get; set; }
 	}
 }
