@@ -40,7 +40,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A profile used to generate billable orders for a customer.
 	/// </summary>
-	public class BillingProfile : Subscribable, IIdUlong, INamed,  IBelongCompany {
+	public class BillingProfile : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this billing profile
 		/// </summary>

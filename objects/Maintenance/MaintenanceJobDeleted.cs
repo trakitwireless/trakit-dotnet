@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Historical service work performed on a Vehicle or Trailer
 	/// </summary>
-	public class MaintenanceJobDeleted : Subscribable, IIdUlong, IDeletable, IBelongCompany, IBelongAsset {
+	public class MaintenanceJobDeleted : Subscribable, IIdUlong, IDeletable, INamed, IBelongCompany, IBelongAsset {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -20,6 +20,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Company.id" />
 		public ulong company { get; set; }
+		/// <summary>
+		/// The work being done. Like "oil change".
+		/// </summary>
+		/// <override max-length="100" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes about the job.  Like "changed the oil and filter".
+		/// </summary>
+		public string notes { get; set; }
 		/// <summary>
 		/// This flag is always true.
 		/// </summary>

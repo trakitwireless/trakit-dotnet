@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The full company object which contains all fields.
 	/// </summary>
-	public class CompanyDeleted : Subscribable, IIdUlong, IAmCompany, IDeletable {
+	public class CompanyDeleted : Subscribable, IIdUlong, INamed, IAmCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
@@ -15,6 +15,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Company.id" />
 		public ulong parent { get; set; }
+		/// <summary>
+		/// The organizational name.
+		/// </summary>
+		/// <override max-length="100" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes.
+		/// </summary>
+		public string notes { get; set; }
 		/// <summary>
 		/// This flag is always true.
 		/// </summary>

@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report generated per billee company.
 	/// </summary>
-	public class BillingReportDeleted : Subscribable, IIdUlong, IDeletable, IBelongCompany, IBelongBillingProfile {
+	public class BillingReportDeleted : Subscribable, IIdUlong, IDeletable, INamed, IBelongCompany, IBelongBillingProfile {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -19,6 +19,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="BillingProfile.id" />
 		public ulong profile { get; set; }
+		/// <summary>
+		/// Name of this report.
+		/// </summary>
+		/// <override max-length="100" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes about this report.
+		/// </summary>
+		public string notes { get; set; }
 		/// <summary>
 		/// This flag is always true.
 		/// </summary>

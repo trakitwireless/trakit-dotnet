@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Device/hardware information and configuration.
 	/// </summary>
-	public class ProviderDeleted : Subscribable,  IDeletable,  IBelongCompany {
+	public class ProviderDeleted : Subscribable, IDeletable, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -16,6 +16,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Company.id" />
 		public ulong company { get; set; }
+		/// <summary>
+		/// A nickname given to the device/hardware.
+		/// </summary>
+		/// <override max-length="100" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes!
+		/// </summary>
+		public string notes { get; set; }
 		/// <summary>
 		/// The provider's current (or pending) configuration profile.
 		/// </summary>

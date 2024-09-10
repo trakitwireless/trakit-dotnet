@@ -1,21 +1,40 @@
-﻿namespace trakit.objects {
+﻿using System;
+
+namespace trakit.objects {
 	/// <summary>
 	/// Hosted things share a lot of common attributes.
 	/// </summary>
-	public abstract class BillableHostingDeleted : BillableBase {
+	public abstract class BillableHostingDeleted : Subscribable, IIdUlong, INamed, IBelongBillingProfile, IBelongCompany, IDeletable {
 		/// <summary>
-		/// The number of units to which this billing rule applies.
-		/// Should be a non-zero value; null means unlimited
+		/// Unique identifier of this hosting rule.
 		/// </summary>
-		public uint? limit;
+		public ulong id { get; set; }
 		/// <summary>
-		/// Which assets are targeted by this hosting rule
+		/// Unique identifier of the Company that owns this hosting rule.
 		/// </summary>
-		/// <override type="System.String" format="expression" />
-		public string targets;
+		/// <seealso cref="Company.id" />
+		public ulong company { get; set; }
 		/// <summary>
-		/// Does this hosting rule apply to suspended resources
+		/// Unique identifier of this rule's billing profile.
 		/// </summary>
-		public bool suspended { get; set; }
+		/// <seealso cref="BillingProfile.id" />
+		public ulong profile { get; set; }
+		/// <summary>
+		/// The name of this billing rule.
+		/// </summary>
+		/// <override max-length="254" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes about billing this rule.
+		/// </summary>
+		public string notes { get; set; }
+		/// <summary>
+		/// This flag is always true.
+		/// </summary>
+		public bool deleted => true;
+		/// <summary>
+		/// Timestamp from the action that deleted this asset.
+		/// </summary>
+		public DateTime since { get; set; }
 	}
 }

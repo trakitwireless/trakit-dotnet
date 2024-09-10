@@ -31,7 +31,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report generated per billee company.
 	/// </summary>
-	public class BillingReport : Subscribable, IIdUlong, INamed,  IBelongCompany, IBelongBillingProfile {
+	public class BillingReport : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongBillingProfile {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>

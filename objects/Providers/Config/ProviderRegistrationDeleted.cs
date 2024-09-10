@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The temporary reference to a device whose ownership is pending.
 	/// </summary>
-	public class ProviderRegistrationDeleted : IBelongCompany, IDeletable {
+	public class ProviderRegistrationDeleted : INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// A unique six digit code.
 		/// </summary>
@@ -15,6 +15,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Company.id" />
 		public ulong company { get; set; }
+		/// <summary>
+		/// A nickname given to the device once it has been provisioned.
+		/// </summary>
+		/// <override max-length="100" />
+		public string name { get; set; }
+		/// <summary>
+		/// Notes!
+		/// </summary>
+		public string notes { get; set; }
 		/// <summary>
 		/// This flag is always true.
 		/// </summary>
