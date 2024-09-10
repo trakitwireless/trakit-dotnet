@@ -21,6 +21,15 @@ namespace trakit.objects {
 		/// <seealso cref="Asset.id" />
 		public ulong asset { get; set; }
 		/// <summary>
+		/// The name of this task or the work needed to be performed.
+		/// </summary>
+		/// <override max-length="100" />
+		public string name;
+		/// <summary>
+		/// Instructions (filled out by dispatcher) for the field-employee to help them completed the task.
+		/// </summary>
+		public string instructions;
+		/// <summary>
 		/// This flag is always true.
 		/// </summary>
 		public bool deleted => true;

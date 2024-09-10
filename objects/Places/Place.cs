@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -46,7 +45,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// </property>
 	/// </override>
-	public class Place : Subscribable, IIdUlong, INamed, IIconic,  IBelongCompany, ILabelled, IPictured {
+	public class Place : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured {
 		/// <summary>
 		/// Unique identifier of this POI.
 		/// </summary>
