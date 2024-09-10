@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
-	/// Contact information
+	/// Contact information.
 	/// </summary>
-	/// <category>Users and Groups</category>
-	public class Contact : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IPictured {
+	public class Contact : Subscribable, IIdUlong, INamed,  IBelongCompany, IPictured {
 		/// <summary>
 		/// Unique identifier of this contact.
 		/// </summary>
@@ -25,7 +24,6 @@ namespace trakit.objects {
 		/// Notes about this person.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// A collection of other names this person might go by.
 		/// Use the object key like a name identifier.
