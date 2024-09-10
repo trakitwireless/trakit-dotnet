@@ -70,7 +70,7 @@ namespace trakit.objects {
 	/// A base class for Alerts and Messages.
 	/// </summary>
 	/// <category>Messaging</category>
-	public abstract class MessageBase : Subscribable, IIdUlong, IDeletable, IBelongCompany, IBelongAsset {
+	public abstract class MessageBase : Subscribable, IIdUlong, IBelongCompany, IBelongAsset {
 		/// <summary>
 		/// Unique identifier of this memo.
 		/// </summary>
@@ -84,7 +84,6 @@ namespace trakit.objects {
 		/// Lifetime status
 		/// </summary>
 		public MessageStatus status;
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Protocol type
 		/// </summary>
