@@ -48,7 +48,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// </property>
 	/// </override>
-	public class Place : Subscribable, IIdUlong, INamed, IIconic, IDeletable, IBelongCompany, ILabelled, IPictured {
+	public class Place : Subscribable, IIdUlong, INamed, IIconic,  IBelongCompany, ILabelled, IPictured {
 		/// <summary>
 		/// Unique identifier of this POI.
 		/// </summary>
@@ -81,7 +81,6 @@ namespace trakit.objects {
 		/// Notes!
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The codified names of labels
 		/// </summary>
