@@ -22,6 +22,10 @@ namespace trakit.objects {
 		/// Marked as true for objects that have been deleted.
 		/// </summary>
 		bool deleted { get; }
+		/// <summary>
+		/// Timestamp from the action that deleted this object.
+		/// </summary>
+		DateTime since { get; }
 	}
 	/// <summary>
 	/// An interface for objects that can be marked as "enabled".
@@ -47,7 +51,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A timestamp from when the object was most recently suspended or revived.
 		/// </summary>
-		DateTime suspendedUtc { get; }
+		DateTime since { get; }
 	}
 	/// <summary>
 	/// An interface for objects that can be marked as "global".
