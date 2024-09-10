@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a thing.
 	/// </summary>
-	public class AssetSuspended : Subscribable, IIdUlong, ISuspendable, IBelongCompany {
+	public class AssetSuspended : Subscribable, IIdUlong, INamed, ISuspendable, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>

@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// The applied behaviour which includes all parameters and targets specific assets.
 	/// </summary>
 	/// <category>Behaviours</category>
-	public class Behaviour : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany {
+	public class Behaviour : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this behaviour.
 		/// </summary>
@@ -33,7 +33,6 @@ namespace trakit.objects {
 		/// The priority flag allows you to define an execution order for all behaviours for a provider.
 		/// </summary>
 		public byte priority;
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The search pattern used to target the assets which will embed this behaviour in their execution context.
 		/// </summary>

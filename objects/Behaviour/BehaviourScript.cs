@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Xml.Linq;
+﻿using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -32,7 +28,7 @@ namespace trakit.objects {
 	/// Business logic run by the system to react to GPS events and device information.
 	/// </summary>
 	/// <category>Behaviours</category>
-	public class BehaviourScript : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany, IGlobal, IVisual {
+	public class BehaviourScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual {
 		/// <summary>
 		/// Unique identifier of this script.
 		/// </summary>
@@ -51,7 +47,6 @@ namespace trakit.objects {
 		/// Usage notes and instructions for users on how best to setup this script.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Indicates whether this script is available to child companies.
 		/// </summary>
