@@ -126,9 +126,15 @@ namespace trakit.objects {
 		/// </summary>
 		public Dictionary<string, string> snf;
 
+		public class Control {
+			/// <summary>
+			/// Collection of commands for this provider.
+			/// </summary>
+			public Dictionary<ProviderCommandType, ProviderCommand> commands;
+		}
 		/// <summary>
-		/// Collection of commands for this provider.
+		/// Managing communication with Device/hardware.
 		/// </summary>
-		public Dictionary<ProviderCommandType, ProviderCommand> commands;
+		public Control control;
 	}
 }
