@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// General details about a company.
 	/// </summary>
 	/// <category>Companies</category>
-	public class CompanyGeneral : Subscribable, IIdUlong, INamed, IAmCompany, IDeletable {
+	public class CompanyGeneral : Subscribable, IIdUlong, INamed, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
@@ -25,7 +25,6 @@ namespace trakit.objects {
 		/// Notes.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
