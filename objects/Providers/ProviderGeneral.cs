@@ -160,7 +160,7 @@ namespace trakit.objects {
 	/// Device/hardware information and configuration.
 	/// </summary>
 	/// <category>Providers and Configurations</category>
-	public class ProviderGeneral : Subscribable, INamed, IDeletable, ISuspendable, IBelongCompany {
+	public class ProviderGeneral : Subscribable, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -181,7 +181,6 @@ namespace trakit.objects {
 		/// Notes!
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The kind of communication protocol this device uses.
 		/// </summary>
@@ -252,14 +251,6 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<string, string> information;
-		/// <summary>
-		/// Indicates whether this Provider is suspended from event processing.
-		/// </summary>
-		public bool suspended { get; set; }
-		/// <summary>
-		/// Timestamp that indicates when the provider was suspended or revived.
-		/// </summary>
-		public DateTime suspendedUtc { get; set; }
 		/// <summary>
 		/// ICCID of the SIM card installed in this provider
 		/// </summary>

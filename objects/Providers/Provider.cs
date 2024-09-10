@@ -6,7 +6,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A device, modem, or service which provides events from the field.
 	/// </summary>
-	public class Provider : Subscribable, INamed, IDeletable, ISuspendable, IBelongCompany {
+	public class Provider : Subscribable, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -27,7 +27,6 @@ namespace trakit.objects {
 		/// Notes!
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The kind of communication protocol this device uses.
 		/// </summary>
@@ -98,14 +97,6 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<string, string> information;
-		/// <summary>
-		/// Indicates whether this Provider is suspended from event processing.
-		/// </summary>
-		public bool suspended { get; set; }
-		/// <summary>
-		/// Timestamp that indicates when the provider was suspended or revived.
-		/// </summary>
-		public DateTime suspendedUtc { get; set; }
 		/// <summary>
 		/// ICCID of the SIM card installed in this provider
 		/// </summary>
