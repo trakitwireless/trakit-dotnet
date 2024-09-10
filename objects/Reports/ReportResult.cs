@@ -86,7 +86,7 @@ namespace trakit.objects {
 	/// Report results
 	/// </summary>
 	/// <category>Reports</category>
-	public class ReportResult : Subscribable, IIdUlong, INamed, IDeletable, IBelongCompany {
+	public class ReportResult : Subscribable, IIdUlong, INamed, IBelongCompany {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -109,7 +109,6 @@ namespace trakit.objects {
 		/// Notes about this report.
 		/// </summary>
 		public string notes { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// Specified parameters for the report logic, targeted Assets, and filtering Places.
 		/// </summary>

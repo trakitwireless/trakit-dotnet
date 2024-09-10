@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Xml.Linq;
 
 namespace trakit.objects {
 	/// <summary>
@@ -46,7 +42,7 @@ namespace trakit.objects {
 	/// Determines when and how often a report schedule runs automatically.
 	/// </summary>
 	/// <category>Reports</category>
-	public class ReportSchedule : Subscribable, IIdUlong, INamed, IDeletable, IEnabled, IBelongCompany {
+	public class ReportSchedule : Subscribable, IIdUlong, INamed, IEnabled, IBelongCompany {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -80,7 +76,6 @@ namespace trakit.objects {
 		/// Indicates whether this schedule is allowed to run.
 		/// </summary>
 		public bool enabled { get; set; }
-		public bool deleted { get; set; }
 		/// <summary>
 		/// The recurring schedule to generate report results.
 		/// </summary>

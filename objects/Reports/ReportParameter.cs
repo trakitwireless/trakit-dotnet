@@ -1,7 +1,4 @@
-﻿using System;
-using System.Xml.Linq;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// The kinds of parameters required and optional to build Report Results
 	/// </summary>
