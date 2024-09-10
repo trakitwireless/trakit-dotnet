@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a thing.
 	/// </summary>
-	public class AssetSuspended : Subscribable, IIdUlong, INamed, ISuspendable, IBelongCompany {
+	public class AssetSuspended : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, ISuspendable {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>
@@ -35,14 +35,6 @@ namespace trakit.objects {
 		/// </summary>
 		public string notes { get; set; }
 		/// <summary>
-		/// Indicates whether this Asset is suspended from event processing.
-		/// </summary>
-		public bool suspended => true;
-		/// <summary>
-		/// Timestamp that indicates when the asset was suspended or revived.
-		/// </summary>
-		public DateTime since { get; set; }
-		/// <summary>
 		/// Codified label names.
 		/// </summary>
 		/// <override>
@@ -51,5 +43,13 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public List<string> labels { get; set; }
+		/// <summary>
+		/// Indicates whether this Asset is suspended from event processing.
+		/// </summary>
+		public bool suspended => true;
+		/// <summary>
+		/// Timestamp that indicates when the asset was suspended or revived.
+		/// </summary>
+		public DateTime since { get; set; }
 	}
 }
