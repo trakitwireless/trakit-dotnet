@@ -96,7 +96,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Refers to the type of logic used by this report.
 		/// </summary>
-		public ReportType type { get; set; }
+		public ReportType kind { get; set; }
 		/// <summary>
 		/// Name of this report.
 		/// </summary>
@@ -182,7 +182,7 @@ namespace trakit.objects {
 	}
 
 	/// <summary>
-	/// 
+	/// Report results which also include the computed summary and breakdown for the results.
 	/// </summary>
 	public class ReportResultData : ReportResult {
 		/// <summary>

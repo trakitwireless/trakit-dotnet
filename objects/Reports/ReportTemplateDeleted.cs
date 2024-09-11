@@ -15,6 +15,10 @@ namespace trakit.objects {
 		/// <seealso cref="Company.id" />
 		public ulong company { get; set; }
 		/// <summary>
+		/// Refers to the type of logic used by this report.
+		/// </summary>
+		public ReportType kind { get; set; }
+		/// <summary>
 		/// Name of this report.
 		/// </summary>
 		/// <override max-length="100" />

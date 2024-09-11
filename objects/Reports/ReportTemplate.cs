@@ -17,7 +17,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Refers to the type of logic used by this report.
 		/// </summary>
-		public ReportType type { get; set; }
+		public ReportType kind { get; set; }
 		/// <summary>
 		/// Name of this report.
 		/// </summary>

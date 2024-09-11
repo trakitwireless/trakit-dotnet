@@ -66,7 +66,7 @@
 		/// <summary>
 		/// The type of argument.
 		/// </summary>
-		public ReportParameterType type;
+		public ReportParameterType kind;
 		/// <summary>
 		/// The parsed value of the argument.  Each type of argument has a different parsing.
 		/// </summary>
