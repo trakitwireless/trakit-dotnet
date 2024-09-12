@@ -16,7 +16,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Text.
 		/// </summary>
-		@string,
+		text,
 		/// <summary>
 		/// Object or array literal.
 		/// </summary>
@@ -91,7 +91,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Simple type information for the compiler.
 		/// </summary>
-		public BehaviourParameterType type;
+		public BehaviourParameterType kind;
 		/// <summary>
 		/// The value is given as a string, but parsed into native type when compiled.
 		/// </summary>

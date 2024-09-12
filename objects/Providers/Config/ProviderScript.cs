@@ -85,7 +85,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Simple type information for the gateway to process.
 		/// </summary>
-		public ProviderScriptParameterType type;
+		public ProviderScriptParameterType kind;
 		/// <summary>
 		/// The value is given as a string, but parsed into native type when used by the gateway.
 		/// </summary>
