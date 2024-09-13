@@ -1,7 +1,4 @@
-﻿using System;
-using System.Xml.Linq;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// A coordinate on a flat surface
 	/// </summary>
