@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// A grouping of credentials, information, preferences, and permissions for a person or machine to login to the system and access its resources.
 	/// </summary>
-	public class User : Subscribable,  IEnabled, IBelongCompany, IHavePreferences {
+	public class User : Subscribable, IEnabled, IBelongCompany, IHavePreferences, IDeletable {
 		/// <summary>
 		/// The unique public email address used to access the system.
 		/// </summary>
@@ -84,5 +85,14 @@ namespace trakit.objects {
 		/// Individual permission rules which override the group rules.
 		/// </summary>
 		public List<Permission> permissions { get; set; }
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

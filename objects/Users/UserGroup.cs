@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// Members of a group (as set by a <see cref="User"/>'s <see cref="UserAdvanced.groups"/> or <see cref="Machine"/>'s <see cref="Machine.groups"/>)
 	/// allow for easy administration of permissions and levels of access.
 	/// </summary>
-	public class UserGroup : Subscribable, IIdUlong, INamed,  IBelongCompany {
+	public class UserGroup : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this group.
 		/// </summary>
@@ -28,5 +29,14 @@ namespace trakit.objects {
 		/// Permissions for this group.
 		/// </summary>
 		public List<Permission> permissions;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

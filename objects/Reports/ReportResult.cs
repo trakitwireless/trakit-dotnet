@@ -83,7 +83,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report results
 	/// </summary>
-	public class ReportResult : Subscribable, IIdUlong, INamed, IBelongCompany {
+	public class ReportResult : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -179,6 +179,15 @@ namespace trakit.objects {
 		/// <seealso cref="ReportStatus" />
 		/// <override max-length="250" />
 		public string error;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

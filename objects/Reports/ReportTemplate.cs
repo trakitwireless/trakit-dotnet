@@ -1,10 +1,11 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace trakit.objects {
 	/// <summary>
 	/// A partially created report used to quickly build results.
 	/// </summary>
-	public class ReportTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual {
+	public class ReportTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -50,5 +51,14 @@ namespace trakit.objects {
 		/// <override max-length="22" format="codified" />
 		[DataMember]
 		public string graphic { get; set; }
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

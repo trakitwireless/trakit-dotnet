@@ -40,7 +40,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Determines when and how often a report schedule runs automatically.
 	/// </summary>
-	public class ReportSchedule : Subscribable, IIdUlong, INamed, IEnabled, IBelongCompany {
+	public class ReportSchedule : Subscribable, IIdUlong, INamed, IEnabled, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -86,6 +86,15 @@ namespace trakit.objects {
 		/// A list of users and a targeting expression for assets which receive report results notifications.
 		/// </summary>
 		public ReportNotifications notify;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// Credentials, information, and preferences about a user.
 	/// </summary>
-	public class UserGeneral : Subscribable,  IEnabled, IBelongCompany, IHavePreferences {
+	public class UserGeneral : Subscribable, IEnabled, IBelongCompany, IHavePreferences, IDeletable {
 		/// <summary>
 		/// The unique public email address used to access the system.
 		/// </summary>
@@ -74,5 +75,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-count="7" />
 		public List<UserNotifications> notify;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

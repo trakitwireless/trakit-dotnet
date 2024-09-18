@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A service account that allowes for API access of system services.
 	/// </summary>
-	public class Machine : Subscribable, IEnabled, IBelongCompany, IHavePreferences, IHavePermissions {
+	public class Machine : Subscribable, IEnabled, IBelongCompany, IHavePreferences, IHavePermissions, IDeletable {
 		/// <summary>
 		/// The unique idenifier used to access the system.
 		/// </summary>
@@ -114,5 +114,14 @@ namespace trakit.objects {
 		/// When true, no access restrictions (<see cref="secret"/>, <see cref="referrers"/>, or <see cref="ipRanges"/>) are enforced.
 		/// </summary>
 		public bool insecure;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
