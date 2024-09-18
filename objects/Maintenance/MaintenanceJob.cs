@@ -27,7 +27,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Historical service work performed on a Vehicle or Trailer
 	/// </summary>
-	public class MaintenanceJob : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongAsset, IPictured {
+	public class MaintenanceJob : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongAsset, IPictured, IDeletable {
 		/// <summary>
 		/// Default threshold (in minutes) for the valid completion date of jobs.
 		/// </summary>
@@ -117,5 +117,14 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public List<ulong> pictures { get; set; }
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Recurring service work
 	/// </summary>
-	public class MaintenanceSchedule : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual {
+	public class MaintenanceSchedule : Subscribable, IIdUlong, INamed, IBelongCompany, IVisual, IDeletable {
 		/// <summary>
 		/// Default prediction day threshold for new schedules.
 		/// </summary>
@@ -113,5 +113,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="100" />
 		public string reference;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -45,7 +46,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// </property>
 	/// </override>
-	public class Place : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured {
+	public class Place : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, IDeletable {
 		/// <summary>
 		/// Unique identifier of this POI.
 		/// </summary>
@@ -119,5 +120,14 @@ namespace trakit.objects {
 		/// A list of points forming a non-self-intersecting polygon.
 		/// </summary>
 		public List<LatLng>? points;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
