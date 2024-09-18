@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Contact information.
 	/// </summary>
-	public class Contact : Subscribable, IIdUlong, INamed, IBelongCompany, IPictured {
+	public class Contact : Subscribable, IIdUlong, INamed, IBelongCompany, IPictured, IDeletable {
 		/// <summary>
 		/// Unique identifier of this contact.
 		/// </summary>
@@ -91,5 +91,14 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public List<ulong> pictures { get; set; }
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

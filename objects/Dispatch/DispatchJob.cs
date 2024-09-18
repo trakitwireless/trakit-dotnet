@@ -31,7 +31,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Some work that needs to be done by performing one or more <see cref="DispatchStep"/>s.
 	/// </summary>
-	public class DispatchJob : Subscribable, IIdUlong, ILabelled, IBelongCompany {
+	public class DispatchJob : Subscribable, IIdUlong, ILabelled, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this job.
 		/// </summary>
@@ -117,5 +117,14 @@ namespace trakit.objects {
 		/// Null if not clocked-in, or no changes have been made.
 		/// </summary>
 		public string driver;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

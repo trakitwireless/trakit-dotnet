@@ -57,7 +57,7 @@ namespace trakit.objects {
 	/// A task assigned to an asset which represents a coordinate on the map which must be visited.
 	/// </summary>
 	[Obsolete("Use DispatchJob instead")]
-	public class DispatchTask : Subscribable, IIdUlong,  IBelongCompany, IBelongAsset {
+	public class DispatchTask : Subscribable, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
 		/// <summary>
 		/// Unique identifier of this task.
 		/// </summary>
@@ -157,5 +157,14 @@ namespace trakit.objects {
 		/// Timestamp from the last change made to this task
 		/// </summary>
 		public DateTime updatedUtc;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
