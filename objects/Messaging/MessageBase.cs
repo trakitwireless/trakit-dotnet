@@ -2,69 +2,6 @@
 
 namespace trakit.objects {
 	/// <summary>
-	/// Memos have a lifetime and each status represents a memos's progress through it's life.
-	/// </summary>
-	public enum MessageStatus : byte {
-		/// <summary>
-		/// Waiting to be sent.
-		/// </summary>
-		created,
-		/// <summary>
-		/// Sent or received.
-		/// </summary>
-		processed,
-		/// <summary>
-		/// Failed to send.
-		/// </summary>
-		failed,
-		/// <summary>
-		/// Failed to send because too many memos were sent.
-		/// </summary>
-		throttled,
-		/// <summary>
-		/// Memo sent, but returned with error from receiving server.
-		/// </summary>
-		bounceback,
-		/// <summary>
-		/// Memo has been responded to or acknowledged by the recipient.
-		/// </summary>
-		acknowledged,
-	}
-	/// <summary>
-	/// The kind of protocol used for this memo.
-	/// </summary>
-	public enum MessageType : byte {
-		/// <summary>
-		/// If the type of memo has not yet been determined, or there was an error determining its type.
-		/// </summary>
-		unknown,
-		/// <summary>
-		/// Short Message Service (text message)
-		/// </summary>
-		sms,
-		/// <summary>
-		/// Email
-		/// </summary>
-		email,
-		/// <summary>
-		/// Garmin/Magellan/etc (Personal Navigation Device)
-		/// </summary>
-		pnd,
-		/// <summary>
-		/// Google Cloud Message
-		/// </summary>
-		gcm,
-		/// <summary>
-		/// Apple Push Notification Service
-		/// </summary>
-		apn,
-		/// <summary>
-		/// WebSocket alert message
-		/// </summary>
-		socket,
-	}
-
-	/// <summary>
 	/// A base class for Alerts and Messages.
 	/// </summary>
 	public abstract class MessageBase : Subscribable, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
