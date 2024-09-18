@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -23,7 +24,7 @@ namespace trakit.objects {
 	/// This class describes a type of logic applied to a provider.
 	/// A script will generate a file which is loaded onto a provider in the field.
 	/// </summary>
-	public class ProviderScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual {
+	public class ProviderScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual, IDeletable {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>
@@ -76,6 +77,15 @@ namespace trakit.objects {
 		/// Parameter definitions for this script, including type-hints and default values.
 		/// </summary>
 		public Dictionary<string, ProviderScriptParameter> parameters;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

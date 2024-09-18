@@ -114,7 +114,7 @@ namespace trakit.objects {
 	/// ProviderConfigurationTypes are used to help define a ProviderConfiguration.
 	/// </summary>
 	[Obsolete("Use ProviderScript instead")]
-	public class ProviderConfigurationType : Subscribable, IIdUlong, INamed {
+	public class ProviderConfigurationType : Subscribable, IIdUlong, INamed, IDeletable {
 		/// <summary>
 		/// Unique identifier.
 		/// </summary>
@@ -150,5 +150,14 @@ namespace trakit.objects {
 		/// A list of supported types of geofences which can be programmed directly onto the device.
 		/// </summary>
 		public PlaceType[] geofenceTypes;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

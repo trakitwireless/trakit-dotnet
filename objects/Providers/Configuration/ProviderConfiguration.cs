@@ -6,7 +6,7 @@ namespace trakit.objects {
 	/// The configured logic loaded onto the provider over-the-air to control it's reporting schedule and behaviour.
 	/// </summary>
 	[Obsolete("Use ProviderConfig instead")]
-	public class ProviderConfiguration : Subscribable, IIdUlong, INamed, IBelongCompany {
+	public class ProviderConfiguration : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>
@@ -38,5 +38,14 @@ namespace trakit.objects {
 		/// List of Places loaded directly onto the provider.
 		/// </summary>
 		public List<ulong> geofences;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

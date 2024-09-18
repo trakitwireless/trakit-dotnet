@@ -6,7 +6,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A device, modem, or service which provides events from the field.
 	/// </summary>
-	public class Provider : Subscribable, INamed, IBelongCompany {
+	public class Provider : Subscribable, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -132,5 +132,14 @@ namespace trakit.objects {
 		public object control = new {
 			commands = new Dictionary<ProviderCommandType, ProviderCommand>(),
 		};
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

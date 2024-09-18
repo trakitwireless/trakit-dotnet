@@ -157,7 +157,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Device/hardware information and configuration.
 	/// </summary>
-	public class ProviderGeneral : Subscribable, INamed, IBelongCompany {
+	public class ProviderGeneral : Subscribable, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -252,5 +252,14 @@ namespace trakit.objects {
 		/// ICCID of the SIM card installed in this provider
 		/// </summary>
 		public string sim;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

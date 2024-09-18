@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The temporary reference to a device whose ownership is pending.
 	/// </summary>
-	public class ProviderRegistration : INamed, IBelongCompany {
+	public class ProviderRegistration : INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// A unique six digit code.
 		/// </summary>
@@ -74,5 +74,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override format="phone" />
 		public ulong? phoneNumber;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The configured script loaded onto the provider over-the-air to control it's reporting schedule and behaviour.
 	/// </summary>
-	public class ProviderConfig : Subscribable, IIdUlong, INamed, IBelongCompany {
+	public class ProviderConfig : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>
@@ -40,5 +41,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override type="System.String" format="expression" />
 		public string geofences;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
