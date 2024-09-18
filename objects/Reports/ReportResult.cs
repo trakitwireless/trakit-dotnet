@@ -3,84 +3,6 @@ using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
-	/// The type of logic used by the report runner.
-	/// </summary>
-	public enum ReportType : byte {
-		/// <summary>
-		/// Invalid report type
-		/// </summary>
-		/// <override skip="true" />
-		unknown = 0,
-		/// <summary>
-		/// Processes all history for the assets.
-		/// </summary>
-		full,
-		/// <summary>
-		/// Summarizes the timeline based on the given tags.
-		/// </summary>
-		tags,
-		/// <summary>
-		/// Summarizes the timeline based on places visited.
-		/// </summary>
-		places,
-		/// <summary>
-		/// Processes the log of messages sent to and from the assets.
-		/// </summary>
-		messages,
-		/// <summary>
-		/// Summarizes the timeline based on the asset's task's lifetimes.
-		/// </summary>
-		[Obsolete("Use `ReportType.jobs` instead")]
-		tasks,
-		/// <summary>
-		/// Summarizes the timeline based on the given attributes and thresholds.
-		/// </summary>
-		attributes,
-		/// <summary>
-		/// Summarizes the timeline based on the regions (cities, provinces/states, countries) through which the assets travelled.
-		/// </summary>
-		regions,
-		/// <summary>
-		/// Summarizes the timeline based on the asset's jobs's lifetimes.
-		/// </summary>
-		jobs,
-		/// <summary>
-		/// Summarizes the timeline by day, week, and month based on the asset's positions.
-		/// </summary>
-		positions,
-	}
-
-	/// <summary>
-	/// The lifetime of building a <see cref="ReportResult"/>.
-	/// </summary>
-	public enum ReportStatus : byte {
-		/// <summary>
-		/// The <see cref="ReportResult"/> has been requested, but not yet begun processing.
-		/// </summary>
-		created,
-		/// <summary>
-		/// The <see cref="ReportResult"/> is waiting for required resources to begin processing.
-		/// </summary>
-		queued,
-		/// <summary>
-		/// The <see cref="ReportResult"/> is currently being processed.
-		/// </summary>
-		running,
-		/// <summary>
-		/// The <see cref="ReportResult"/> results have been calculated, and are being saved for review.
-		/// </summary>
-		saving,
-		/// <summary>
-		/// The <see cref="ReportResult"/> is available for retrieval.
-		/// </summary>
-		completed,
-		/// <summary>
-		/// There was an error processing the <see cref="ReportResult"/>; see the <see cref="ReportResult.error"/> for a description.
-		/// </summary>
-		failed,
-	}
-
-	/// <summary>
 	/// Report results
 	/// </summary>
 	public class ReportResult : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
@@ -188,19 +110,5 @@ namespace trakit.objects {
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
 		public DateTime? since { get; set; }
-	}
-
-	/// <summary>
-	/// Report results which also include the computed summary and breakdown for the results.
-	/// </summary>
-	public class ReportResultData : ReportResult {
-		/// <summary>
-		/// Grouped events form a summary instance, and contain information about the starting, ending, and number of the grouped events.
-		/// </summary>
-		public Dictionary<ulong, List<ReportDataSummaryInstance>>? summary;
-		/// <summary>
-		/// Individual events about the targeted assets used to calculate the results of the report.
-		/// </summary>
-		public Dictionary<ulong, List<ReportDataBreakdownInstance>>? breakdown;
 	}
 }
