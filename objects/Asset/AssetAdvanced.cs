@@ -1,25 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace trakit.objects {
-	/// <summary>
-	/// The kinds of interactions had with a Place.
-	/// </summary>
-	public enum AssetPlaceStatusType : byte {
-		/// <summary>
-		/// Occurs when an asset is outside a Place, then goes inside the boundary.
-		/// </summary>
-		enter,
-		/// <summary>
-		/// Occurs when the asset was inside the boundary before, and is still inside the boundary now.
-		/// </summary>
-		inside,
-		/// <summary>
-		/// Occurs when an asset was inside the boundary of a Place, but then moves outside the boundary.
-		/// </summary>
-		exit,
-	}
-
 	/// <summary>
 	/// Often changing details about a thing.
 	/// </summary>
@@ -87,77 +68,5 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<ulong, AssetPlaceStatus> places;
-	}
-	/// <summary>
-	/// Often changing details about a vehicle.
-	/// </summary>
-	public class VehicleAdvanced : AssetAdvanced {
-		/// <summary>
-		/// The cumulative duration that the vehicle's engine has been running (in decimal hours).
-		/// </summary>
-		public double engineHours;
-	}
-
-	/// <summary>
-	/// An attribute given to an asset by a behaviour script.
-	/// </summary>
-	public struct AssetAttribute {
-		/// <summary>
-		/// Display name of the attribute.
-		/// </summary>
-		/// <override max-length="100" />
-		public string name;
-		/// <summary>
-		/// Computed/contextual value from the behaviour.  Like "3.76 volts" or "on".
-		/// </summary>
-		public string simple;
-		/// <summary>
-		/// Parse-able/formatted string for complex display.  May contain HTML.
-		/// </summary>
-		public string complex;
-		/// <summary>
-		/// Raw value like 3.76 (volts) or true (on).
-		/// </summary>
-		public object raw;
-		/// <summary>
-		/// Text representation of unit like "°C" or "Km".
-		/// </summary>
-		/// <seealso cref="Units" />
-		public string unit;
-		/// <summary>
-		/// The device which provided  this attribute.
-		/// </summary>
-		/// <seealso cref="Provider.id" />
-		public string provider;
-		/// <summary>
-		/// The related asset which provided this attribute.
-		/// </summary>
-		/// <seealso cref="Asset.id" />
-		public ulong asset;
-		/// <summary>
-		/// Date/time stamp from when this attribute was recorded (or reported) by the device.
-		/// </summary>
-		public DateTime dts;
-		/// <summary>
-		/// When false, indicates that this attribute is used by an internal system and should be left untouched.
-		/// </summary>
-		public bool global;
-	}
-	/// <summary>
-	/// A simple status for each place an Asset visits.
-	/// </summary>
-	public class AssetPlaceStatus {
-		/// <summary>
-		/// The kind of interaction.
-		/// </summary>
-		public AssetPlaceStatusType kind;
-		/// <summary>
-		/// The date/time stamp for when the Asset first began interacting with the Place.
-		/// </summary>
-		public DateTime enter;
-		/// <summary>
-		/// The most recent date/time stamp for the interaction.
-		/// </summary>
-		public DateTime latest;
 	}
 }
