@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// Seldom changing details about a thing.
 	/// </summary>
-	public class AssetGeneral : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured {
+	public class AssetGeneral : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, ISuspendable, IDeletable {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>
@@ -64,6 +65,19 @@ namespace trakit.objects {
 		/// <values max-length="100" />
 		/// </override>
 		public Dictionary<string, string> references;
+
+		/// <summary>
+		/// This flag is always true.
+		/// </summary>
+		public bool deleted { get; set; }
+		/// <summary>
+		/// Indicates whether this Asset is suspended from event processing.
+		/// </summary>
+		public bool suspended { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted this asset.
+		/// </summary>
+		public DateTime since { get; set; }
 	}
 	/// <summary>
 	/// Seldom changing details about a person.

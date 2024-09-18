@@ -27,7 +27,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The full details of an Asset, containing all the properties from the <see cref="AssetGeneral"/> and <see cref="AssetAdvanced"/> objects.
 	/// </summary>
-	public class Asset : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured {
+	public class Asset : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, ISuspendable, IDeletable {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>
@@ -155,6 +155,19 @@ namespace trakit.objects {
 		/// Timestamp from the last update to this <see cref="AssetDispatch"/> by a <see cref="User"/>, <see cref="Machine"/>, <see cref="Asset"/>, or an assigned <see cref="DispatchJob"/>.
 		/// </summary>
 		public DateTime lastDispatched;
+
+		/// <summary>
+		/// This flag is always true.
+		/// </summary>
+		public bool deleted { get; set; }
+		/// <summary>
+		/// Indicates whether this Asset is suspended from event processing.
+		/// </summary>
+		public bool suspended { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted this asset.
+		/// </summary>
+		public DateTime since { get; set; }
 	}
 
 	/// <summary>
