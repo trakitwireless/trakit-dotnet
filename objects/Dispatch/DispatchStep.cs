@@ -4,41 +4,6 @@ using System.Linq;
 
 namespace trakit.objects {
 	/// <summary>
-	/// The lifetime of all <see cref="DispatchStep"/>s (in order).
-	/// </summary>
-	public enum DispatchStepStatus : byte {
-		/// <summary>
-		/// The <see cref="DispatchStep"/> has not yet been started.
-		/// </summary>
-		pending,
-		/// <summary>
-		/// The asset is on the way to the <see cref="DispatchStep"/>'s location next.
-		/// </summary>
-		onRoute,
-		/// <summary>
-		/// The asset has arrived at the <see cref="DispatchStep"/>'s location.
-		/// </summary>
-		arrived,
-		/// <summary>
-		/// The <see cref="DispatchStep"/> is done (or the asset has departed the location).
-		/// </summary>
-		completed,
-	}
-	/// <summary>
-	/// Details about the lifetime of a <see cref="DispatchStep"/>.
-	/// </summary>
-	public class DispatchStepState {
-		/// <summary>
-		/// A timestamp from when the lifetime was updated.
-		/// </summary>
-		public DateTime updated;
-		/// <summary>
-		/// The coordinates from the <see cref="Asset"/> when the update happened.
-		/// </summary>
-		public LatLng latlng;
-	}
-
-	/// <summary>
 	/// A portion of work for a <see cref="DispatchJob"/>.
 	/// </summary>
 	public class DispatchStep : IIdUlong, INamed {
@@ -46,7 +11,7 @@ namespace trakit.objects {
 		/// Identifier for this <see cref="DispatchStep"/>.
 		/// This value is unique per <see cref="DispatchJob"/>, but is not unique system-wide.
 		/// </summary>
-		public ulong id{ get; set; }
+		public ulong id { get; set; }
 		/// <summary>
 		/// A name for the work needed to be performed.
 		/// </summary>
