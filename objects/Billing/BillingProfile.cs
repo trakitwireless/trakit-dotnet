@@ -3,41 +3,6 @@ using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
-	/// Used for invoices.
-	/// </summary>
-	public enum BillingCurrency : byte {
-		/// <summary>
-		/// Canadian dollars
-		/// </summary>
-		CAD,
-		/// <summary>
-		/// American dollars
-		/// </summary>
-		USD,
-		/// <summary>
-		/// Eurozone currency
-		/// </summary>
-		EURO,
-	}
-	/// <summary>
-	/// The type of repeating cycle used for generating bills.
-	/// </summary>
-	public enum BillingCycle : byte {
-		/// <summary>
-		/// Once a month
-		/// </summary>
-		monthly,
-		/// <summary>
-		/// Every three months
-		/// </summary>
-		quarterly,
-		/// <summary>
-		/// Once per year
-		/// </summary>
-		annually,
-	}
-
-	/// <summary>
 	/// A profile used to generate billable orders for a customer.
 	/// </summary>
 	public class BillingProfile : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
@@ -108,19 +73,5 @@ namespace trakit.objects {
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
 		public DateTime? since { get; set; }
-	}
-	/// <summary>
-	/// Description of a tiered SMS messaging limit
-	/// </summary>
-	public class BillableSmsProfile {
-		/// <summary>
-		/// The maximum number of messages sent per cycle
-		/// </summary>
-		public uint limit;
-		/// <summary>
-		/// Cost per SMS message sent.
-		/// Received messages are free.
-		/// </summary>
-		public double amount;
 	}
 }
