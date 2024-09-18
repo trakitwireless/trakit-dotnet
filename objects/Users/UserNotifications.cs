@@ -3,25 +3,6 @@ using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
-	/// The types of alerts used.
-	/// </summary>
-	/// <override name="NotificationMethod" />
-	public enum UserNotificationsMethod : byte {
-		/// <summary>
-		/// A separate message sent across the WebSocket.
-		/// </summary>
-		popup,
-		/// <summary>
-		/// A text message (SMS).
-		/// </summary>
-		sms,
-		/// <summary>
-		/// Carrier pigeon.
-		/// </summary>
-		email,
-	}
-
-	/// <summary>
 	/// Definition of how and when to send alerts to the user.
 	/// </summary>
 	public class UserNotifications : IEnabled {

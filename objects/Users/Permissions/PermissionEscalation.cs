@@ -4,8 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Definition for the kinds of permission escalations.
 	/// </summary>
-	/// <override name="PermissionEscalationType" />
-	public enum EscalationType : byte {
+	public enum PermissionEscalationType : byte {
 		/// <summary>
 		/// Increase in privileges.
 		/// </summary>
@@ -19,12 +18,11 @@ namespace trakit.objects {
 	/// Used to throw permission escalation exceptions, this is similar to a <see cref="Permission"/>,
 	/// but defines a <see cref="before"/> and <see cref="after"/> for a proposed change.
 	/// </summary>
-	/// <override name="PermissionEscalation" />
 	public class PermissionEscalation {
 		/// <summary>
 		/// Gets the direction of the escalation.
 		/// </summary>
-		public EscalationType direction;
+		public PermissionEscalationType direction;
 		/// <summary>
 		/// The <see cref="Company"/> that this permission targets.
 		/// </summary>
@@ -47,7 +45,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Describes the changes in state that raised the escalation.
 	/// </summary>
-	/// <override name="PermissionEscalationState" />
 	public class PermissionEscalationState {
 		/// <summary>
 		/// The level of access defined before the proposed change.
