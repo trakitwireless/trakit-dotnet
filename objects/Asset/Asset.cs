@@ -157,17 +157,17 @@ namespace trakit.objects {
 		public DateTime lastDispatched;
 
 		/// <summary>
-		/// This flag is always true.
+		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool deleted { get; set; }
+		public bool? deleted { get; set; }
 		/// <summary>
-		/// Indicates whether this Asset is suspended from event processing.
+		/// Indicates whether this object is suspended from event processing.
 		/// </summary>
-		public bool suspended { get; set; }
+		public bool? suspended { get; set; }
 		/// <summary>
-		/// Timestamp from the action that deleted this asset.
+		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime since { get; set; }
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

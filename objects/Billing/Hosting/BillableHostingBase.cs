@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Hosted things share a lot of common attributes.
 	/// </summary>
-	public abstract class BillableHostingBase : Subscribable, IIdUlong, IBelongBillingProfile, IBelongCompany {
+	public abstract class BillableHostingBase : Subscribable, IIdUlong, IBelongBillingProfile, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this hosting rule.
 		/// </summary>
@@ -19,13 +19,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="BillingProfile.id" />
 		public ulong profile { get; set; }
+
 		/// <summary>
-		/// This flag is always true.
+		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool deleted => true;
+		public bool? deleted { get; set; }
 		/// <summary>
-		/// Timestamp from the action that deleted this rule.
+		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime since { get; set; }
+		public DateTime? since { get; set; }
 	}
 }

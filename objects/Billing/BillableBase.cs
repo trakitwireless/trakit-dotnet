@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Most billable things share common attibutes.
 	/// </summary>
-	public abstract class BillableBase : Subscribable, IIdUlong, INamed, IBelongBillingProfile, IBelongCompany {
+	public abstract class BillableBase : Subscribable, IIdUlong, INamed, IBelongBillingProfile, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this hosting rule.
 		/// </summary>
@@ -52,5 +52,14 @@ namespace trakit.objects {
 		/// Cost per cycle for this plan
 		/// </summary>
 		public double amount;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

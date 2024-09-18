@@ -31,7 +31,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report generated per billee company.
 	/// </summary>
-	public class BillingReport : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongBillingProfile {
+	public class BillingReport : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongBillingProfile, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>
@@ -94,5 +94,14 @@ namespace trakit.objects {
 		/// Individual amounts per company, used to calculate the results of the report.
 		/// </summary>
 		public List<BillingReportBreakdown>? breakdown;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

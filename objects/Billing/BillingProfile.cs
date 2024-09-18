@@ -40,7 +40,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A profile used to generate billable orders for a customer.
 	/// </summary>
-	public class BillingProfile : Subscribable, IIdUlong, INamed, IBelongCompany {
+	public class BillingProfile : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this billing profile
 		/// </summary>
@@ -99,6 +99,15 @@ namespace trakit.objects {
 		/// Are the Google services available to be proxied by the service?
 		/// </summary>
 		public bool googleServicesEnabled;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 	/// <summary>
 	/// Description of a tiered SMS messaging limit
