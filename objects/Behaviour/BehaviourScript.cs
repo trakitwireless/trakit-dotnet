@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -26,7 +27,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Business logic run by the system to react to GPS events and device information.
 	/// </summary>
-	public class BehaviourScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual {
+	public class BehaviourScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual, IDeletable {
 		/// <summary>
 		/// Unique identifier of this script.
 		/// </summary>
@@ -82,6 +83,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="22" format="codified" />
 		public string graphic { get; set; }
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

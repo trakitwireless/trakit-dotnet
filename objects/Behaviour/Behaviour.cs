@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The applied behaviour which includes all parameters and targets specific assets.
 	/// </summary>
-	public class Behaviour : Subscribable, IIdUlong, INamed, IBelongCompany {
+	public class Behaviour : Subscribable, IIdUlong, INamed, IBelongCompany,IDeletable {
 		/// <summary>
 		/// Unique identifier of this behaviour.
 		/// </summary>
@@ -46,5 +47,14 @@ namespace trakit.objects {
 		/// The list of defined variable name/value pairs for the script requires.
 		/// </summary>
 		public Dictionary<string, BehaviourParameter> parameters;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

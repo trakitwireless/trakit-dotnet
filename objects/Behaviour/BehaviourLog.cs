@@ -26,7 +26,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A debug message available to script writers to help debug and trace output from a BehaviourScript.
 	/// </summary>
-	public class BehaviourLog : Subscribable, IIdUlong, IBelongCompany, IBelongAsset {
+	public class BehaviourLog : Subscribable, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
 		/// <summary>
 		/// Unique identifier of this log message.
 		/// </summary>
@@ -71,5 +71,14 @@ namespace trakit.objects {
 		/// The character column where the error was generated.
 		/// </summary>
 		public uint? character;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
