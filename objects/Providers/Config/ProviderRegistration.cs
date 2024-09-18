@@ -78,10 +78,10 @@ namespace trakit.objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted { get; set; }
+		public bool? deleted => this.expires < DateTime.UtcNow;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since { get; set; }
+		DateTime? IDeletable.since => this.since;
 	}
 }
