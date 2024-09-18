@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The full company object which contains all fields.
 	/// </summary>
-	public class Company : Subscribable, IIdUlong, INamed, IAmCompany {
+	public class Company : Subscribable, IIdUlong, INamed, IAmCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
@@ -80,5 +80,14 @@ namespace trakit.objects {
 		/// If this company is a reseller, then they have their own theme, support and billing information.
 		/// </summary>
 		public CompanyReseller reseller;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

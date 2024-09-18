@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Defines the seller company's details for white-labelling.
 	/// </summary>
-	public class CompanyReseller : Subscribable, IIdUlong, IAmCompany {
+	public class CompanyReseller : Subscribable, IIdUlong, IAmCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
@@ -143,6 +143,15 @@ namespace trakit.objects {
 		/// </code>
 		/// </remarks>
 		public bool recoverIsHtml;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

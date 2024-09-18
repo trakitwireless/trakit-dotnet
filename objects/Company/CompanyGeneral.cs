@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// General details about a company.
 	/// </summary>
-	public class CompanyGeneral : Subscribable, IIdUlong, INamed, IAmCompany {
+	public class CompanyGeneral : Subscribable, IIdUlong, INamed, IAmCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
@@ -32,5 +33,14 @@ namespace trakit.objects {
 		/// <values max-length="100" />
 		/// </override>
 		public Dictionary<string, string> references;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
