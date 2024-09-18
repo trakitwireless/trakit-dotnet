@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A completed form submitted by a <see cref="User"/> or <see cref="Asset"/>.
 	/// </summary>
-	public class FormResult : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled {
+	public class FormResult : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IDeletable {
 		/// <summary>
 		/// Unique identifier of this form.
 		/// </summary>
@@ -59,5 +59,14 @@ namespace trakit.objects {
 		/// Null if not clocked-in, or no changes have been made.
 		/// </summary>
 		public string driver;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

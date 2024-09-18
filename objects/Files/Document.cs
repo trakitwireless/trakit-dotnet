@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A file stored temporarily by the system.
 	/// </summary>
-	public class Document : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize {
+	public class Document : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize, IDeletable {
 		/// <summary>
 		/// Unique identifier of this file.
 		/// </summary>
@@ -50,5 +50,14 @@ namespace trakit.objects {
 		/// <values max-length="100" />
 		/// </override>
 		public Dictionary<string, string> references;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The full definition of a form that needs to be filled out.
 	/// </summary>
-	public class FormTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IVisual {
+	public class FormTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IVisual, IDeletable {
 		/// <summary>
 		/// Unique identifier of this form.
 		/// </summary>
@@ -51,5 +52,14 @@ namespace trakit.objects {
 		/// All the user fillable fields by name.
 		/// </summary>
 		public List<FormFieldBase> fields;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }

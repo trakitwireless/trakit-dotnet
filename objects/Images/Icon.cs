@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
@@ -38,7 +39,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A visual representation of a thing on a map or in a list.
 	/// </summary>
-	public class Icon : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal {
+	public class Icon : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IDeletable {
 		/// <summary>
 		/// Unique identifier of this icon.
 		/// </summary>
@@ -84,6 +85,15 @@ namespace trakit.objects {
 		/// The images used to show the detail of this icon.
 		/// </summary>
 		public List<IconGlyph> glyphs;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 
 	/// <summary>

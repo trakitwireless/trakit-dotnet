@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace trakit.objects {
 	/// <summary>
 	/// An image stored by the system.
 	/// </summary>
-	public class Picture : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize {
+	public class Picture : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize, IDeletable {
 		/// <summary>
 		/// Unique identifier of this image.
 		/// </summary>
@@ -44,5 +45,14 @@ namespace trakit.objects {
 		/// A count of the times this image was used for something (asset, contact, task, etc).
 		/// </summary>
 		public uint uses;
+
+		/// <summary>
+		/// Indicates whether this object was deleted.
+		/// </summary>
+		public bool? deleted { get; set; }
+		/// <summary>
+		/// Timestamp from the action that deleted or suspended this object.
+		/// </summary>
+		public DateTime? since { get; set; }
 	}
 }
