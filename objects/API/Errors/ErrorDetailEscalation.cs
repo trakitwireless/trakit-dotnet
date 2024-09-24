@@ -1,0 +1,13 @@
+﻿using System.Collections.Generic;
+
+namespace trakit.objects {
+	/// <summary>
+	/// Details of a permission escallation error thrown when modifying a resource or user that would grant the following extra permissions.
+	/// </summary>
+	public class ErrorDetailEscalation : ErrorDetail {
+		/// <summary>
+		/// A list of escallated permission details.
+		/// </summary>
+		public List<PermissionEscalation> escalations;
+	}
+}
