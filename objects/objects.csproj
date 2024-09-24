@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="API\Errors\ErrorCode - Copy.cs" />
+  </ItemGroup>
 
 </Project>
