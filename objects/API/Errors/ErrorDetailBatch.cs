@@ -6,6 +6,6 @@
 		/// <summary>
 		/// Index-presevered list of sub-command errors.
 		/// </summary>
-		public ResponseBase[] errors;
+		public ResponseType[] errors;
 	}
 }
