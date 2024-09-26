@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Trak-iT Object Model</Title>
+    <PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>
   </PropertyGroup>
-
   <ItemGroup>
-    <Compile Remove="API\Errors\ErrorCode - Copy.cs" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
-
 </Project>
