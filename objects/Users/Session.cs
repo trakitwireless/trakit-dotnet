@@ -4,7 +4,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// Information about other users' sessions.
 	/// </summary>
-	/// <override skip="true" />
 	public class Session {
 		/// <summary>
 		/// UserAgent identification string
