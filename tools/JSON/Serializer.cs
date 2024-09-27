@@ -16,7 +16,8 @@ namespace trakit.tools {
 		public Serializer() {
 			this.options.AllowTrailingCommas = true;
 			this.options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-			this.options.NumberHandling = JsonNumberHandling.Strict;
+			this.options.IncludeFields = true;
+			//this.options.NumberHandling = JsonNumberHandling.Strict;
 			//this.options.WriteIndented = false;
 
 			this.options.Converters.Add(new JsonStringEnumConverter());

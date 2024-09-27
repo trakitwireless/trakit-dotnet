@@ -7,13 +7,9 @@ namespace trakit.tools {
 	/// <summary>
 	/// 
 	/// </summary>
-	public class ConvertAsset : JsonConverter<Asset> {
-
+	public class ConvertAsset : TrakitConverter<Asset> {
 		public override Asset? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) {
-
-		}
-		public override void Write(Utf8JsonWriter writer, Asset value, JsonSerializerOptions options) {
-
+			return null;
 		}
 	}
 }
