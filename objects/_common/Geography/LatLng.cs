@@ -6,7 +6,7 @@
 		/// <summary>
 		/// Let's consider the zero-zero coordinates to be invalid.
 		/// </summary>
-		public static LatLng INVALID => new LatLng() { lat = 0, lng = 0 };
+		public static LatLng INVALID => new LatLng(0, 0);
 
 		/// <summary>
 		/// Latitude
@@ -16,5 +16,10 @@
 		/// Longitude
 		/// </summary>
 		public double lng;
+
+		public LatLng(double lat, double lng) {
+			this.lat = lat;
+			this.lng = lng;
+		}
 	}
 }
