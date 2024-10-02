@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using trakit.objects;
@@ -23,25 +24,26 @@ namespace trakit.tools {
 						break;
 					case JsonTokenType.StartObject:
 						var obj = new JsonObject();
-						while (reader.Read()) {
+						do {
 							if (reader.TokenType == JsonTokenType.EndObject) break;
 							if (reader.TokenType != JsonTokenType.PropertyName) throw new JsonException();
 
 							string key = reader.GetString();
 							reader.Read();
 							obj.Add(key, this.readJson(ref reader));
-						}
+						} while (reader.Read());
 						node = obj;
 						break;
 					case JsonTokenType.StartArray:
 						var arr = new JsonArray();
-						while (reader.Read()) {
+						while (true) {
 							if (reader.TokenType == JsonTokenType.EndArray) break;
 							arr.Add(this.readJson(ref reader));
 						}
 						node = arr;
 						break;
 					case JsonTokenType.String:
+						if (reader.TryGetDateTime(out DateTime dt)) node = dt;
 						node = reader.GetString();
 						break;
 					case JsonTokenType.Number:
