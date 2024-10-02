@@ -8,8 +8,13 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public abstract class TrakitConverter<T> : JsonConverter<T> where T : Subscribable {
-
-		protected JsonNode read(ref Utf8JsonReader reader) {
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="reader"></param>
+		/// <returns></returns>
+		/// <exception cref="JsonException"></exception>
+		protected JsonNode readJson(ref Utf8JsonReader reader) {
 			JsonNode node = null;
 			while (reader.Read()) {
 				switch (reader.TokenType) {
@@ -17,10 +22,24 @@ namespace trakit.tools {
 					case JsonTokenType.Null:
 						break;
 					case JsonTokenType.StartObject:
-						node = this.readObject(ref reader);
+						var obj = new JsonObject();
+						while (reader.Read()) {
+							if (reader.TokenType == JsonTokenType.EndObject) break;
+							if (reader.TokenType != JsonTokenType.PropertyName) throw new JsonException();
+
+							string key = reader.GetString();
+							reader.Read();
+							obj.Add(key, this.readJson(ref reader));
+						}
+						node = obj;
 						break;
 					case JsonTokenType.StartArray:
-						node = this.readArray(ref reader);
+						var arr = new JsonArray();
+						while (reader.Read()) {
+							if (reader.TokenType == JsonTokenType.EndArray) break;
+							arr.Add(this.readJson(ref reader));
+						}
+						node = arr;
 						break;
 					case JsonTokenType.String:
 						node = reader.GetString();
@@ -38,33 +57,6 @@ namespace trakit.tools {
 				}
 			}
 			return node;
-		}
-		protected JsonArray readArray(ref Utf8JsonReader reader) {
-			if (reader.TokenType != JsonTokenType.StartArray) throw new JsonException();
-			var obj = new JsonArray();
-			while (reader.Read()) {
-				if (reader.TokenType == JsonTokenType.EndArray) break;
-
-				string key = reader.GetString();
-				reader.Read();
-				obj.Add(key, JsonNode.Parse(ref reader));
-			}
-			return obj;
-		}
-
-
-		protected JsonObject readObject(ref Utf8JsonReader reader) {
-			if (reader.TokenType != JsonTokenType.StartObject) throw new JsonException();
-			var obj = new JsonObject();
-			while (reader.Read()) {
-				if (reader.TokenType == JsonTokenType.EndObject) break;
-				if (reader.TokenType != JsonTokenType.PropertyName) throw new JsonException();
-
-				string key = reader.GetString();
-				reader.Read();
-				obj.Add(key, JsonNode.Parse(ref reader));
-			}
-			return obj;
 		}
 
 		/// <summary>
