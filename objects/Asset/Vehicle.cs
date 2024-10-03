@@ -1,41 +1,81 @@
-﻿namespace trakit.objects {
+﻿using System;
+
+namespace trakit.objects {
 	/// <summary>
 	/// The full details of a Vehicle, containing all the properties from the <see cref="VehicleGeneral"/> and <see cref="VehicleAdvanced"/> objects.
 	/// </summary>
 	public class Vehicle : Asset {
 		/// <summary>
+		/// General details about this vehicle.
+		/// </summary>
+		/// <override skip="true" />
+		new public VehicleGeneral general {
+			get => (VehicleGeneral)base.general;
+			set => base.general = value;
+		}
+		/// <summary>
+		/// Advanced details about this vehicle.
+		/// </summary>
+		/// <override skip="true" />
+		new public VehicleAdvanced advanced {
+			get => (VehicleAdvanced)base.advanced;
+			set => base.advanced = value;
+		}
+
+		/// <summary>
 		/// Manufacturer's unique identification number (Vehicle Identification Number).
 		/// </summary>
 		/// <override max-length="50" />
-		public string vin;
+		public string vin {
+			get => this.general?.vin ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).vin = value;
+		}
 		/// <summary>
 		/// The license plate.
 		/// </summary>
 		/// <override max-length="50" />
-		public string plate;
+		public string plate {
+			get => this.general?.plate ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).plate = value;
+		}
 		/// <summary>
 		/// Manufacturer's name.
 		/// </summary>
 		/// <override max-length="50" />
-		public string make;
+		public string make {
+			get => this.general?.make ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).make = value;
+		}
 		/// <summary>
 		/// Manufacturer's model name/number.
 		/// </summary>
 		/// <override max-length="50" />
-		public string model;
+		public string model {
+			get => this.general?.model ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).model = value;
+		}
 		/// <summary>
 		/// Year of manufacturing.
 		/// </summary>
-		public ushort year;
+		public ushort year {
+			get => this.general?.year ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).year = value;
+		}
 		/// <summary>
 		/// Primary colour of the vehicle (given in 24bit hex; #RRGGBB)
 		/// </summary>
 		/// <override max-length="22" format="colour" />
-		public string colour;
+		public string colour {
+			get => this.general?.colour ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).colour = value;
+		}
 
 		/// <summary>
 		/// The cumulative duration that the vehicle's engine has been running (in decimal hours).
 		/// </summary>
-		public double engineHours;
+		public double engineHours {
+			get => this.advanced?.engineHours ?? throw new NullReferenceException("advanced");
+			set => (this.advanced ?? throw new NullReferenceException("advanced")).engineHours = value;
+		}
 	}
 }

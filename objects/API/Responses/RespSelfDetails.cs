@@ -2,7 +2,7 @@
 
 namespace trakit.objects {
 	/// <summary>
-	/// A container for the login of the <see cref="User"/> requested/created.
+	/// A container for the <see cref="User"/> or <see cref="Machine"/> of the current session.
 	/// </summary>
 	public class RespSelfDetails : ResponseType {
 		/// <summary>
