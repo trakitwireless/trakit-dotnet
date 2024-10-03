@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using trakit.objects;
 
 namespace trakit.tools {
@@ -8,8 +7,7 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertProvider : TrakitConverter<Provider> {
-		public override Provider? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) {
-			return null;
-		}
+		public override Provider? ReadJson(JsonReader reader, Type objectType, Provider? existingValue, bool hasExistingValue, JsonSerializer serializer) => throw new NotImplementedException();
+		public override void WriteJson(JsonWriter writer, Provider? value, JsonSerializer serializer) => throw new NotImplementedException();
 	}
 }

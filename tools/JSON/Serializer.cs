@@ -1,5 +1,6 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace trakit.tools {
 	/// <summary>
@@ -11,23 +12,28 @@ namespace trakit.tools {
 		/// </summary>
 		public const string DATETIME_FORMAT_ISO8601 = "yyyy-MM-ddTHH:mm:ss.fffZ";
 
-		JsonSerializerOptions options = new JsonSerializerOptions();
+		JsonSerializerSettings settings = new JsonSerializerSettings();
 
 		public Serializer() {
-			this.options.AllowTrailingCommas = true;
-			this.options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-			this.options.IncludeFields = true;
-			//this.options.NumberHandling = JsonNumberHandling.Strict;
-			//this.options.WriteIndented = false;
+			this.settings.DateParseHandling = DateParseHandling.None;
+			this.settings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+			this.settings.MaxDepth = 128; // https://github.com/advisories/GHSA-5crp-9r3c-p9vr
 
-			this.options.Converters.Add(new JsonStringEnumConverter());
-			this.options.Converters.Add(new ConvertAsset());
-			this.options.Converters.Add(new ConvertCompany());
-			this.options.Converters.Add(new ConvertPlace());
-			this.options.Converters.Add(new ConvertPlace());
-			this.options.Converters.Add(new ConvertUser());
+			// Converts a DateTime to and from the ISO 8601 date format 
+			this.settings.Converters.Add(new IsoDateTimeConverter() {
+				DateTimeFormat = DATETIME_FORMAT_ISO8601,
+			});
+
+
+			this.settings.Converters.Add(new StringEnumConverter());
+			this.settings.Converters.Add(new ConvertAsset());
+			this.settings.Converters.Add(new ConvertCompany());
+			this.settings.Converters.Add(new ConvertPlace());
+			this.settings.Converters.Add(new ConvertPlace());
+			this.settings.Converters.Add(new ConvertUser());
 		}
 
-
+		public string serialize<T>(T body) => throw new NotImplementedException();
+		public T deserialize<T>(string body) => throw new NotImplementedException();
 	}
 }

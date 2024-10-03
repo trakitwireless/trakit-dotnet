@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The possible errors returned by the system.
 	/// </summary>
-	[JsonConverter(typeof(JsonNumberEnumConverter<ErrorCode>))]
+	[JsonConverter(typeof(JsonConverter<ErrorCode>))]
 	public enum ErrorCode : ushort {
 		/// <summary sort="">
 		/// Success!
@@ -659,10 +659,5 @@ namespace trakit.objects {
 		/// In order to delete a <see cref="FormTemplate"/>, all <see cref="FormResult"/>s must first be expired or deleted.
 		/// </summary>
 		formTemplateInUse,
-
-		/// <summary sort="Dispatch">
-		/// <see cref="DispatchJob"/> is cancelled.
-		/// </summary>
-		dispatchJobCancelled,
 	}
 }
