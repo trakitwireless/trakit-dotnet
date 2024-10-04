@@ -27,5 +27,12 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public Dictionary<string, List<ulong>> directory;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
 	}
 }

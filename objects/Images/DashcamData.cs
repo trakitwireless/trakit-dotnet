@@ -8,8 +8,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Unique identifier of this resource.
 		/// </summary>
-		/// <override format="guid" />
-		public string guid;
+		public Guid guid;
 		/// <summary>
 		/// The type of data being stored.
 		/// </summary>
@@ -36,5 +35,12 @@ namespace trakit.objects {
 		/// The reason why we're saving this image/video. Or the event name that triggered it.
 		/// </summary>
 		public string eventName;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="guid"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.guid.ToString();
 	}
 }

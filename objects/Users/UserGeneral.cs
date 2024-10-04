@@ -76,6 +76,14 @@ namespace trakit.objects {
 		/// <override max-count="7" />
 		public List<UserNotifications> notify;
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="login"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.login;
+
+		// IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>

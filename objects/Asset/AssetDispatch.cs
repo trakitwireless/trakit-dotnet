@@ -5,12 +5,6 @@ namespace trakit.objects {
 	/// <summary>
 	/// The current state of an asset's <see cref="DispatchJob"/> route progress.
 	/// </summary>
-	/// <override>
-	/// <property name="tasks" type="System.Array" obsolete="true">
-	/// <summary>The current list of tasks assigned to this asset.</summary>
-	/// <values type="Vorgon.DispatchTask" />
-	/// </property>
-	/// </override>
 	public class AssetDispatch : Subscribable, IIdUlong, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this asset.
@@ -35,5 +29,12 @@ namespace trakit.objects {
 		/// Timestamp from the last update to this <see cref="AssetDispatch"/> by a <see cref="User"/>, <see cref="Machine"/>, <see cref="Asset"/>, or an assigned <see cref="DispatchJob"/>.
 		/// </summary>
 		public DateTime lastDispatched;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
 	}
 }

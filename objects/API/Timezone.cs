@@ -2,11 +2,10 @@
 	/// <summary>
 	/// Timezone definition
 	/// </summary>
-	public class Timezone {
+	public class Timezone : IRequestable {
 		/// <summary>
 		/// Unique timezone code
 		/// </summary>
-		/// <override format="codified" readonly="true" />
 		public string code;
 		/// <summary>
 		/// Common timezone name
@@ -23,5 +22,11 @@
 		/// </summary>
 		/// <override readonly="true" />
 		public bool dst;
+
+		/// <summary>
+		/// The <see cref="code"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public string getKey() => this.code;
 	}
 }

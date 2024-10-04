@@ -41,19 +41,19 @@ namespace trakit.objects {
 			set => (this.general ?? throw new NullReferenceException("general")).name = value;
 		}
 		/// <summary>
+		/// Notes about it.
+		/// </summary>
+		public string notes {
+			get => this.general?.notes ?? throw new NullReferenceException("general");
+			set => (this.general ?? throw new NullReferenceException("general")).notes = value;
+		}
+		/// <summary>
 		/// The icon that represents this asset on the map and in lists.
 		/// </summary>
 		/// <seealso cref="Icon.id" />
 		public ulong icon {
 			get => this.general?.icon ?? throw new NullReferenceException("general");
 			set => (this.general ?? throw new NullReferenceException("general")).icon = value;
-		}
-		/// <summary>
-		/// Notes about it.
-		/// </summary>
-		public string notes {
-			get => this.general?.notes ?? throw new NullReferenceException("general");
-			set => (this.general ?? throw new NullReferenceException("general")).notes = value;
 		}
 		/// <summary>
 		/// Codified label names.
@@ -205,6 +205,14 @@ namespace trakit.objects {
 			set => (this.dispatch ?? throw new NullReferenceException("dispatch")).lastDispatched = value;
 		}
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
+
+		// ISuspendable and IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>

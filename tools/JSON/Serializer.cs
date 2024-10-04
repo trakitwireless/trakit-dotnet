@@ -26,11 +26,11 @@ namespace trakit.tools {
 
 
 			this.settings.Converters.Add(new StringEnumConverter());
-			this.settings.Converters.Add(new ConvertAsset());
-			this.settings.Converters.Add(new ConvertCompany());
-			this.settings.Converters.Add(new ConvertPlace());
-			this.settings.Converters.Add(new ConvertPlace());
-			this.settings.Converters.Add(new ConvertUser());
+			//this.settings.Converters.Add(new ConvertAsset());
+			//this.settings.Converters.Add(new ConvertCompany());
+			//this.settings.Converters.Add(new ConvertPlace());
+			//this.settings.Converters.Add(new ConvertPlace());
+			//this.settings.Converters.Add(new ConvertUser());
 		}
 
 		public string serialize<T>(T body) => throw new NotImplementedException();

@@ -25,5 +25,12 @@ namespace trakit.objects {
 		/// Individual permission rules which override the group rules.
 		/// </summary>
 		public List<Permission> permissions { get; set; }
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="login"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.login;
 	}
 }

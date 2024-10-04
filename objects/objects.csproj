@@ -7,6 +7,9 @@
 		<PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Providers\Provider.cs~RF2267457f.TMP" />
+	</ItemGroup>
+	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 </Project>

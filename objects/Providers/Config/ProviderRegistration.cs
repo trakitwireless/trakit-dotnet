@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The temporary reference to a device whose ownership is pending.
 	/// </summary>
-	public class ProviderRegistration : INamed, IBelongCompany, IDeletable {
+	public class ProviderRegistration : IRequestable, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// A unique six digit code.
 		/// </summary>
@@ -75,6 +75,14 @@ namespace trakit.objects {
 		/// <override format="phone" />
 		public ulong? phoneNumber;
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public string getKey() => this.code;
+
+		// IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>

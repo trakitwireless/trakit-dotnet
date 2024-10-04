@@ -21,5 +21,12 @@
 		/// The password complexity and expiry policy.
 		/// </summary>
 		public PasswordPolicy passwordPolicy;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
 	}
 }

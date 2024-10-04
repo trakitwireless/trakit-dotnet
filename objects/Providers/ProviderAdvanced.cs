@@ -25,20 +25,17 @@ namespace trakit.objects {
 		/// <summary>
 		/// Often changing values like latitude, longitude, speed, wiring state, VBus information, etc...
 		/// </summary>
-		/// <override>
-		/// <keys>
-		/// <seealso cref="GroupName" />
-		/// </keys>
-		/// <values>
-		/// <keys>
-		/// <seealso cref="DataName" />
-		/// </keys>
-		/// </values>
-		/// </override>
 		public Dictionary<string, Dictionary<string, ProviderData>> attributes;
 		/// <summary>
 		/// Store-and-forward information like last sequence number of SnF window
 		/// </summary>
 		public Dictionary<string, string> snf;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id;
 	}
 }

@@ -66,6 +66,14 @@ namespace trakit.objects {
 		/// </override>
 		public Dictionary<string, string> references;
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
+
+		// ISuspendable and IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
@@ -78,83 +86,5 @@ namespace trakit.objects {
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
 		public DateTime? since { get; set; }
-	}
-	/// <summary>
-	/// Seldom changing details about a person.
-	/// </summary>
-	public class PersonGeneral : AssetGeneral {
-		/// <summary>
-		/// A reference to their Company's Contact information.
-		/// </summary>
-		/// <seealso cref="Contact.id" />
-		public ulong contact;
-	}
-	/// <summary>
-	/// Seldom changing details about a trailer.
-	/// </summary>
-	public class TrailerGeneral : AssetGeneral {
-		/// <summary>
-		/// The license plate.
-		/// </summary>
-		/// <override max-length="50" />
-		public string plate;
-		/// <summary>
-		/// Manufacturer's unique identification number for this trailer.
-		/// </summary>
-		/// <override max-length="50" />
-		public string serial;
-		/// <summary>
-		/// Manufacturer's name.
-		/// </summary>
-		/// <override max-length="50" />
-		public string make;
-		/// <summary>
-		/// Manufacturer's model name/number.
-		/// </summary>
-		/// <override max-length="50" />
-		public string model;
-		/// <summary>
-		/// Year of manufacturing.
-		/// </summary>
-		public ushort year;
-		/// <summary>
-		/// Primary colour of the trailer (given in 24bit hex; #RRGGBB)
-		/// </summary>
-		/// <override max-length="22" format="colour" />
-		public string colour;
-	}
-	/// <summary>
-	/// Seldom changing details about a vehicle.
-	/// </summary>
-	public class VehicleGeneral : AssetGeneral {
-		/// <summary>
-		/// Manufacturer's unique identification number (Vehicle Identification Number).
-		/// </summary>
-		/// <override max-length="50" />
-		public string vin;
-		/// <summary>
-		/// The license plate.
-		/// </summary>
-		/// <override max-length="50" />
-		public string plate;
-		/// <summary>
-		/// Manufacturer's name.
-		/// </summary>
-		/// <override max-length="50" />
-		public string make;
-		/// <summary>
-		/// Manufacturer's model name/number.
-		/// </summary>
-		/// <override max-length="50" />
-		public string model;
-		/// <summary>
-		/// Year of manufacturing.
-		/// </summary>
-		public ushort year;
-		/// <summary>
-		/// Primary colour of the vehicle (given in 24bit hex; #RRGGBB)
-		/// </summary>
-		/// <override max-length="22" format="colour" />
-		public string colour;
 	}
 }

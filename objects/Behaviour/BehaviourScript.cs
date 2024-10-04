@@ -62,6 +62,14 @@ namespace trakit.objects {
 		/// <override max-length="22" format="codified" />
 		public string graphic { get; set; }
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
+
+		// IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>

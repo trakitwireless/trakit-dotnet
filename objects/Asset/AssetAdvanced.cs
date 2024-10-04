@@ -68,5 +68,12 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<ulong, AssetPlaceStatus> places;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
 	}
 }

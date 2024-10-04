@@ -20,5 +20,12 @@ namespace trakit.objects {
 		/// Collection of commands for this provider.
 		/// </summary>
 		public Dictionary<ProviderCommandType, ProviderCommand> commands;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id;
 	}
 }

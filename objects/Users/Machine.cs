@@ -115,6 +115,14 @@ namespace trakit.objects {
 		/// </summary>
 		public bool insecure;
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="key"/> is the key (how about that).
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.key;
+
+		// IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>

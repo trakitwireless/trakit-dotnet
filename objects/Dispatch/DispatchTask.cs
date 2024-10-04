@@ -107,6 +107,14 @@ namespace trakit.objects {
 		/// </summary>
 		public DateTime updatedUtc;
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
+
+		// IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>

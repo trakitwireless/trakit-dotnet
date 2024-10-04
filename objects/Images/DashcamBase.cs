@@ -2,7 +2,7 @@
 	/// <summary>
 	/// A base class for Dashcam meta-data.
 	/// </summary>
-	public abstract class DashcamBase : IFileSize {
+	public abstract class DashcamBase : IRequestable, IFileSize {
 		/// <summary>
 		/// Number bytes in the dashcam media file.
 		/// </summary>
@@ -50,5 +50,12 @@
 		/// Altitude of the start of the resource.
 		/// </summary>
 		public double altitude;
+
+		// IRequestable
+		/// <summary>
+		/// For dashcams, this is either a unique identifier, or a combination of the <see cref="asset"/>, <see cref="provider"/>, and <see cref="camera"/> values.
+		/// </summary>
+		/// <returns>A string unique for this type of object.</returns>
+		public abstract string getKey();
 	}
 }

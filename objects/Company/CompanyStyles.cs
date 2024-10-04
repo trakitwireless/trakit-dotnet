@@ -22,12 +22,13 @@ namespace trakit.objects {
 		/// <summary>
 		/// The styles for status tags added to Assets.
 		/// </summary>
-		/// <override type="System.Collections.IDictionary">
-		/// <keys type="System.String" format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </keys>
-		/// <values type="Vorgon.LabelStyle" />
-		/// </override>
 		public Dictionary<string, LabelStyle> tags;
+
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
 	}
 }

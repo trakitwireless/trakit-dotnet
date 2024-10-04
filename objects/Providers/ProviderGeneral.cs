@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Device/hardware information and configuration.
 	/// </summary>
-	public class ProviderGeneral : Subscribable, INamed, IBelongCompany, IDeletable {
+	public class ProviderGeneral : Subscribable, INamed, IBelongCompany, ISuspendable, IDeletable {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -41,42 +41,12 @@ namespace trakit.objects {
 		/// <seealso cref="ProviderConfig.id" />
 		/// <seealso cref="ProviderConfiguration.id" />
 		public ulong configuration;
-		/// <summary>
-		/// A timestamp from when the provider last checked for a new script or new geofences.
-		/// </summary>
-		public DateTime? lastCheckIn;
-		/// <summary>
-		/// A timestamp from when the script status was updated by a <see cref="User"/> or a <see cref="Provider"/>.
-		/// </summary>
-		public DateTime? scriptLast;
-		/// <summary>
-		/// A timestamp from when the geofence list was updated by a <see cref="User"/> or a <see cref="Provider"/>.
-		/// </summary>
-		public DateTime? geofenceLast;
 
-		/// <summary>
-		/// The system's progress of updating the device's programming.
-		/// </summary>
-		public ProvisioningStatus scriptStatus;
-		/// <summary>
-		/// The system's progress of updating the device's on-board geofence definitions.
-		/// </summary>
-		public ProvisioningStatus geofenceStatus;
-		/// <summary>
-		/// The system's progress of updating the device's firmware/application.
-		/// </summary>
-		public ProvisioningStatus firmwareStatus;
 		/// <summary>
 		/// The password programmed on the device used to ensure the system is the only client authorized to make changes.
 		/// </summary>
 		/// <override max-length="50" />
 		public string password;
-		/// <summary>
-		/// The short-name of the kind of PND attached to this device.
-		/// Leave blank if none.
-		/// </summary>
-		/// <override max-length="50" />
-		public string pnd;
 		/// <summary>
 		/// The firmware/application version number.
 		/// </summary>
@@ -90,21 +60,28 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of read-only values about the device like IMEI, ESN, firmware version, hardware revision, etc...
 		/// </summary>
-		/// <override>
-		/// <keys>
-		/// <seealso cref="DataName" />
-		/// </keys>
-		/// </override>
 		public Dictionary<string, string> information;
 		/// <summary>
 		/// ICCID of the SIM card installed in this provider
 		/// </summary>
 		public string sim;
 
+		// IRequestable
+		/// <summary>
+		/// The <see cref="id"/> is the key.
+		/// </summary>
+		/// <returns></returns>
+		public override string getKey() => this.id.ToString();
+
+		// ISuspendable and IDeletable
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
 		public bool? deleted { get; set; }
+		/// <summary>
+		/// Indicates whether this object is suspended from event processing.
+		/// </summary>
+		public bool? suspended { get; set; }
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
