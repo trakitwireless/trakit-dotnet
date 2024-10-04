@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// An image stored by the system.
 	/// </summary>
-	public class Picture : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize, IDeletable {
+	public class Picture : Component, IIdUlong, INamed, IBelongCompany, IFileSize, IDeletable {
 		/// <summary>
 		/// Unique identifier of this image.
 		/// </summary>

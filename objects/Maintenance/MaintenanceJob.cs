@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Historical service work performed on a Vehicle or Trailer
 	/// </summary>
-	public class MaintenanceJob : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongAsset, IPictured, IDeletable {
+	public class MaintenanceJob : Component, IIdUlong, INamed, IBelongCompany, IBelongAsset, IPictured, IDeletable {
 		/// <summary>
 		/// Default threshold (in minutes) for the valid completion date of jobs.
 		/// </summary>

@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Permissions and group membership defined for a user.
 	/// </summary>
-	public class UserAdvanced : Subscribable, IBelongCompany, IHavePermissions {
+	public class UserAdvanced : Component, IBelongCompany, IHavePermissions {
 		/// <summary>
 		/// The unique public email address used to access the system.
 		/// </summary>

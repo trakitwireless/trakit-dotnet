@@ -6,11 +6,11 @@ namespace trakit.objects {
 	/// <summary>
 	/// A device, modem, or service which provides events from the field.
 	/// </summary>
-	public class Provider : Complexable, INamed, IBelongCompany, IDeletable {
+	public class Provider : Compound, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// 
 		/// </summary>
-		protected override Subscribable[] pieces => new Subscribable[] {
+		protected override Component[] pieces => new Component[] {
 			this.general,
 			this.advanced,
 			this.control,

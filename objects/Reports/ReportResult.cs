@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report results
 	/// </summary>
-	public class ReportResult : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
+	public class ReportResult : Component, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>

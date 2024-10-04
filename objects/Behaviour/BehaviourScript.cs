@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Business logic run by the system to react to GPS events and device information.
 	/// </summary>
-	public class BehaviourScript : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual, IDeletable {
+	public class BehaviourScript : Component, IIdUlong, INamed, IBelongCompany, IGlobal, IVisual, IDeletable {
 		/// <summary>
 		/// Unique identifier of this script.
 		/// </summary>

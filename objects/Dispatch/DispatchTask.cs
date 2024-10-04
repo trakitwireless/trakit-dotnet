@@ -6,7 +6,7 @@ namespace trakit.objects {
 	/// A task assigned to an asset which represents a coordinate on the map which must be visited.
 	/// </summary>
 	[Obsolete("Use DispatchJob instead")]
-	public class DispatchTask : Subscribable, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
+	public class DispatchTask : Component, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
 		/// <summary>
 		/// Unique identifier of this task.
 		/// </summary>

@@ -7,7 +7,7 @@ namespace trakit.objects {
 	/// ProviderConfigurationTypes are used to help define a ProviderConfiguration.
 	/// </summary>
 	[Obsolete("Use ProviderScript instead")]
-	public class ProviderConfigurationType : Subscribable, IIdUlong, INamed, IDeletable {
+	public class ProviderConfigurationType : Component, IIdUlong, INamed, IDeletable {
 		/// <summary>
 		/// Unique identifier.
 		/// </summary>

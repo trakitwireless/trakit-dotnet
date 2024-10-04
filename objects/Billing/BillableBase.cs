@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Most billable things share common attibutes.
 	/// </summary>
-	public abstract class BillableBase : Subscribable, IIdUlong, INamed, IBelongBillingProfile, IBelongCompany, IDeletable {
+	public abstract class BillableBase : Component, IIdUlong, INamed, IBelongBillingProfile, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this hosting rule.
 		/// </summary>

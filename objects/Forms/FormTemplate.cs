@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The full definition of a form that needs to be filled out.
 	/// </summary>
-	public class FormTemplate : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IVisual, IDeletable {
+	public class FormTemplate : Component, IIdUlong, INamed, IBelongCompany, ILabelled, IVisual, IDeletable {
 		/// <summary>
 		/// Unique identifier of this form.
 		/// </summary>

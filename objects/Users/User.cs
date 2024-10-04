@@ -5,11 +5,11 @@ namespace trakit.objects {
 	/// <summary>
 	/// A grouping of credentials, information, preferences, and permissions for a person or machine to login to the system and access its resources.
 	/// </summary>
-	public class User : Complexable, IEnabled, IBelongCompany, IHavePreferences, IDeletable {
+	public class User : Compound, IEnabled, IBelongCompany, IHavePreferences, IDeletable {
 		/// <summary>
 		/// 
 		/// </summary>
-		protected override Subscribable[] pieces => new Subscribable[] {
+		protected override Component[] pieces => new Component[] {
 			this.general,
 			this.advanced,
 		};

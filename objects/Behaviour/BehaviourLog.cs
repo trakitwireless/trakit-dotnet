@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A debug message available to script writers to help debug and trace output from a BehaviourScript.
 	/// </summary>
-	public class BehaviourLog : Subscribable, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
+	public class BehaviourLog : Component, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
 		/// <summary>
 		/// Unique identifier of this log message.
 		/// </summary>

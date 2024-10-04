@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The configured script loaded onto the provider over-the-air to control it's reporting schedule and behaviour.
 	/// </summary>
-	public class ProviderConfig : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
+	public class ProviderConfig : Component, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this configuration.
 		/// </summary>

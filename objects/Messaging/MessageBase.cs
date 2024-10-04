@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A base class for Alerts and Messages.
 	/// </summary>
-	public abstract class MessageBase : Subscribable, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
+	public abstract class MessageBase : Component, IIdUlong, IBelongCompany, IBelongAsset, IDeletable {
 		/// <summary>
 		/// Unique identifier of this memo.
 		/// </summary>

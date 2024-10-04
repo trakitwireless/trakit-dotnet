@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Determines when and how often a report schedule runs automatically.
 	/// </summary>
-	public class ReportSchedule : Subscribable, IIdUlong, INamed, IEnabled, IBelongCompany, IDeletable {
+	public class ReportSchedule : Component, IIdUlong, INamed, IEnabled, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>

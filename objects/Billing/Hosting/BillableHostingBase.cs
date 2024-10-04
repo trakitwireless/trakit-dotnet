@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Hosted things share a lot of common attributes.
 	/// </summary>
-	public abstract class BillableHostingBase : Subscribable, IIdUlong, IBelongBillingProfile, IBelongCompany, IDeletable {
+	public abstract class BillableHostingBase : Component, IIdUlong, IBelongBillingProfile, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this hosting rule.
 		/// </summary>

@@ -19,7 +19,7 @@ namespace trakit.objects {
 	/// </summary>
 	/// </property>
 	/// </override>
-	public class Place : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, IDeletable {
+	public class Place : Component, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, IDeletable {
 		/// <summary>
 		/// Unique identifier of this POI.
 		/// </summary>

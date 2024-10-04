@@ -6,7 +6,7 @@ namespace trakit.tools {
 	/// <summary>
 	/// 
 	/// </summary>
-	public abstract class TrakitConverter<T> : JsonConverter<T> where T : Subscribable {
+	public abstract class TrakitConverter<T> : JsonConverter<T> where T : Component {
 
 	}
 }

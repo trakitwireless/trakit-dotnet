@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Device/hardware information and configuration.
 	/// </summary>
-	public class ProviderGeneral : Subscribable, INamed, IBelongCompany, ISuspendable, IDeletable {
+	public class ProviderGeneral : Component, INamed, IBelongCompany, ISuspendable, IDeletable {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>

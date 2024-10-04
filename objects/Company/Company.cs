@@ -6,11 +6,11 @@ namespace trakit.objects {
 	/// <summary>
 	/// The full company object which contains all fields.
 	/// </summary>
-	public class Company : Complexable, IIdUlong, INamed, IAmCompany, IDeletable {
+	public class Company : Compound, IIdUlong, INamed, IAmCompany, IDeletable {
 		/// <summary>
 		/// 
 		/// </summary>
-		protected override Subscribable[] pieces => new Subscribable[] {
+		protected override Component[] pieces => new Component[] {
 			this.general,
 			null,	// reserved for future use
 			this.directory,

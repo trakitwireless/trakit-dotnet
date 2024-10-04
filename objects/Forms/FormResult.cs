@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A completed form submitted by a <see cref="User"/> or <see cref="Asset"/>.
 	/// </summary>
-	public class FormResult : Subscribable, IIdUlong, INamed, IBelongCompany, ILabelled, IDeletable {
+	public class FormResult : Component, IIdUlong, INamed, IBelongCompany, ILabelled, IDeletable {
 		/// <summary>
 		/// Unique identifier of this form.
 		/// </summary>

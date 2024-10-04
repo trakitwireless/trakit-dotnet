@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A visual representation of a thing on a map or in a list.
 	/// </summary>
-	public class Icon : Subscribable, IIdUlong, INamed, IBelongCompany, IGlobal, IDeletable {
+	public class Icon : Component, IIdUlong, INamed, IBelongCompany, IGlobal, IDeletable {
 		/// <summary>
 		/// Unique identifier of this icon.
 		/// </summary>

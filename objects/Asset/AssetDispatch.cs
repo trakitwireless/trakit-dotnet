@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The current state of an asset's <see cref="DispatchJob"/> route progress.
 	/// </summary>
-	public class AssetDispatch : Subscribable, IIdUlong, IBelongCompany {
+	public class AssetDispatch : Component, IIdUlong, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>

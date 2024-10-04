@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Some work that needs to be done by performing one or more <see cref="DispatchStep"/>s.
 	/// </summary>
-	public class DispatchJob : Subscribable, IIdUlong, ILabelled, IBelongCompany, IDeletable {
+	public class DispatchJob : Component, IIdUlong, ILabelled, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this job.
 		/// </summary>

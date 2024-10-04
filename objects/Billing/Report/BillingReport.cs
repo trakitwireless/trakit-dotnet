@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Report generated per billee company.
 	/// </summary>
-	public class BillingReport : Subscribable, IIdUlong, INamed, IBelongCompany, IBelongBillingProfile, IDeletable {
+	public class BillingReport : Component, IIdUlong, INamed, IBelongCompany, IBelongBillingProfile, IDeletable {
 		/// <summary>
 		/// Unique identifier
 		/// </summary>

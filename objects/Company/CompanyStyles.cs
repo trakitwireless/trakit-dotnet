@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// The colours and styles used by this company to tag and label Assets, Places, and other things.
 	/// </summary>
-	public class CompanyStyles : Subscribable, IIdUlong, IAmCompany {
+	public class CompanyStyles : Component, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>

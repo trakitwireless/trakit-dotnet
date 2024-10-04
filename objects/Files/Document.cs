@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A file stored temporarily by the system.
 	/// </summary>
-	public class Document : Subscribable, IIdUlong, INamed, IBelongCompany, IFileSize, IDeletable {
+	public class Document : Component, IIdUlong, INamed, IBelongCompany, IFileSize, IDeletable {
 		/// <summary>
 		/// Unique identifier of this file.
 		/// </summary>

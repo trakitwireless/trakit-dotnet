@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Device/hardware information reported from the field.
 	/// </summary>
-	public class ProviderAdvanced : Subscribable, IBelongCompany {
+	public class ProviderAdvanced : Component, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>

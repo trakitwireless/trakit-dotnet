@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Defines the seller company's details for white-labelling.
 	/// </summary>
-	public class CompanyReseller : Subscribable, IIdUlong, IAmCompany, IDeletable {
+	public class CompanyReseller : Component, IIdUlong, IAmCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>

@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Often changing details about a thing.
 	/// </summary>
-	public class AssetAdvanced : Subscribable, IIdUlong, IBelongCompany {
+	public class AssetAdvanced : Component, IIdUlong, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>

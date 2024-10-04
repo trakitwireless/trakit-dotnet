@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// A profile used to generate billable orders for a customer.
 	/// </summary>
-	public class BillingProfile : Subscribable, IIdUlong, INamed, IBelongCompany, IDeletable {
+	public class BillingProfile : Component, IIdUlong, INamed, IBelongCompany, IDeletable {
 		/// <summary>
 		/// Unique identifier of this billing profile
 		/// </summary>

@@ -5,7 +5,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Contact information.
 	/// </summary>
-	public class Contact : Subscribable, IIdUlong, INamed, IBelongCompany, IPictured, IDeletable {
+	public class Contact : Component, IIdUlong, INamed, IBelongCompany, IPictured, IDeletable {
 		/// <summary>
 		/// Unique identifier of this contact.
 		/// </summary>

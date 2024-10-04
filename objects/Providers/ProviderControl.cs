@@ -4,7 +4,7 @@ namespace trakit.objects {
 	/// <summary>
 	/// Managing communication with Device/hardware.
 	/// </summary>
-	public class ProviderControl : Subscribable, IBelongCompany {
+	public class ProviderControl : Component, IBelongCompany {
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
