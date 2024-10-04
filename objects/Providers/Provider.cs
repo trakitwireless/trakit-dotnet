@@ -6,7 +6,16 @@ namespace trakit.objects {
 	/// <summary>
 	/// A device, modem, or service which provides events from the field.
 	/// </summary>
-	public class Provider : Subscribable, INamed, IBelongCompany, IDeletable {
+	public class Provider : Complexable, INamed, IBelongCompany, IDeletable {
+		/// <summary>
+		/// 
+		/// </summary>
+		protected override Subscribable[] pieces => new Subscribable[] {
+			this.general,
+			this.advanced,
+			this.control,
+		};
+
 		/// <summary>
 		/// Unique identifier of this device.
 		/// </summary>
@@ -139,7 +148,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// 
 		/// </summary>
-		public  ProviderControl control { get; set; }
+		public ProviderControl control { get; set; }
 		/// <summary>
 		/// Collection of commands for this provider.
 		/// </summary>

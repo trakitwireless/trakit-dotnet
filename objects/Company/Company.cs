@@ -1,11 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The full company object which contains all fields.
 	/// </summary>
-	public class Company : Subscribable, IIdUlong, INamed, IAmCompany, IDeletable {
+	public class Company : Complexable, IIdUlong, INamed, IAmCompany, IDeletable {
+		/// <summary>
+		/// 
+		/// </summary>
+		protected override Subscribable[] pieces => new Subscribable[] {
+			this.general,
+			null,	// reserved for future use
+			this.directory,
+			this.styles,
+			this.policies,
+			this.reseller,
+		};
+
 		/// <summary>
 		/// Unique identifier of this Company.
 		/// </summary>
@@ -20,12 +33,21 @@ namespace trakit.objects {
 		/// The parent organization for this Company.
 		/// </summary>
 		/// <seealso cref="Company.id" />
-		public ulong parent => this.general?.parent
-							?? this.directory?.parent
-							?? this.policies?.parent
-							?? this.styles?.parent
-							?? this.reseller?.parent
-							?? throw new NullReferenceException("general");
+		public ulong parent {
+			get => this.general?.parent
+				?? this.directory?.parent
+				?? this.policies?.parent
+				?? this.styles?.parent
+				?? this.reseller?.parent
+				?? throw new NullReferenceException("general");
+			set {
+				if (this.general != null) this.general.parent = value;
+				if (this.directory != null) this.directory.parent = value;
+				if (this.policies != null) this.policies.parent = value;
+				if (this.styles != null) this.styles.parent = value;
+				if (this.reseller != null) this.reseller.parent = value;
+			}
+		}
 
 		/// <summary>
 		/// 

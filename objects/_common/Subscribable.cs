@@ -6,7 +6,7 @@
 		/// <summary>
 		/// Object version keys used to validate synchronization for all object properties.
 		/// </summary>
-		public uint[] v;
+		public virtual int[] v { get; set; }
 
 		/// <summary>
 		/// Returns a string which can be used as a unique identifier for this object.

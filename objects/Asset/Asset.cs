@@ -5,7 +5,16 @@ namespace trakit.objects {
 	/// <summary>
 	/// The full details of an Asset, containing all the properties from the <see cref="AssetGeneral"/> and <see cref="AssetAdvanced"/> objects.
 	/// </summary>
-	public class Asset : Subscribable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, ISuspendable, IDeletable {
+	public class Asset : Complexable, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, ISuspendable, IDeletable {
+		/// <summary>
+		/// 
+		/// </summary>
+		protected override Subscribable[] pieces => new Subscribable[] {
+			this.general,
+			this.advanced,
+			this.dispatch,
+		};
+
 		/// <summary>
 		/// Unique identifier of this asset.
 		/// </summary>
