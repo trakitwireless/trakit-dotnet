@@ -8,6 +8,8 @@
 		<AssemblyName>trakit.$(MSBuildProjectName)</AssemblyName>
 		<FileVersion>0.1.0.0</FileVersion>
 		<AssemblyVersion>0.1.0.0</AssemblyVersion>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -17,5 +19,15 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Geometry\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>
