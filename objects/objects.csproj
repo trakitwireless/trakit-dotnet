@@ -5,10 +5,8 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Trak-iT Object Model</Title>
 		<PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>
+		<AssemblyName>trakit.$(MSBuildProjectName)</AssemblyName>
 	</PropertyGroup>
-	<ItemGroup>
-	  <None Remove="Providers\Provider.cs~RF2267457f.TMP" />
-	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>

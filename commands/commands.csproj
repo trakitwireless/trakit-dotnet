@@ -5,11 +5,12 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Trak-iT API Commands</Title>
 		<PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>
+		<AssemblyName>trakit.$(MSBuildProjectName)</AssemblyName>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\objects\objects.csproj" />
+		<ProjectReference Include="..\objects\objects.csproj" />
 	</ItemGroup>
 </Project>
