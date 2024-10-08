@@ -30,6 +30,6 @@ namespace trakit.objects {
 		/// <summary>
 		/// Rules used to generate scorecard for this report.
 		/// </summary>
-		public ReportScorecardRules? scorecardRules;
+		public ReportScorecardRules scorecardRules;
 	}
 }

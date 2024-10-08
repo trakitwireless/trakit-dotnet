@@ -10,7 +10,7 @@
 		/// <summary>
 		/// The value is given as a string, but parsed into native type when used by the gateway.
 		/// </summary>
-		public string? value;
+		public string value;
 		/// <summary>
 		/// Usage notes.
 		/// </summary>
@@ -19,7 +19,7 @@
 		/// Gives a hint to the client on the best UI to use for editing.
 		/// For example, "checkbox" is a good UI hint for boolean parameter types.
 		/// </summary>
-		public string? context;
+		public string context;
 		/// <summary>
 		/// The order in which this parameter is displayed compared to other parameters.
 		/// The value has no effect on how this parameter is inserted into the ProviderScriptBlocks.

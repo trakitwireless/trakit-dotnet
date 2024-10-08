@@ -13,7 +13,7 @@ namespace trakit.objects {
 		/// Used only for daily schedules, this 7 item, boolean array, determines if the schedule should recur on that day of the week.
 		/// </summary>
 		/// <override count="7" />
-		public bool[]? weekdays;
+		public bool[] weekdays;
 		/// <summary>
 		/// Used only for weekly schedules, it's a number between 0 and 6 representing the day of the week, with Sunday being the first day of the week.
 		/// </summary>

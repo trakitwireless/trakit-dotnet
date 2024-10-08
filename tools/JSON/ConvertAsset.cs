@@ -7,7 +7,7 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertAsset : TrakitConverter<Asset> {
-		public override Asset? ReadJson(JsonReader reader, Type objectType, Asset? existingValue, bool hasExistingValue, JsonSerializer serializer) => throw new NotImplementedException();
-		public override void WriteJson(JsonWriter writer, Asset? value, JsonSerializer serializer) => throw new NotImplementedException();
+		public override Asset ReadJson(JsonReader reader, Type objectType, Asset existingValue, bool hasExistingValue, JsonSerializer serializer) => throw new NotImplementedException();
+		public override void WriteJson(JsonWriter writer, Asset value, JsonSerializer serializer) => throw new NotImplementedException();
 	}
 }

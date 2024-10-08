@@ -35,11 +35,11 @@ namespace trakit.objects {
 		/// <summary>
 		/// Effective permission after the proposed change.
 		/// </summary>
-		public PermissionEscalationState? after;
+		public PermissionEscalationState after;
 		/// <summary>
 		/// Effective permission before the proposed change.
 		/// </summary>
-		public PermissionEscalationState? before;
+		public PermissionEscalationState before;
 	}
 
 	/// <summary>
@@ -59,6 +59,6 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string>? labels;
+		public List<string> labels;
 	}
 }

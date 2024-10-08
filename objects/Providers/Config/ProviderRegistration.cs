@@ -28,7 +28,7 @@ namespace trakit.objects {
 		/// The password programmed on the device used to ensure the system is the only client authorized to make changes.
 		/// </summary>
 		/// <override max-length="50" />
-		public string? password;
+		public string password;
 		/// <summary>
 		/// The unique identifier the user who generated this registration.
 		/// </summary>
@@ -62,7 +62,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Provider.id" />
 		/// <override max-length="50" />
-		public string? identifier;
+		public string identifier;
 		/// <summary>
 		/// The Asset for which this device will provide data.
 		/// </summary>

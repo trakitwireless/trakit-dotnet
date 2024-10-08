@@ -59,6 +59,6 @@ namespace trakit.objects {
 		/// The name of the person who signed the step's completion.
 		/// </summary>
 		/// <override max-length="100" />
-		public string? signatory;
+		public string signatory;
 	}
 }

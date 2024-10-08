@@ -82,19 +82,19 @@ namespace trakit.objects {
 		/// <summary>
 		/// When the report runs, a list of targeted assets is calculated based on the ReportOption's targeting expression.
 		/// </summary>
-		public ulong[]? targeted;
+		public ulong[] targeted;
 		/// <summary>
 		/// When the report runs, a list of filtered places is calculated based on the ReportOption's place filtering expression.
 		/// </summary>
-		public ulong[]? filtered;
+		public ulong[] filtered;
 		/// <summary>
 		/// After processing, the report totals the values from all summary instances for a quick overview of the kind of results generated.
 		/// </summary>
-		public List<ReportDataTotal>? totals;
+		public List<ReportDataTotal> totals;
 		/// <summary>
 		/// Scorecards for all the targeted assets based on the scorecard rules.
 		/// </summary>
-		public List<ReportScorecard>? scorecards;
+		public List<ReportScorecard> scorecards;
 		/// <summary>
 		/// A field which contains report error details if the <see cref="status"/> is <see cref="ReportStatus.failed"/>.
 		/// </summary>

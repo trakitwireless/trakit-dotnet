@@ -22,24 +22,24 @@ namespace trakit.objects {
 		/// <summary>
 		/// The minimum possible value for this confugration node.
 		/// </summary>
-		public object? min;
+		public object min;
 		/// <summary>
 		/// The maximum possible value for this confugration node.
 		/// </summary>
-		public object? max;
+		public object max;
 		/// <summary>
 		/// Type hint used by the script processor to help format the value.
 		/// </summary>
-		public string? type;
+		public string type;
 		/// <summary>
 		/// Unit hint used to help the script processor format the value.
 		/// </summary>
 		/// <override type="Vorgon.Units" />
-		public string? unit;
+		public string unit;
 		/// <summary>
 		/// Description of what this configuration does when mapped to a device.
 		/// </summary>
-		public string? notes;
+		public string notes;
 		/// <summary>
 		/// Child configuration nodes.
 		/// </summary>

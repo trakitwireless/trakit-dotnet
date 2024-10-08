@@ -59,15 +59,15 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="BillingReportStatus" />
 		/// <override max-length="250" />
-		public string? error;
+		public string error;
 		/// <summary>
 		/// Summary contains totals per target for this billee
 		/// </summary>
-		public List<BillingReportSummary>? summary;
+		public List<BillingReportSummary> summary;
 		/// <summary>
 		/// Individual amounts per company, used to calculate the results of the report.
 		/// </summary>
-		public List<BillingReportBreakdown>? breakdown;
+		public List<BillingReportBreakdown> breakdown;
 
 		// IRequestable
 		/// <summary>

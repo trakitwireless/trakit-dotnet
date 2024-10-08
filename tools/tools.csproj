@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
-		<Nullable>enable</Nullable>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>trakit.tools</RootNamespace>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Trak-iT API Tools</Title>
 		<PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>

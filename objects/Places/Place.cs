@@ -92,7 +92,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of points forming a non-self-intersecting polygon.
 		/// </summary>
-		public List<LatLng>? points;
+		public List<LatLng> points;
 
 		// IRequestable
 		/// <summary>

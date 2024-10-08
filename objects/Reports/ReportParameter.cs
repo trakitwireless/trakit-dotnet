@@ -10,6 +10,6 @@
 		/// <summary>
 		/// The parsed value of the argument.  Each type of argument has a different parsing.
 		/// </summary>
-		public string? value;
+		public string value;
 	}
 }
