@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// Rules used for generating a scorecard.
 	/// </summary>

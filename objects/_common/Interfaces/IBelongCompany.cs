@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that belong to a single company.
 	/// </summary>

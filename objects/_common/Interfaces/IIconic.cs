@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// An interface for objcts that have an "icon".
 	/// </summary>

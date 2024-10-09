@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// Permissions and group membership defined for a user.
 	/// </summary>

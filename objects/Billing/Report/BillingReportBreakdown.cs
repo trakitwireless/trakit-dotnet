@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// Billing breakdown per target company.
 	/// </summary>

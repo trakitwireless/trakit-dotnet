@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// A group of users and targeted assets which receive report notifications.
 	/// </summary>

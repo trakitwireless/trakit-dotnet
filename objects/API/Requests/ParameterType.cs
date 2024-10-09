@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// Base class for all command parameters.
 	/// All command parameter classes use this as the base.

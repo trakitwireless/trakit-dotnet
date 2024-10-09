@@ -7,19 +7,6 @@ namespace trakit.objects {
 	/// </summary>
 	public class MaintenanceSchedule : Component, IIdUlong, INamed, IBelongCompany, IVisual, IDeletable {
 		/// <summary>
-		/// Default prediction day threshold for new schedules.
-		/// </summary>
-		public const uint DEFAULT_PREDICTION = 14;
-		/// <summary>
-		/// Minimum prediction threshold in days.
-		/// </summary>
-		public const uint MINIMUM_PREDICTION = 5;
-		/// <summary>
-		/// Maximum prediction threshold in days.
-		/// </summary>
-		public const uint MAXIMUM_PREDICTION = 180;
-
-		/// <summary>
 		/// Unique identifier
 		/// </summary>
 		public ulong id { get; set; }

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// The image source and defined status tags which need to be applied to an asset in order to show the image.
 	/// </summary>

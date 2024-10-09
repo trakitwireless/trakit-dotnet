@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// Defines the behaviour of the system when a user creates multiple sessions.
 	/// </summary>
-	/// <override name="SessionMultiUser" />
 	public enum SessionMultiUser : byte {
 		/// <summary>
 		/// Allow users to create multiple simultaneous sessions.
