@@ -1,11 +1,9 @@
 ﻿using System;
-using Newtonsoft.Json;
 
 namespace trakit.objects {
 	/// <summary>
 	/// The possible errors returned by the system.
 	/// </summary>
-	[JsonConverter(typeof(JsonConverter<ErrorCode>))]
 	public enum ErrorCode : ushort {
 		/// <summary sort="">
 		/// Success!
@@ -26,7 +24,7 @@ namespace trakit.objects {
 		/// </summary>
 		invalidData,
 		/// <summary sort="">
-		/// Not a valid <see cref="UserPermissionType"/>.
+		/// Not a valid <see cref="PermissionType"/>.
 		/// </summary>
 		[Obsolete]
 		invalidPermission,

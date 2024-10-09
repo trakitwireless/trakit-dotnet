@@ -6,6 +6,6 @@
 		/// <summary>
 		/// The list of <see cref="UserGroup"/> to which this <see cref="User"/> belongs.
 		/// </summary>
-		new public UserGroup groups;
+		new public UserGroup[] groups;
 	}
 }

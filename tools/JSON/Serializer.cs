@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace trakit.tools {
@@ -11,7 +10,9 @@ namespace trakit.tools {
 		/// 
 		/// </summary>
 		public const string DATETIME_FORMAT_ISO8601 = "yyyy-MM-ddTHH:mm:ss.fffZ";
-
+		/// <summary>
+		/// 
+		/// </summary>
 		JsonSerializerSettings settings = new JsonSerializerSettings();
 
 		public Serializer() {
@@ -33,7 +34,57 @@ namespace trakit.tools {
 			//this.settings.Converters.Add(new ConvertUser());
 		}
 
-		public string serialize<T>(T body) => throw new NotImplementedException();
-		public T deserialize<T>(string body) => throw new NotImplementedException();
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public string serialize<T>(T value) => JsonConvert.SerializeObject(value, this.settings);
+
+		/// <summary>
+		/// Attempts to deserialize the given string and outs the value.
+		/// If an exception is thrown, false is returned, and null is outputted.
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public bool trySerialize<T>(T value, out string text) {
+			bool success;
+			try {
+				text = this.serialize<T>(value);
+				success = true;
+			} catch {
+				text = default;
+				success = false;
+			}
+			return success;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public T deserialize<T>(string value) => JsonConvert.DeserializeObject<T>(value, this.settings);
+		/// <summary>
+		/// Attempts to deserialize the given string and outs the value.
+		/// If an exception is thrown, false is returned, and null is outputted.
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public bool tryDeserialize<T>(string text, out T value) {
+			bool success;
+			try {
+				value = this.deserialize<T>(text);
+				success = true;
+			} catch {
+				value = default;
+				success = false;
+			}
+			return success;
+		}
 	}
 }
