@@ -8,14 +8,14 @@ namespace trakit.objects {
 		/// <summary>
 		/// The list of applications users are allowed to use to create sessions.
 		/// </summary>
-		public List<string> applications;
+		public string[] applications;
 		/// <summary>
 		/// Restrict session creation to only the provided IPv4 ranges (using CIDR slash-notation).  Leave blank for Internet access.
 		/// </summary>
 		/// <override>
 		/// <values max-length="19" format="ipv4" />
 		/// </override>
-		public List<string> ipv4Ranges;
+		public string[] ipv4Ranges;
 		/// <summary>
 		/// Defines the behaviour of the system when a user creates multiple sessions.
 		/// </summary>

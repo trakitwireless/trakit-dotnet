@@ -75,7 +75,7 @@ namespace trakit.objects {
 		/// <override>
 		/// <values max-length="5" format="codified" />
 		/// </override>
-		public List<string> languages;
+		public string[] languages;
 		/// <summary>
 		/// Colours used as templates for status tags, labels, and places.
 		/// </summary>

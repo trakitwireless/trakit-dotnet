@@ -16,7 +16,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Identifiers of the summary instances that used this event.
 		/// </summary>
-		public List<uint> summaryInstances;
+		public uint[] summaryInstances;
 		/// <summary>
 		/// General Asset information.
 		/// </summary>

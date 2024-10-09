@@ -40,6 +40,6 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels;
+		public string[] labels;
 	}
 }

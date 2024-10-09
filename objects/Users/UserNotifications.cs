@@ -50,10 +50,10 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of the types of methods to use to notify the user when they have an active WebSocket connection.
 		/// </summary>
-		public List<UserNotificationsMethod> online;
+		public UserNotificationsMethod[] online;
 		/// <summary>
 		/// A list of the types of methods to use to notify the user when they are not connected.
 		/// </summary>
-		public List<UserNotificationsMethod> offline;
+		public UserNotificationsMethod[] offline;
 	}
 }

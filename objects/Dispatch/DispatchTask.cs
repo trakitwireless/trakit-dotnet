@@ -97,7 +97,7 @@ namespace trakit.objects {
 		/// <seealso cref="Document.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> attachments;
+		public ulong[] attachments;
 		/// <summary>
 		/// Either the user's login, or provider's identifier that changed this task
 		/// </summary>

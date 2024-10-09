@@ -118,7 +118,7 @@ namespace trakit.objects {
 		/// Definition of how and when to send alerts to the user.
 		/// </summary>
 		/// <override max-count="7" />
-		public List<UserNotifications> notify {
+		public UserNotifications[] notify {
 			get => this.general?.notify ?? throw new NullReferenceException("general");
 			set => (this.general ?? throw new NullReferenceException("general")).notify = value;
 		}
@@ -131,14 +131,14 @@ namespace trakit.objects {
 		/// A list of groups to which this user belongs.
 		/// </summary>
 		/// <seealso cref="UserGroup.id" />
-		public List<ulong> groups {
+		public ulong[] groups {
 			get => this.advanced?.groups ?? throw new NullReferenceException("advanced");
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).groups = value;
 		}
 		/// <summary>
 		/// Individual permission rules which override the group rules.
 		/// </summary>
-		public List<Permission> permissions {
+		public Permission[] permissions {
 			get => this.advanced?.permissions ?? throw new NullReferenceException("advanced");
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).permissions = value;
 		}

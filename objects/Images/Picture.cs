@@ -36,7 +36,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of focal points in the images like faces.
 		/// </summary>
-		public List<Square> focals;
+		public Square[] focals;
 		/// <summary>
 		/// The file-size on the disk.
 		/// </summary>

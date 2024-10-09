@@ -53,19 +53,19 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels { get; set; }
+		public string[] labels { get; set; }
 		/// <summary>
 		/// The list of devices providing events for this asset.
 		/// </summary>
 		/// <seealso cref="Provider.id" />
-		public List<string> providers;
+		public string[] providers;
 		/// <summary>
 		/// The list of phone numbers for this asset.
 		/// </summary>
 		/// <override>
 		/// <values format="phone" />
 		/// </override>
-		public List<ulong> phoneNumbers;
+		public ulong[] phoneNumbers;
 		/// <summary>
 		/// Indicates when this Asset was last updated.
 		/// </summary>

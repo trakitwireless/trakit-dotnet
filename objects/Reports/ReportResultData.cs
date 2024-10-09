@@ -8,10 +8,10 @@ namespace trakit.objects {
 		/// <summary>
 		/// Grouped events form a summary instance, and contain information about the starting, ending, and number of the grouped events.
 		/// </summary>
-		public Dictionary<ulong, List<ReportSummary>> summary;
+		public Dictionary<ulong, ReportSummary[]> summary;
 		/// <summary>
 		/// Individual events about the targeted assets used to calculate the results of the report.
 		/// </summary>
-		public Dictionary<ulong, List<ReportBreakdown>> breakdown;
+		public Dictionary<ulong, ReportBreakdown[]> breakdown;
 	}
 }

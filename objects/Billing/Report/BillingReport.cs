@@ -63,11 +63,11 @@ namespace trakit.objects {
 		/// <summary>
 		/// Summary contains totals per target for this billee
 		/// </summary>
-		public List<BillingReportSummary> summary;
+		public BillingReportSummary[] summary;
 		/// <summary>
 		/// Individual amounts per company, used to calculate the results of the report.
 		/// </summary>
-		public List<BillingReportBreakdown> breakdown;
+		public BillingReportBreakdown[] breakdown;
 
 		// IRequestable
 		/// <summary>

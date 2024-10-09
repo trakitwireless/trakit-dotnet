@@ -31,7 +31,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> tags;
+		public string[] tags;
 		/// <summary>
 		/// A list of attributes given to this asset by the connection device such as wiring state, VBus, etc.
 		/// </summary>
@@ -49,7 +49,7 @@ namespace trakit.objects {
 		/// <seealso cref="Provider.id" />
 		/// </values>
 		/// </override>
-		public List<string> providers;
+		public string[] providers;
 		/// <summary>
 		/// A list of assets related to this one; like a Person for a Vehicle (driver).
 		/// </summary>
@@ -58,7 +58,7 @@ namespace trakit.objects {
 		/// <seealso cref="Asset.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> relationships;
+		public ulong[] relationships;
 		/// <summary>
 		/// The current state of this asset's interaction with known Places.
 		/// </summary>

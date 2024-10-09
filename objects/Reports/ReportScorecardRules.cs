@@ -12,6 +12,6 @@ namespace trakit.objects {
 		/// <summary>
 		/// Infraction parameters used to generate the final score
 		/// </summary>
-		public List<ReportScorecardParameter> parameters;
+		public ReportScorecardParameter[] parameters;
 	}
 }

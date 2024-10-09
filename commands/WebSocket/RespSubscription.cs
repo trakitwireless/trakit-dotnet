@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using trakit.objects;
+﻿using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
@@ -16,14 +15,14 @@ namespace trakit.commands {
 		/// <summary>
 		/// Subscription types added/removed (or were not applicable) to your socket's subscription list.
 		/// </summary>
-		public List<SubscriptionType> merged;
+		public SubscriptionType[] merged;
 		/// <summary>
 		/// Subscription types not added to your socket due to insufficient permissions.
 		/// </summary>
-		public List<SubscriptionType> denied;
+		public SubscriptionType[] denied;
 		/// <summary>
 		/// A returned list of nonsense you sent to my beautiful service.
 		/// </summary>
-		public List<string> invalid;
+		public string[] invalid;
 	}
 }

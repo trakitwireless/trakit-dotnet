@@ -27,6 +27,6 @@ namespace trakit.objects {
 		/// <summary>
 		/// Summary contains totals per type of hosting (services and licenses) for this target
 		/// </summary>
-		public List<BillingReportHostingSummary> hosting;
+		public BillingReportHostingSummary[] hosting;
 	}
 }

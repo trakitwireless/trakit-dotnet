@@ -39,7 +39,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// SMS messaging tiers
 		/// </summary>
-		public List<BillableSmsProfile> messages;
+		public BillableSmsProfile[] messages;
 		/// <summary>
 		/// Repeating cycle used for generating bills
 		/// </summary>

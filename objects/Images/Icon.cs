@@ -37,7 +37,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of things that this icon can be used to represent.  Like asset, place, user, etc...
 		/// </summary>
-		public List<string> usage;
+		public string[] usage;
 		/// <summary>
 		/// Definition for the name bubble above the icon on a map.
 		/// </summary>
@@ -50,7 +50,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// The images used to show the detail of this icon.
 		/// </summary>
-		public List<IconGlyph> glyphs;
+		public IconGlyph[] glyphs;
 
 		// IRequestable
 		/// <summary>

@@ -86,7 +86,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// The list of Contacts from this and other companies broken down by contact role.
 		/// </summary>
-		public Dictionary<string, List<ulong>> employees {
+		public Dictionary<string, ulong[]> employees {
 			get => this.directory?.directory ?? throw new NullReferenceException("directory");
 			set => (this.directory ?? throw new NullReferenceException("directory")).directory = value;
 		}

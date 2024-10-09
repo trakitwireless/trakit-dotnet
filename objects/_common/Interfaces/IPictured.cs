@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace trakit.objects {
+﻿namespace trakit.objects {
 	/// <summary>
 	/// An interface for objects that have "pictures".
 	/// </summary>
@@ -9,6 +7,6 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of picture identifiers of this object.
 		/// </summary>
-		List<ulong> pictures { get; }
+		ulong[] pictures { get; }
 	}
 }

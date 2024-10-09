@@ -83,25 +83,25 @@ namespace trakit.objects {
 		/// A list of groups to which this machine account belongs.
 		/// </summary>
 		/// <seealso cref="UserGroup.id" />
-		public List<ulong> groups { get; set; }
+		public ulong[] groups { get; set; }
 		/// <summary>
 		/// Permission rules which override the group rules.
 		/// </summary>
-		public List<Permission> permissions { get; set; }
+		public Permission[] permissions { get; set; }
 		/// <summary>
 		/// List of system service URIs that this machine account is permitted to access.
 		/// </summary>
 		/// <override>
 		/// <values type="System.String" max-length="254" format="url" />
 		/// </override>
-		public List<Uri> services;
+		public Uri[] services;
 		/// <summary>
 		/// Optional list of your managed domains from which this machine account can be used.
 		/// </summary>
 		/// <override>
 		/// <values type="System.String" max-length="254" format="url" />
 		/// </override>
-		public List<Uri> referrers;
+		public Uri[] referrers;
 		/// <summary>
 		/// Restrict service access to only the provided IP ranges.
 		/// Currently we only support IPv4 ranges using CIDR slash-notation.
@@ -109,7 +109,7 @@ namespace trakit.objects {
 		/// <override>
 		/// <values max-length="19" format="ipv4" />
 		/// </override>
-		public List<string> ipRanges;
+		public string[] ipRanges;
 		/// <summary>
 		/// When true, no access restrictions (<see cref="secret"/>, <see cref="referrers"/>, or <see cref="ipRanges"/>) are enforced.
 		/// </summary>

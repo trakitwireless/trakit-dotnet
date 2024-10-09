@@ -8,7 +8,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of parameters to better shape the results.
 		/// </summary>
-		public List<ReportParameter> parameters;
+		public ReportParameter[] parameters;
 		/// <summary>
 		/// A targeting expression for including/excluding Assets.
 		/// </summary>
@@ -26,7 +26,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of provinces and states, where only assets within those regions will be included in the results.
 		/// </summary>
-		public List<string> regions;
+		public string[] regions;
 		/// <summary>
 		/// Rules used to generate scorecard for this report.
 		/// </summary>

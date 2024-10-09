@@ -22,11 +22,11 @@ namespace trakit.objects {
 		/// A <format id="polyline">route path</format> to display on a map.
 		/// </summary>
 		/// <override type="System.String" format="polyline" />
-		public List<LatLng> path;
+		public LatLng[] path;
 		/// <summary>
 		/// For complex routes, the sub-directions provide a breakdown or additional details.
 		/// </summary>
-		public List<DispatchDirection> directions;
+		public DispatchDirection[] directions;
 		/// <summary>
 		/// Unique identifier of the <see cref="DispatchJob"/> or <see cref="DispatchTask"/>.
 		/// </summary>

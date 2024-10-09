@@ -46,7 +46,7 @@ namespace trakit.objects {
 		/// <seealso cref="Document.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> attachments;
+		public ulong[] attachments;
 		/// <summary>
 		/// A list of hosted <see cref="FormResult"/> identifiers attached to this job.
 		/// </summary>
@@ -55,7 +55,7 @@ namespace trakit.objects {
 		/// <seealso cref="FormResult.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> forms;
+		public ulong[] forms;
 		/// <summary>
 		/// The importance of this job when scheduling for an asset.
 		/// </summary>
@@ -68,7 +68,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels { get; set; }
+		public string[] labels { get; set; }
 		/// <summary>
 		/// The codified status tag names reflecting the conditions of this job.
 		/// </summary>
@@ -77,11 +77,11 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> tags { get; set; }
+		public string[] tags { get; set; }
 		/// <summary>
 		/// A list of coordinates to visit in order to carry out the work for this job.
 		/// </summary>
-		public List<DispatchStep> steps { get; set; }
+		public DispatchStep[] steps { get; set; }
 		/// <summary>
 		/// When this job was originally created.
 		/// </summary>

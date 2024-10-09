@@ -54,7 +54,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Blocks of file data which are (optionally) included in the script data file.
 		/// </summary>
-		public List<ProviderScriptBlock> blocks;
+		public ProviderScriptBlock[] blocks;
 		/// <summary>
 		/// Parameter definitions for this script, including type-hints and default values.
 		/// </summary>

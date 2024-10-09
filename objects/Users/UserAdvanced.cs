@@ -20,11 +20,11 @@ namespace trakit.objects {
 		/// A list of groups to which this user belongs.
 		/// </summary>
 		/// <seealso cref="UserGroup.id" />
-		public List<ulong> groups { get; set; }
+		public ulong[] groups { get; set; }
 		/// <summary>
 		/// Individual permission rules which override the group rules.
 		/// </summary>
-		public List<Permission> permissions { get; set; }
+		public Permission[] permissions { get; set; }
 
 		// IRequestable
 		/// <summary>

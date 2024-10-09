@@ -51,7 +51,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A simplified polyline of all the asset's positions in sequence.
 		/// </summary>
-		public List<LatLng> polyline = new List<LatLng>();
+		public LatLng[] polyline;
 		/// <summary>
 		/// The first asset state which begins this summary instance.
 		/// </summary>

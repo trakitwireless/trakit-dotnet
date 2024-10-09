@@ -74,7 +74,7 @@ namespace trakit.objects {
 		/// Definition of how and when to send alerts to the user.
 		/// </summary>
 		/// <override max-count="7" />
-		public List<UserNotifications> notify;
+		public UserNotifications[] notify;
 
 		// IRequestable
 		/// <summary>

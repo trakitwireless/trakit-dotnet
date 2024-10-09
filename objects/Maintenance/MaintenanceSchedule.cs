@@ -49,7 +49,7 @@ namespace trakit.objects {
 		/// <seealso cref="User.login" />
 		/// </values>
 		/// </override>
-		public List<string> notify;
+		public string[] notify;
 
 		/// <summary>
 		/// The fill/background colour of the icon.

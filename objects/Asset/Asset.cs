@@ -72,7 +72,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels {
+		public string[] labels {
 			get => this.general?.labels ?? throw new NullReferenceException("general");
 			set => (this.general ?? throw new NullReferenceException("general")).labels = value;
 		}
@@ -84,7 +84,7 @@ namespace trakit.objects {
 		/// <seealso cref="Picture.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> pictures {
+		public ulong[] pictures {
 			get => this.general?.pictures ?? throw new NullReferenceException("general");
 			set => (this.general ?? throw new NullReferenceException("general")).pictures = value;
 		}
@@ -134,7 +134,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> tags {
+		public string[] tags {
 			get => this.advanced?.tags ?? throw new NullReferenceException("advanced");
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).tags = value;
 		}
@@ -158,7 +158,7 @@ namespace trakit.objects {
 		/// <seealso cref="Provider.id" />
 		/// </values>
 		/// </override>
-		public List<string> providers {
+		public string[] providers {
 			get => this.advanced?.providers ?? throw new NullReferenceException("advanced");
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).providers = value;
 		}
@@ -170,7 +170,7 @@ namespace trakit.objects {
 		/// <seealso cref="Asset.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> relationships {
+		public ulong[] relationships {
 			get => this.advanced?.relationships ?? throw new NullReferenceException("advanced");
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).relationships = value;
 		}
@@ -195,14 +195,14 @@ namespace trakit.objects {
 		/// The current list of <see cref="DispatchJob"/>s assigned to the asset.
 		/// </summary>
 		/// <seealso cref="DispatchJob"/>
-		public List<ulong> jobs {
+		public ulong[] jobs {
 			get => this.dispatch?.jobs ?? throw new NullReferenceException("dispatch");
 			set => (this.dispatch ?? throw new NullReferenceException("dispatch")).jobs = value;
 		}
 		/// <summary>
 		/// Driving directions and route path details.
 		/// </summary>
-		public List<DispatchDirection> directions {
+		public DispatchDirection[] directions {
 			get => this.dispatch?.directions ?? throw new NullReferenceException("dispatch");
 			set => (this.dispatch ?? throw new NullReferenceException("dispatch")).directions = value;
 		}

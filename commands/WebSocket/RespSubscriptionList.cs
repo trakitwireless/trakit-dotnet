@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using trakit.objects;
+﻿using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
@@ -18,12 +17,12 @@ namespace trakit.commands {
 			/// <summary>
 			/// List of subscription types for the company.
 			/// </summary>
-			public List<SubscriptionType> subscriptionTypes;
+			public SubscriptionType[] subscriptionTypes;
 		}
 
 		/// <summary>
 		/// The list of your current subscription types.
 		/// </summary>
-		public List<Subscription> subscriptions;
+		public Subscription[] subscriptions;
 	}
 }

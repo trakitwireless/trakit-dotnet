@@ -37,7 +37,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// List of Places loaded directly onto the provider.
 		/// </summary>
-		public List<ulong> geofences;
+		public ulong[] geofences;
 
 		// IRequestable
 		/// <summary>

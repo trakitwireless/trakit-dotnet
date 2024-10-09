@@ -8,6 +8,6 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of keys given to this object so we can differentiate between null and undefined.
 		/// </summary>
-		public List<string> givenKeys;
+		public string[] givenKeys;
 	}
 }

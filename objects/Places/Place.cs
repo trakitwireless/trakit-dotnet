@@ -60,7 +60,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels { get; set; }
+		public string[] labels { get; set; }
 		/// <summary>
 		/// The fill colour given to this place for easy visual identification on the map (given in 24bit hex; #RRGGBB)
 		/// </summary>
@@ -74,7 +74,7 @@ namespace trakit.objects {
 		/// <seealso cref="Picture.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> pictures { get; set; }
+		public ulong[] pictures { get; set; }
 		/// <summary>
 		/// A custom field used to refer to an external system.
 		/// </summary>
@@ -92,7 +92,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// A list of points forming a non-self-intersecting polygon.
 		/// </summary>
-		public List<LatLng> points;
+		public LatLng[] points;
 
 		// IRequestable
 		/// <summary>

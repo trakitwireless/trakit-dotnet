@@ -90,11 +90,11 @@ namespace trakit.objects {
 		/// <summary>
 		/// After processing, the report totals the values from all summary instances for a quick overview of the kind of results generated.
 		/// </summary>
-		public List<ReportDataTotal> totals;
+		public ReportDataTotal[] totals;
 		/// <summary>
 		/// Scorecards for all the targeted assets based on the scorecard rules.
 		/// </summary>
-		public List<ReportScorecard> scorecards;
+		public ReportScorecard[] scorecards;
 		/// <summary>
 		/// A field which contains report error details if the <see cref="status"/> is <see cref="ReportStatus.failed"/>.
 		/// </summary>

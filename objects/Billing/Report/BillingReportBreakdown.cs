@@ -13,10 +13,10 @@ namespace trakit.objects {
 		/// <summary>
 		/// Individual amounts billed per targeted assets.
 		/// </summary>
-		public List<BillingReportServiceBreakdown> services;
+		public BillingReportServiceBreakdown[] services;
 		/// <summary>
 		/// Individual amounts for licensing per targeted providers.
 		/// </summary>
-		public List<BillingReportLicenseBreakdown> licenses;
+		public BillingReportLicenseBreakdown[] licenses;
 	}
 }

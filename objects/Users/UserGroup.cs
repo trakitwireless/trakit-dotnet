@@ -28,7 +28,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Permissions for this group.
 		/// </summary>
-		public List<Permission> permissions;
+		public Permission[] permissions;
 
 		// IRequestable
 		/// <summary>

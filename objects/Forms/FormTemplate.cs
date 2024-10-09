@@ -32,7 +32,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels { get; set; }
+		public string[] labels { get; set; }
 		/// <summary>
 		/// The fill/background colour of the icon.
 		/// </summary>
@@ -51,7 +51,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// All the user fillable fields by name.
 		/// </summary>
-		public List<FormFieldBase> fields;
+		public FormFieldBase[] fields;
 
 		// IRequestable
 		/// <summary>

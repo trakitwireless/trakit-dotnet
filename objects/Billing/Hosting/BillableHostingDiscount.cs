@@ -11,7 +11,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// The type of services being discounted.
 		/// </summary>
-		public List<BillableHostingType> services;
+		public BillableHostingType[] services;
 		/// <summary>
 		/// When true, the amount is used as a percentage value instead of a currency values.
 		/// </summary>

@@ -18,6 +18,6 @@ namespace trakit.objects {
 		/// <values format="phone" />
 		/// </values>
 		/// </override>
-		public Dictionary<string, List<ulong>> phoneNumbers;
+		public Dictionary<string, ulong[]> phoneNumbers;
 	}
 }

@@ -14,7 +14,7 @@ namespace trakit.objects {
 		/// <seealso cref="UserGeneral.login" />
 		/// </values>
 		/// </override>
-		public List<string> users;
+		public string[] users;
 		/// <summary>
 		/// A targeting expression to identify which assets receive the report results.
 		/// The results emailed to each asset will only be for themselves, not all assets.

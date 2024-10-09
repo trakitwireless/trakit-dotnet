@@ -26,7 +26,7 @@ namespace trakit.objects {
 		/// </values>
 		/// </values>
 		/// </override>
-		public Dictionary<string, List<ulong>> directory;
+		public Dictionary<string, ulong[]> directory;
 
 		// IRequestable
 		/// <summary>

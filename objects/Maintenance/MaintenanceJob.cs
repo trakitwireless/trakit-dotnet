@@ -94,7 +94,7 @@ namespace trakit.objects {
 		/// <seealso cref="Picture.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> pictures { get; set; }
+		public ulong[] pictures { get; set; }
 
 		// IRequestable
 		/// <summary>

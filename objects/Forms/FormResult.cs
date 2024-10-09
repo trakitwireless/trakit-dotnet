@@ -41,7 +41,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels { get; set; }
+		public string[] labels { get; set; }
 		/// <summary>
 		/// All the values for fillable fields by index.
 		/// </summary>

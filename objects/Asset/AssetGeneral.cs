@@ -42,7 +42,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> labels { get; set; }
+		public string[] labels { get; set; }
 		/// <summary>
 		/// A list of photos of this thing.
 		/// </summary>
@@ -51,7 +51,7 @@ namespace trakit.objects {
 		/// <seealso cref="Picture.id" />
 		/// </values>
 		/// </override>
-		public List<ulong> pictures { get; set; }
+		public ulong[] pictures { get; set; }
 		/// <summary>
 		/// The fall-back address which is used to send Messages if the asset is a Person and has no Contact phone or email.
 		/// </summary>

@@ -13,7 +13,7 @@ namespace trakit.objects {
 		/// <seealso cref="LabelStyle.code" />
 		/// </values>
 		/// </override>
-		public List<string> tags;
+		public string[] tags;
 		/// <summary>
 		/// Path to the image.
 		/// </summary>

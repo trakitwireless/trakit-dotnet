@@ -13,7 +13,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// Command message body.
 		/// </summary>
-		public List<string> parameters;
+		public string[] parameters;
 		/// <summary>
 		/// Date/time stamp of when the command was created.
 		/// </summary>
