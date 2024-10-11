@@ -1,4 +1,6 @@
-﻿namespace trakit.objects {
+﻿using trakit.objects;
+
+namespace trakit.commands {
 	/// <summary>
 	/// A container for the details of the <see cref="Machine"/> requested.
 	/// </summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace trakit.objects {
 	/// <summary>
@@ -9,6 +10,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// 
 		/// </summary>
+		[JsonIgnore]
 		protected override Component[] pieces => new Component[] {
 			this.general,
 			this.advanced,
@@ -40,6 +42,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// 
 		/// </summary>
+		[JsonIgnore]
 		public AssetGeneral general { get; set; }
 		/// <summary>
 		/// This thing's name.
@@ -111,6 +114,7 @@ namespace trakit.objects {
 		/// <summary>
 		/// 
 		/// </summary>
+		[JsonIgnore]
 		public AssetAdvanced advanced { get; set; }
 		/// <summary>
 		/// The things GPS coordinates including speed, bearing, and street information.
@@ -191,28 +195,6 @@ namespace trakit.objects {
 		/// 
 		/// </summary>
 		public AssetDispatch dispatch { get; set; }
-		/// <summary>
-		/// The current list of <see cref="DispatchJob"/>s assigned to the asset.
-		/// </summary>
-		/// <seealso cref="DispatchJob"/>
-		public ulong[] jobs {
-			get => this.dispatch?.jobs ?? throw new NullReferenceException("dispatch");
-			set => (this.dispatch ?? throw new NullReferenceException("dispatch")).jobs = value;
-		}
-		/// <summary>
-		/// Driving directions and route path details.
-		/// </summary>
-		public DispatchDirection[] directions {
-			get => this.dispatch?.directions ?? throw new NullReferenceException("dispatch");
-			set => (this.dispatch ?? throw new NullReferenceException("dispatch")).directions = value;
-		}
-		/// <summary>
-		/// Timestamp from the last update to this <see cref="AssetDispatch"/> by a <see cref="User"/>, <see cref="Machine"/>, <see cref="Asset"/>, or an assigned <see cref="DispatchJob"/>.
-		/// </summary>
-		public DateTime lastDispatched {
-			get => this.dispatch?.lastDispatched ?? throw new NullReferenceException("dispatch");
-			set => (this.dispatch ?? throw new NullReferenceException("dispatch")).lastDispatched = value;
-		}
 
 		// IRequestable
 		/// <summary>
