@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -11,6 +10,7 @@ namespace trakit.tools {
 	/// </summary>
 	public class ConvertAsset : TrakitConverter<Asset> {
 		public ConvertAsset(Serializer owner) : base(owner) { }
+		public override bool CanWrite => false;
 
 		public override Asset ReadJson(JsonReader reader, Type type, Asset asset, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
@@ -52,35 +52,7 @@ namespace trakit.tools {
 			return asset;
 		}
 		public override void WriteJson(JsonWriter writer, Asset asset, JsonSerializer serializer) {
-			var obj = new JObject(
-				new JProperty("id", asset.id),
-				new JProperty("company", asset.company),
-				new JProperty("v", asset.v)
-			);
-
-			// general
-			if (asset.general != null) {
-				foreach (var prop in JObject.FromObject(asset.general, serializer).Properties().Where(p => _valid(p))) {
-					obj.Add(prop);
-				}
-			}
-			// advanced
-			if (asset.advanced != null) {
-				foreach (var prop in JObject.FromObject(asset.advanced, serializer).Properties().Where(p => _valid(p))) {
-					obj.Add(prop);
-				}
-			}
-			// dispatch, jobs, and tasks
-			if (asset.dispatch != null) {
-				var dispatch = new JObject();
-				foreach (var prop in JObject.FromObject(asset.dispatch, serializer).Properties().Where(p => _valid(p))) {
-					dispatch.Add(prop);
-				}
-				obj.Add(new JProperty("dispatch", dispatch));
-			}
-
-			obj.WriteTo(writer);
+			throw new NotImplementedException();
 		}
-
 	}
 }
