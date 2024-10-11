@@ -94,15 +94,15 @@ namespace trakit.tools {
 		/// Converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
 		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
-		/// <param name="token">JSON of the <typeparamref name="T">desired output</typeparamref>.</param>
-		/// <returns>The <typeparamref name="T">desired output</typeparamref>.</returns>
+		/// <param name="token">JSON of the desired <typeparamref name="T">value</typeparamref>.</param>
+		/// <returns>The desired <typeparamref name="T">value</typeparamref>.</returns>
 		public T convert<T>(JToken token) => token.ToObject<T>(_newton);
 		/// <summary>
 		/// Attempts to converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
 		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
-		/// <param name="token">JSON of the <typeparamref name="T">desired output</typeparamref>.</param>
-		/// <param name="value"></param>
+		/// <param name="token">JSON of the desired <typeparamref name="T">value</typeparamref>.</param>
+		/// <param name="value">The desired <typeparamref name="T">value</typeparamref>.</param>
 		/// <returns>True when successful.</returns>
 		public bool tryConvert<T>(JToken token, out T value) {
 			bool success;
@@ -111,6 +111,30 @@ namespace trakit.tools {
 				success = true;
 			} catch {
 				value = default;
+				success = false;
+			}
+			return success;
+		}
+		/// <summary>
+		/// Converts the given <typeparamref name="T">value</typeparamref> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
+		/// </summary>
+		/// <typeparam name="T">Any object or struct.</typeparam>
+		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
+		/// <returns>The desired <see cref="JToken"/>.</returns>
+		public JToken convert<T>(T value) => JToken.FromObject(value, _newton);
+		/// <summary>
+		/// Attempts to converts the given <typeparamref name="T">value</typeparamref> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
+		/// </summary>
+		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
+		/// <param name="token">The desired <see cref="JToken"/>.</param>
+		/// <returns>True when successful.</returns>
+		public bool tryConvert<T>(T value, out JToken token) {
+			bool success;
+			try {
+				token = this.convert<T>(value);
+				success = true;
+			} catch {
+				token = default;
 				success = false;
 			}
 			return success;
