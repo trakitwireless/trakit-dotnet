@@ -4,7 +4,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// 
 	/// </summary>
-	public class RespAssetList : ResponseType {
+	public class RespAssetList : Response {
 		/// <summary>
 		/// 
 		/// </summary>

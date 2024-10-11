@@ -5,7 +5,7 @@ namespace trakit.commands {
 	/// The types of subscriptions available using <see cref="subscribe"/>/<see cref="unsubscribe"/>.
 	/// Each type has a different synchronization messages and objects.
 	/// </summary>
-	public class ReqSubscription : ParameterType {
+	public class ReqSubscription : Request {
 		/// <summary>
 		/// An object to contain the "id" key.
 		/// </summary>

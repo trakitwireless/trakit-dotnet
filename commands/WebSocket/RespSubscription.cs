@@ -5,7 +5,7 @@ namespace trakit.commands {
 	/// The types of subscriptions available using <see cref="TrakitSocket.subscribe"/>/<see cref="TrakitSocket.unsubscribe"/>.
 	/// Each type has a different synchronization messages and objects.
 	/// </summary>
-	public class RespSubscription : ResponseType {
+	public class RespSubscription : Response {
 		/// <summary>
 		/// An object which contains only one key "id" when there is no error.
 		/// The "id" key is the unique identifier of the company to which the array of objects relate.

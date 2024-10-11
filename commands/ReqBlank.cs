@@ -2,7 +2,7 @@
 
 namespace trakit.commands {
 	/// <summary>
-	/// Used for commands that require no other parameter values except the optional <see cref="ParameterType.reqId"/>.
+	/// Used for commands that require no other parameter values except the optional <see cref="Request.reqId"/>.
 	/// </summary>
-	public class ReqBlank : ParameterType { }
+	public class ReqBlank : Request { }
 }

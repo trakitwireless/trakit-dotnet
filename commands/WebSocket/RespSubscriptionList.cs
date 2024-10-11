@@ -4,7 +4,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// Gets the list of current subscriptions for your current session.
 	/// </summary>
-	public class RespSubscriptionList : ResponseType {
+	public class RespSubscriptionList : Response {
 		/// <summary>
 		/// Contains a <see cref="Company.id"/> and an array of <see cref="SubscriptionType"/>s for each <see cref="Company"/>.
 		/// </summary>
