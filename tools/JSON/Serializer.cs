@@ -14,9 +14,9 @@ namespace trakit.tools {
 		public const string DATETIME_FORMAT_ISO8601 = "yyyy-MM-ddTHH:mm:ss.fffZ";
 
 		// settings used by Trak-iT's APIs
-		JsonSerializerSettings _settings;
+		internal JsonSerializerSettings _settings;
 		// used to convert JObjects into Trak-iT classes
-		JsonSerializer _newton;
+		internal JsonSerializer newton;
 
 		public Serializer() {
 			_settings = new JsonSerializerSettings() {
@@ -30,13 +30,13 @@ namespace trakit.tools {
 				DateTimeFormat = DATETIME_FORMAT_ISO8601,
 			});
 			_settings.Converters.Add(new StringEnumConverter());
-			//this.settings.Converters.Add(new ConvertAsset());
-			//this.settings.Converters.Add(new ConvertCompany());
-			//this.settings.Converters.Add(new ConvertPlace());
-			//this.settings.Converters.Add(new ConvertPlace());
-			//this.settings.Converters.Add(new ConvertUser());
+			_settings.Converters.Add(new ConvertAsset(this));
+			_settings.Converters.Add(new ConvertCompany(this));
+			_settings.Converters.Add(new ConvertProvider(this));
+			_settings.Converters.Add(new ConvertPlace(this));
+			_settings.Converters.Add(new ConvertUser(this));
 
-			_newton = JsonSerializer.CreateDefault(_settings);
+			this.newton = JsonSerializer.CreateDefault(_settings);
 		}
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace trakit.tools {
 		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
 		/// <param name="token">JSON of the desired <typeparamref name="T">value</typeparamref>.</param>
 		/// <returns>The desired <typeparamref name="T">value</typeparamref>.</returns>
-		public T convert<T>(JToken token) => token.ToObject<T>(_newton);
+		public T convert<T>(JToken token) => token.ToObject<T>(this.newton);
 		/// <summary>
 		/// Attempts to converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
@@ -122,7 +122,7 @@ namespace trakit.tools {
 		/// <typeparam name="J">The kind of JSON token being returned.</typeparam>
 		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
 		/// <returns>The desired <see cref="JToken"/>.</returns>
-		public J convert<T, J>(T value) where J : JToken => (J)JToken.FromObject(value, _newton);
+		public J convert<T, J>(T value) where J : JToken => (J)JToken.FromObject(value, this.newton);
 		/// <summary>
 		/// Attempts to converts the given <typeparamref name="T">value</typeparamref> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
 		/// </summary>

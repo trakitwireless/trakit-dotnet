@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using trakit.objects;
 
 namespace trakit.tools {
@@ -7,7 +8,23 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertPlace : TrakitConverter<Place> {
-		public override Place ReadJson(JsonReader reader, Type objectType, Place existingValue, bool hasExistingValue, JsonSerializer serializer) => throw new NotImplementedException();
-		public override void WriteJson(JsonWriter writer, Place value, JsonSerializer serializer) => throw new NotImplementedException();
+		public ConvertPlace(Serializer owner) : base(owner) { }
+
+		public override Place ReadJson(JsonReader reader, Type type, Place place, bool existing, JsonSerializer serializer) {
+			var obj = JObject.Load(reader);
+			if (!Enum.TryParse(obj["kind"].ToString(), true, out PlaceType kind)) throw new JsonException();
+
+			switch (obj["points"]?.Type) {
+				case JTokenType.String:
+					// overwrite object
+					obj["points"] = JArray.FromObject(polyline.decode(obj["points"].ToString()));
+					break;
+			}
+			place = obj.ToObject<Place>(this.owner.newton);
+			return place;
+		}
+		public override void WriteJson(JsonWriter writer, Place place, JsonSerializer serializer) {
+
+		}
 	}
 }

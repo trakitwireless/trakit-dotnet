@@ -9,12 +9,17 @@ namespace trakit.tools {
 	/// </summary>
 	public static class polyline {
 		/// <summary>
+		/// 
+		/// </summary>
+		public const byte DEFAULT_PRECISION = 6;
+
+		/// <summary>
 		/// A C# implementation to encode a polyline using Google's Encoded Polyline algorithm.
 		/// </summary>
 		/// <param name="latlngs"></param>
 		/// <param name="precision"></param>
 		/// <returns>Encoded string</returns>
-		public static string encode(IEnumerable<LatLng> latlngs, byte precision = 5) {
+		public static string encode(IEnumerable<LatLng> latlngs, byte precision = DEFAULT_PRECISION) {
 			var encodedPoints = new StringBuilder();
 			Action<int> encode = (diff) => {
 				int shifted = diff << 1;
@@ -44,7 +49,7 @@ namespace trakit.tools {
 		/// <param name="encodedPoints"></param>
 		/// <param name="precision"></param>
 		/// <returns></returns>
-		public static IEnumerable<LatLng> decode(string encodedPoints, byte precision = 5) {
+		public static IEnumerable<LatLng> decode(string encodedPoints, byte precision = DEFAULT_PRECISION) {
 			if (string.IsNullOrEmpty(encodedPoints)) throw new ArgumentNullException("encodedPoints");
 
 			var polylineChars = encodedPoints.ToCharArray();
