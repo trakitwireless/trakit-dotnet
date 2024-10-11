@@ -119,19 +119,22 @@ namespace trakit.tools {
 		/// Converts the given <typeparamref name="T">value</typeparamref> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
 		/// </summary>
 		/// <typeparam name="T">Any object or struct.</typeparam>
+		/// <typeparam name="J">The kind of JSON token being returned.</typeparam>
 		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
 		/// <returns>The desired <see cref="JToken"/>.</returns>
-		public JToken convert<T>(T value) => JToken.FromObject(value, _newton);
+		public J convert<T, J>(T value) where J : JToken => (J)JToken.FromObject(value, _newton);
 		/// <summary>
 		/// Attempts to converts the given <typeparamref name="T">value</typeparamref> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
 		/// </summary>
+		/// <typeparam name="T">Any object or struct.</typeparam>
+		/// <typeparam name="J">The kind of JSON token being returned.</typeparam>
 		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
 		/// <param name="token">The desired <see cref="JToken"/>.</param>
 		/// <returns>True when successful.</returns>
-		public bool tryConvert<T>(T value, out JToken token) {
+		public bool tryConvert<T, J>(T value, out J token) where J : JToken {
 			bool success;
 			try {
-				token = this.convert<T>(value);
+				token = this.convert<T, J>(value);
 				success = true;
 			} catch {
 				token = default;
