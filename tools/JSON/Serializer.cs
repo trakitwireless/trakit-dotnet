@@ -1,54 +1,57 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 
 namespace trakit.tools {
 	/// <summary>
-	/// 
+	/// JSON serialization helper that abides by the rules and settings of the Trak-iT APIs.
 	/// </summary>
 	public class Serializer {
 		/// <summary>
-		/// 
+		/// The full ISO8601 date/time string with seconds and milliseconds.
+		/// All date/time stamps in the Trak-iT APIs are given in UTC unless otherwise specified.
 		/// </summary>
 		public const string DATETIME_FORMAT_ISO8601 = "yyyy-MM-ddTHH:mm:ss.fffZ";
-		/// <summary>
-		/// 
-		/// </summary>
-		JsonSerializerSettings settings = new JsonSerializerSettings();
+
+		// settings used by Trak-iT's APIs
+		JsonSerializerSettings _settings;
+		// used to convert JObjects into Trak-iT classes
+		JsonSerializer _newton;
 
 		public Serializer() {
-			this.settings.DateParseHandling = DateParseHandling.None;
-			this.settings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-			this.settings.MaxDepth = 128; // https://github.com/advisories/GHSA-5crp-9r3c-p9vr
+			_settings = new JsonSerializerSettings() {
+				Formatting = Formatting.None,
+				DateParseHandling = DateParseHandling.None,
+				DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+			};
 
-			// Converts a DateTime to and from the ISO 8601 date format 
-			this.settings.Converters.Add(new IsoDateTimeConverter() {
+			// Converts a DateTime to and from the ISO 8601 date format (with seconds and milliseconds)
+			_settings.Converters.Add(new IsoDateTimeConverter() {
 				DateTimeFormat = DATETIME_FORMAT_ISO8601,
 			});
-
-
-			this.settings.Converters.Add(new StringEnumConverter());
+			_settings.Converters.Add(new StringEnumConverter());
 			//this.settings.Converters.Add(new ConvertAsset());
 			//this.settings.Converters.Add(new ConvertCompany());
 			//this.settings.Converters.Add(new ConvertPlace());
 			//this.settings.Converters.Add(new ConvertPlace());
 			//this.settings.Converters.Add(new ConvertUser());
+
+			_newton = JsonSerializer.CreateDefault(_settings);
 		}
 
 		/// <summary>
-		/// 
+		/// Serializes the given value that abides the rules of Trak-iT's APIs.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		public string serialize<T>(T value) => JsonConvert.SerializeObject(value, this.settings);
-
+		/// <typeparam name="T">Any object or struct.</typeparam>
+		/// <param name="value">The value to serialize.</param>
+		/// <returns>The serialized value.</returns>
+		public string serialize<T>(T value) => JsonConvert.SerializeObject(value, _settings);
 		/// <summary>
-		/// Attempts to deserialize the given string and outs the value.
-		/// If an exception is thrown, false is returned, and null is outputted.
+		/// Attempts to serialize the given value that abides the rules of Trak-iT's APIs.
 		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
+		/// <param name="value">The value to serialize.</param>
+		/// <param name="text">The serialized value.</param>
+		/// <returns>True when successful.</returns>
 		public bool trySerialize<T>(T value, out string text) {
 			bool success;
 			try {
@@ -62,23 +65,49 @@ namespace trakit.tools {
 		}
 
 		/// <summary>
-		/// 
+		/// Deserializes the given text into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		public T deserialize<T>(string value) => JsonConvert.DeserializeObject<T>(value, this.settings);
+		/// <typeparam name="T">Any object or struct.</typeparam>
+		/// <param name="text">The serialized value.</param>
+		/// <returns>The <typeparamref name="T">object or struct</typeparamref>.</returns>
+		public T deserialize<T>(string text) => JsonConvert.DeserializeObject<T>(text, _settings);
 		/// <summary>
-		/// Attempts to deserialize the given string and outs the value.
-		/// If an exception is thrown, false is returned, and null is outputted.
+		/// Attempts to deserializes the given text into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
+		/// <typeparam name="T">Any object or struct.</typeparam>
+		/// <param name="text">The serialized value.</param>
+		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
+		/// <returns>True when successful.</returns>
 		public bool tryDeserialize<T>(string text, out T value) {
 			bool success;
 			try {
 				value = this.deserialize<T>(text);
+				success = true;
+			} catch {
+				value = default;
+				success = false;
+			}
+			return success;
+		}
+
+		/// <summary>
+		/// Converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
+		/// </summary>
+		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
+		/// <param name="token">JSON of the <typeparamref name="T">desired output</typeparamref>.</param>
+		/// <returns>The <typeparamref name="T">desired output</typeparamref>.</returns>
+		public T convert<T>(JToken token) => token.ToObject<T>(_newton);
+		/// <summary>
+		/// Attempts to converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
+		/// </summary>
+		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
+		/// <param name="token">JSON of the <typeparamref name="T">desired output</typeparamref>.</param>
+		/// <param name="value"></param>
+		/// <returns>True when successful.</returns>
+		public bool tryConvert<T>(JToken token, out T value) {
+			bool success;
+			try {
+				value = this.convert<T>(token);
 				success = true;
 			} catch {
 				value = default;
