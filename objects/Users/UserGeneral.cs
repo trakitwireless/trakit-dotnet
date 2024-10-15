@@ -39,8 +39,7 @@ namespace trakit.objects {
 		/// The user's local timezone.
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
-		/// <override type="System.String" format="codified" />
-		public string timezone { get; set; }
+		public Timezone timezone { get; set; }
 		/// <summary>
 		/// Preferred region/language for the UI and notifications.
 		/// Valid formats use &lt;ISO 639-1&gt;&lt;dash&gt;&lt;ISO 3166-2&gt; such as "fr-CA" or "en-US".

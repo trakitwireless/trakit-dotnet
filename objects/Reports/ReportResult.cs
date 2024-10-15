@@ -50,8 +50,7 @@ namespace trakit.objects {
 		/// The timezone code used to adjust dates/times used in processing and saving this report.
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
-		/// <override type="System.String" format="codified" />
-		public TimeZoneInfo timezone;
+		public Timezone timezone;
 		/// <summary>
 		/// The login of the user that ran this report.
 		/// </summary>

@@ -9,7 +9,7 @@ namespace trakit.objects {
 		/// The local timezone for this object.
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
-		string timezone { get; }
+		Timezone timezone { get; }
 		/// <summary>
 		/// Preferred region/language for the UI and notifications.
 		/// Valid formats use &lt;ISO 639-1&gt;&lt;dash&gt;&lt;ISO 3166-2&gt; such as "fr-CA" or "en-US".

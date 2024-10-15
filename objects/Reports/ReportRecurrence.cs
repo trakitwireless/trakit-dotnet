@@ -22,9 +22,8 @@ namespace trakit.objects {
 		/// The local timezone used to calculate recurring date/time ranges.
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
-		/// <override type="System.String" format="codified" />
 		[Obsolete("Use owner.timezone instead")]
-		public TimeZoneInfo timezone;
+		public Timezone timezone;
 		/// <summary>
 		/// When the schedule is to begin recurring in local-time (not UTC).
 		/// </summary>

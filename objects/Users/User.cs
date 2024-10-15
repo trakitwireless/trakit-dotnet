@@ -68,8 +68,7 @@ namespace trakit.objects {
 		/// The user's local timezone.
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
-		/// <override type="System.String" format="codified" />
-		public string timezone {
+		public Timezone timezone {
 			get => this.general?.timezone ?? throw new NullReferenceException("general");
 			set => (this.general ?? throw new NullReferenceException("general")).timezone = value;
 		}
