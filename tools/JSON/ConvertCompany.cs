@@ -9,8 +9,6 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertCompany : TrakitConverter<Company> {
-		public ConvertCompany(Serializer owner) : base(owner) { }
-
 		public override Company deconvert(JsonReader reader, Type type, Company company, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (
@@ -18,22 +16,21 @@ namespace trakit.tools {
 				|| bool.TryParse(obj["suspended"]?.ToString(), out _)
 			) {
 				company = new Company() {
-					general = obj.ToObject<CompanyGeneral>(this.owner.newton),
+					general = obj.ToObject<CompanyGeneral>(serializer),
 				};
 			} else {
 				company = new Company() {
-					general = obj.ToObject<CompanyGeneral>(this.owner.newton),
-					directory = obj.ToObject<CompanyDirectory>(this.owner.newton),
-					policies = obj.ToObject<CompanyPolicies>(this.owner.newton),
-					styles = obj.ToObject<CompanyStyles>(this.owner.newton),
+					general = obj.ToObject<CompanyGeneral>(serializer),
+					directory = obj.ToObject<CompanyDirectory>(serializer),
+					policies = obj.ToObject<CompanyPolicies>(serializer),
+					styles = obj.ToObject<CompanyStyles>(serializer),
 				};
 				if (obj["reseller"]?.Type == JTokenType.Object) {
-					company.reseller = obj["reseller"].ToObject<CompanyReseller>(this.owner.newton);
+					company.reseller = obj["reseller"].ToObject<CompanyReseller>(serializer);
 				}
 				company.v = obj["v"].Select(p => (int)p).ToArray();
 			}
 			return company;
 		}
-		public override void convert(JsonWriter writer, Company value, JsonSerializer serializer) => throw new NotImplementedException();
 	}
 }

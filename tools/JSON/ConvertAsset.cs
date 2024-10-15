@@ -9,9 +9,6 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertAsset : TrakitConverter<Asset> {
-		//public override bool CanWrite => false;
-		public ConvertAsset(Serializer owner) : base(owner) { }
-
 		public override Asset deconvert(JsonReader reader, Type type, Asset asset, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"]?.ToString(), true, out AssetType kind)) throw new JsonException();
@@ -22,22 +19,22 @@ namespace trakit.tools {
 				switch (kind) {
 					case AssetType.person:
 						asset = new Person() {
-							general = obj.ToObject<PersonGeneral>(this.owner.newton),
+							general = obj.ToObject<PersonGeneral>(serializer),
 						};
 						break;
 					case AssetType.vehicle:
 						asset = new Vehicle() {
-							general = obj.ToObject<VehicleGeneral>(this.owner.newton),
+							general = obj.ToObject<VehicleGeneral>(serializer),
 						};
 						break;
 					case AssetType.trailer:
 						asset = new Trailer() {
-							general = obj.ToObject<TrailerGeneral>(this.owner.newton),
+							general = obj.ToObject<TrailerGeneral>(serializer),
 						};
 						break;
 					case AssetType.asset:
 						asset = new Asset() {
-							general = obj.ToObject<AssetGeneral>(this.owner.newton),
+							general = obj.ToObject<AssetGeneral>(serializer),
 						};
 						break;
 				}
@@ -46,30 +43,30 @@ namespace trakit.tools {
 				switch (kind) {
 					case AssetType.person:
 						asset = new Person() {
-							general = obj.ToObject<PersonGeneral>(this.owner.newton),
-							advanced = obj.ToObject<AssetAdvanced>(this.owner.newton),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(this.owner.newton),
+							general = obj.ToObject<PersonGeneral>(serializer),
+							advanced = obj.ToObject<AssetAdvanced>(serializer),
+							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 					case AssetType.vehicle:
 						asset = new Vehicle() {
-							general = obj.ToObject<VehicleGeneral>(this.owner.newton),
-							advanced = obj.ToObject<VehicleAdvanced>(this.owner.newton),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(this.owner.newton),
+							general = obj.ToObject<VehicleGeneral>(serializer),
+							advanced = obj.ToObject<VehicleAdvanced>(serializer),
+							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 					case AssetType.trailer:
 						asset = new Trailer() {
-							general = obj.ToObject<TrailerGeneral>(this.owner.newton),
-							advanced = obj.ToObject<AssetAdvanced>(this.owner.newton),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(this.owner.newton),
+							general = obj.ToObject<TrailerGeneral>(serializer),
+							advanced = obj.ToObject<AssetAdvanced>(serializer),
+							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 					case AssetType.asset:
 						asset = new Asset() {
-							general = obj.ToObject<AssetGeneral>(this.owner.newton),
-							advanced = obj.ToObject<AssetAdvanced>(this.owner.newton),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(this.owner.newton),
+							general = obj.ToObject<AssetGeneral>(serializer),
+							advanced = obj.ToObject<AssetAdvanced>(serializer),
+							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 				}

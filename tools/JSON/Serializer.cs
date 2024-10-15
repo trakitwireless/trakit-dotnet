@@ -7,12 +7,6 @@ namespace trakit.tools {
 	/// JSON serialization helper that abides by the rules and settings of the Trak-iT APIs.
 	/// </summary>
 	public class Serializer {
-		/// <summary>
-		/// The full ISO8601 date/time string with seconds and milliseconds.
-		/// All date/time stamps in the Trak-iT APIs are given in UTC unless otherwise specified.
-		/// </summary>
-		public const string DATETIME_FORMAT_ISO8601 = "yyyy-MM-ddTHH:mm:ss.fffZ";
-
 		// settings used by Trak-iT's APIs
 		internal JsonSerializerSettings _settings;
 		// used to convert JObjects into Trak-iT classes
@@ -27,14 +21,15 @@ namespace trakit.tools {
 
 			// Converts a DateTime to and from the ISO 8601 date format (with seconds and milliseconds)
 			_settings.Converters.Add(new IsoDateTimeConverter() {
-				DateTimeFormat = DATETIME_FORMAT_ISO8601,
+				DateTimeFormat = text.DATETIME_FORMAT_ISO8601,
 			});
 			_settings.Converters.Add(new StringEnumConverter());
-			_settings.Converters.Add(new ConvertAsset(this));
-			_settings.Converters.Add(new ConvertCompany(this));
-			_settings.Converters.Add(new ConvertProvider(this));
-			_settings.Converters.Add(new ConvertPlace(this));
-			_settings.Converters.Add(new ConvertUser(this));
+			_settings.Converters.Add(new ConvertAsset());
+			_settings.Converters.Add(new ConvertCompany());
+			_settings.Converters.Add(new ConvertProvider());
+			_settings.Converters.Add(new ConvertPlace());
+			_settings.Converters.Add(new ConvertUser());
+			_settings.Converters.Add(new ConvertTimezone());
 
 			this.newton = JsonSerializer.CreateDefault(_settings);
 		}

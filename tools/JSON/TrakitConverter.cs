@@ -1,6 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json;
-using trakit.objects;
 
 namespace trakit.tools {
 	/// <summary>
@@ -10,7 +9,7 @@ namespace trakit.tools {
 	/// Inspiration for this approach was taken from https://github.com/JamesNK/Newtonsoft.Json/issues/719#issuecomment-2103805140
 	/// Which was itself inspired by https://stackoverflow.com/questions/16085805/recursively-call-jsonserializer-in-a-jsonconverter/76705937#76705937
 	/// </remarks>
-	public abstract class TrakitConverter<T> : JsonConverter<T>  /*where T : Component*/ {
+	public abstract class TrakitConverter<T> : JsonConverter<T> {
 		/// <summary>
 		/// 
 		/// </summary>
@@ -34,11 +33,6 @@ namespace trakit.tools {
 		/// 
 		/// </summary>
 		public override sealed bool CanWrite => !_isWriting;
-
-		public TrakitConverter(Serializer owner) {
-			this.owner = owner;
-		}
-
 
 		/// <summary>
 		/// 

@@ -8,8 +8,6 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertPlace : TrakitConverter<Place> {
-		public ConvertPlace(Serializer owner) : base(owner) { }
-
 		public override Place deconvert(JsonReader reader, Type type, Place place, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"].ToString(), true, out PlaceType kind)) throw new JsonException();
@@ -20,9 +18,8 @@ namespace trakit.tools {
 					obj["points"] = JArray.FromObject(polyline.decode(obj["points"].ToString()));
 					break;
 			}
-			place = obj.ToObject<Place>(this.owner.newton);
+			place = obj.ToObject<Place>(serializer);
 			return place;
 		}
-		public override void convert(JsonWriter writer, Place value, JsonSerializer serializer) => throw new NotImplementedException();
 	}
 }
