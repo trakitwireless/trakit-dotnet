@@ -14,6 +14,12 @@ namespace trakit.objects {
 		/// </summary>
 		protected abstract Component[] pieces { get; }
 
+		protected Compound() {
+			this.v = Enumerable.Range(0, this.pieces.Length)
+							.Select(n => -1)
+							.ToArray();
+		}
+
 		/// <summary>
 		/// Compound objects have multiple <see cref="v"/> values; one for each part of the object.
 		/// </summary>
@@ -21,9 +27,7 @@ namespace trakit.objects {
 			get => this.pieces.Select(p => p?.v[0] ?? -1).ToArray();
 			set {
 				for (int i = 0; i < value.Length; i++) {
-					if (this.pieces[i] != null) {
-						this.pieces[i].v = new[] { value[i] };
-					}
+					this.pieces[i].v[0] = value[i];
 				}
 			}
 		}
