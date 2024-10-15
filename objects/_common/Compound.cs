@@ -7,7 +7,7 @@ namespace trakit.objects {
 	/// <seealso cref="Asset"/>
 	/// <seealso cref="Company"/>
 	/// <seealso cref="Provider"/>
-	/// <seealso cref="Company"/>
+	/// <seealso cref="User"/>
 	public abstract class Compound : Component {
 		/// <summary>
 		/// A list of individually subscribable objects that make up the compound object.

@@ -3,7 +3,7 @@ using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
-	/// A container for the id and owning <see cref="Company.id"/> of the object requested/created.
+	/// A container for the requested <see cref="assets"/>.
 	/// </summary>
 	public abstract class RespListAsset : Response {
 		/// <summary>
@@ -26,7 +26,7 @@ namespace trakit.commands {
 	/// </summary>
 	public class RespListAssetByCompanyAndLabels : RespListAssetByCompany {
 		/// <summary>
-		/// The labels given as input.
+		/// The parsed labels given as input.
 		/// </summary>
 		/// <seealso cref="AssetGeneral.labels"/>
 		public string[] labels;
@@ -36,7 +36,7 @@ namespace trakit.commands {
 	/// </summary>
 	public class RespListAssetByCompanyAndRefPairs : RespListAssetByCompany {
 		/// <summary>
-		/// The reference string given as input.
+		/// The parsed references given as input.
 		/// </summary>
 		/// <seealso cref="AssetGeneral.references"/>
 		public Dictionary<string, string> references;

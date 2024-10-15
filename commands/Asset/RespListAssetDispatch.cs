@@ -3,7 +3,7 @@ using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
-	/// A container for the <see cref="assetDispatches"/> collection.
+	/// A container for the requested <see cref="assetDispatches"/>.
 	/// </summary>
 	public abstract class RespListAssetDispatch : Response {
 		/// <summary>
