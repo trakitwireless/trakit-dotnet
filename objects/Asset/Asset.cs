@@ -207,14 +207,14 @@ namespace trakit.objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted => this.general?.deleted ?? throw new NullReferenceException("general");
+		public bool? deleted => this.general?.deleted;
 		/// <summary>
 		/// Indicates whether this object is suspended from event processing.
 		/// </summary>
-		public bool? suspended => this.general?.suspended ?? throw new NullReferenceException("general");
+		public bool? suspended => this.general?.suspended;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since => this.general?.since ?? throw new NullReferenceException("general");
+		public DateTime? since => this.general?.since;
 	}
 }

@@ -154,10 +154,10 @@ namespace trakit.objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted { get; set; }
+		public bool? deleted => this.general?.deleted;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since { get; set; }
+		public DateTime? since => this.general?.since;
 	}
 }

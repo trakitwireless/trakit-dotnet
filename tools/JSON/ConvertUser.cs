@@ -9,7 +9,6 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertUser : TrakitConverter<User> {
-		public override bool CanWrite => false;
 		public ConvertUser(Serializer owner) : base(owner) { }
 
 		public override User deconvert(JsonReader reader, Type type, User user, bool existing, JsonSerializer serializer) {

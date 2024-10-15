@@ -10,7 +10,7 @@ namespace trakit.tools {
 	/// Inspiration for this approach was taken from https://github.com/JamesNK/Newtonsoft.Json/issues/719#issuecomment-2103805140
 	/// Which was itself inspired by https://stackoverflow.com/questions/16085805/recursively-call-jsonserializer-in-a-jsonconverter/76705937#76705937
 	/// </remarks>
-	public abstract class TrakitConverter<T> : JsonConverter /*where T : Component*/ {
+	public abstract class TrakitConverter<T> : JsonConverter<T>  /*where T : Component*/ {
 		/// <summary>
 		/// 
 		/// </summary>
@@ -26,19 +26,19 @@ namespace trakit.tools {
 		/// 
 		/// </summary>
 		protected Serializer owner;
-		public override bool CanConvert(Type objectType) => typeof(T).IsAssignableFrom(objectType);
 		/// <summary>
 		/// 
 		/// </summary>
-		public override bool CanRead => !_isReading && base.CanRead;
+		public override sealed bool CanRead => !_isReading;
 		/// <summary>
 		/// 
 		/// </summary>
-		public override bool CanWrite => !_isWriting && base.CanWrite;
+		public override sealed bool CanWrite => !_isWriting;
 
 		public TrakitConverter(Serializer owner) {
 			this.owner = owner;
 		}
+
 
 		/// <summary>
 		/// 
@@ -50,10 +50,11 @@ namespace trakit.tools {
 		/// <param name="serializer"></param>
 		/// <returns></returns>
 		/// <exception cref="InvalidOperationException"></exception>
-		public override sealed object ReadJson(
+		public override sealed T ReadJson(
 			JsonReader reader,
 			Type type,
-			object value,
+			T value,
+			bool existing,
 			JsonSerializer serializer
 		) {
 			if (_isReading) {
@@ -62,7 +63,7 @@ namespace trakit.tools {
 			}
 			_isReading = true;
 			try {
-				return this.deconvert(reader, type, (T)value, false, serializer);
+				return this.deconvert(reader, type, value, false, serializer);
 			} finally {
 				_isReading = false;
 			}
@@ -76,7 +77,7 @@ namespace trakit.tools {
 		/// <exception cref="InvalidOperationException"></exception>
 		public override sealed void WriteJson(
 			JsonWriter writer,
-			object value,
+			T value,
 			JsonSerializer serializer
 		) {
 			if (_isReading) {
@@ -85,7 +86,7 @@ namespace trakit.tools {
 			}
 			_isWriting = true;
 			try {
-				this.convert(writer, (T)value, serializer);
+				this.convert(writer, value, serializer);
 			} finally {
 				_isWriting = false;
 			}
@@ -100,23 +101,23 @@ namespace trakit.tools {
 		/// <param name="existing"></param>
 		/// <param name="serializer"></param>
 		/// <returns></returns>
-		public abstract T deconvert(
+		public virtual T deconvert(
 			JsonReader reader,
 			Type type,
 			T value,
 			bool existing,
 			JsonSerializer serializer
-		);
+		) => serializer.Deserialize<T>(reader);
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <param name="writer"></param>
 		/// <param name="value"></param>
 		/// <param name="serializer"></param>
-		public abstract void convert(
+		public virtual void convert(
 			JsonWriter writer,
 			T value,
 			JsonSerializer serializer
-		);
+		) => serializer.Serialize(writer, value);
 	}
 }
