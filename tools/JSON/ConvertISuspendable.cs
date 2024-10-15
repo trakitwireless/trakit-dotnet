@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using trakit.objects;
@@ -10,19 +9,20 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertISuspendable : TrakitConverter<ISuspendable> {
-		public ConvertISuspendable(Serializer owner) : base(owner) { }
 		public override bool CanRead => false;
+		public ConvertISuspendable(Serializer owner) : base(owner) { }
 
-		public override ISuspendable ReadJson(JsonReader reader, Type type, ISuspendable asset, bool existing, JsonSerializer serializer) {
-			throw new NotImplementedException("IDeltable interface; cannot create objects");
-		}
-		public override void WriteJson(JsonWriter writer, ISuspendable value, JsonSerializer serializer) {
+		public override ISuspendable deconvert(JsonReader reader, Type type, ISuspendable value, bool existing, JsonSerializer serializer) => throw new NotImplementedException();
+		public override void convert(JsonWriter writer, ISuspendable value, JsonSerializer serializer) {
 			if (value?.suspended ?? false) {
 				var obj = new JObject(
 					new JProperty("suspended", true),
 					new JProperty("since", value.since ?? DateTime.MinValue)
 				);
 
+				if (value is IBelongCompany companyObj) {
+					obj.Add(new JProperty("company", companyObj.company));
+				}
 				if (value is AssetGeneral asset) {
 					obj.Add(new JProperty("id", asset.id));
 					obj.Add(new JProperty("name", asset.name));
@@ -40,15 +40,10 @@ namespace trakit.tools {
 					throw new NotImplementedException("ISuspendable not implemented for " + value.GetType().Name);
 				}
 
-				if (value is IBelongCompany companyObj) {
-					obj.Add(new JProperty("company", companyObj.company));
-				}
-
-				obj.WriteTo(writer);
+				obj.WriteTo(writer, this.owner.newton.Converters.ToArray());
 			} else {
-
+				serializer.Serialize(writer, value);
 			}
-
 		}
 	}
 }

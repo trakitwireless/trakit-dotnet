@@ -10,7 +10,7 @@ namespace trakit.tools {
 	public class ConvertPlace : TrakitConverter<Place> {
 		public ConvertPlace(Serializer owner) : base(owner) { }
 
-		public override Place ReadJson(JsonReader reader, Type type, Place place, bool existing, JsonSerializer serializer) {
+		public override Place deconvert(JsonReader reader, Type type, Place place, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"].ToString(), true, out PlaceType kind)) throw new JsonException();
 
@@ -23,8 +23,6 @@ namespace trakit.tools {
 			place = obj.ToObject<Place>(this.owner.newton);
 			return place;
 		}
-		public override void WriteJson(JsonWriter writer, Place place, JsonSerializer serializer) {
-
-		}
+		public override void convert(JsonWriter writer, Place value, JsonSerializer serializer) => throw new NotImplementedException();
 	}
 }

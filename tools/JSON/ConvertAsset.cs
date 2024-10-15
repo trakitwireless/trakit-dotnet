@@ -9,10 +9,10 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertAsset : TrakitConverter<Asset> {
+		//public override bool CanWrite => false;
 		public ConvertAsset(Serializer owner) : base(owner) { }
-		public override bool CanWrite => false;
 
-		public override Asset ReadJson(JsonReader reader, Type type, Asset asset, bool existing, JsonSerializer serializer) {
+		public override Asset deconvert(JsonReader reader, Type type, Asset asset, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"].ToString(), true, out AssetType kind)) throw new JsonException();
 
@@ -51,8 +51,6 @@ namespace trakit.tools {
 			asset.v = obj["v"].Select(p => (int)p).ToArray();
 			return asset;
 		}
-		public override void WriteJson(JsonWriter writer, Asset asset, JsonSerializer serializer) {
-			throw new NotImplementedException();
-		}
+		public override void convert(JsonWriter writer, Asset value, JsonSerializer serializer) => throw new NotImplementedException();
 	}
 }

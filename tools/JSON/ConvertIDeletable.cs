@@ -10,13 +10,11 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertIDeletable : TrakitConverter<IDeletable> {
-		public ConvertIDeletable(Serializer owner) : base(owner) { }
 		public override bool CanRead => false;
+		public ConvertIDeletable(Serializer owner) : base(owner) { }
 
-		public override IDeletable ReadJson(JsonReader reader, Type type, IDeletable asset, bool existing, JsonSerializer serializer) {
-			throw new NotImplementedException("IDeltable interface; cannot create objects");
-		}
-		public override void WriteJson(JsonWriter writer, IDeletable value, JsonSerializer serializer) {
+		public override IDeletable deconvert(JsonReader reader, Type type, IDeletable value, bool existing, JsonSerializer serializer) => throw new NotImplementedException();
+		public override void convert(JsonWriter writer, IDeletable value, JsonSerializer serializer) {
 			if (value?.deleted ?? false) {
 				var obj = new JObject(
 					new JProperty("deleted", true),
@@ -78,11 +76,10 @@ namespace trakit.tools {
 					obj.Add(new JProperty("profile", profileObj.profile));
 				}
 
-				obj.WriteTo(writer);
+				obj.WriteTo(writer, this.owner.newton.Converters.ToArray());
 			} else {
-				base.WriteJson(writer, value, serializer);
+				serializer.Serialize(writer, value);
 			}
-
 		}
 	}
 }

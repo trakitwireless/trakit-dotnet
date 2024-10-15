@@ -30,11 +30,13 @@ namespace trakit.tools {
 				DateTimeFormat = DATETIME_FORMAT_ISO8601,
 			});
 			_settings.Converters.Add(new StringEnumConverter());
+			_settings.Converters.Add(new ConvertIDeletable(this));
+			_settings.Converters.Add(new ConvertISuspendable(this));
 			_settings.Converters.Add(new ConvertAsset(this));
-			_settings.Converters.Add(new ConvertCompany(this));
-			_settings.Converters.Add(new ConvertProvider(this));
-			_settings.Converters.Add(new ConvertPlace(this));
-			_settings.Converters.Add(new ConvertUser(this));
+			//_settings.Converters.Add(new ConvertCompany(this));
+			//_settings.Converters.Add(new ConvertProvider(this));
+			//_settings.Converters.Add(new ConvertPlace(this));
+			//_settings.Converters.Add(new ConvertUser(this));
 
 			this.newton = JsonSerializer.CreateDefault(_settings);
 		}
