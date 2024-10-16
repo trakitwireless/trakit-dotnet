@@ -47,14 +47,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="100" />
 		public string name {
-			get => this.general?.name ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).name;
 			set => (this.general ?? throw new NullReferenceException("general")).name = value;
 		}
 		/// <summary>
 		/// Notes about it.
 		/// </summary>
 		public string notes {
-			get => this.general?.notes ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).notes;
 			set => (this.general ?? throw new NullReferenceException("general")).notes = value;
 		}
 		/// <summary>
@@ -62,7 +62,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Asset.id" />
 		public ulong? asset {
-			get => this.general?.asset ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).asset;
 			set => (this.general ?? throw new NullReferenceException("general")).asset = value;
 		}
 		/// <summary>
@@ -71,7 +71,7 @@ namespace trakit.objects {
 		/// <seealso cref="ProviderConfig.id" />
 		/// <seealso cref="ProviderConfiguration.id" />
 		public ulong configuration {
-			get => this.general?.configuration ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).configuration;
 			set => (this.general ?? throw new NullReferenceException("general")).configuration = value;
 		}
 		/// <summary>
@@ -79,7 +79,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string password {
-			get => this.general?.password ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).password;
 			set => (this.general ?? throw new NullReferenceException("general")).password = value;
 		}
 		/// <summary>
@@ -87,7 +87,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="100" />
 		public string firmware {
-			get => this.general?.firmware ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).firmware;
 			set => (this.general ?? throw new NullReferenceException("general")).firmware = value;
 		}
 		/// <summary>
@@ -95,7 +95,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override format="phone" />
 		public ulong? phoneNumber {
-			get => this.general?.phoneNumber ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).phoneNumber;
 			set => (this.general ?? throw new NullReferenceException("general")).phoneNumber = value;
 		}
 		/// <summary>
@@ -107,14 +107,14 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<string, string> information {
-			get => this.general?.information ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).information;
 			set => (this.general ?? throw new NullReferenceException("general")).information = value;
 		}
 		/// <summary>
 		/// ICCID of the SIM card installed in this provider
 		/// </summary>
 		public string sim {
-			get => this.general?.sim ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).sim;
 			set => (this.general ?? throw new NullReferenceException("general")).sim = value;
 		}
 
@@ -127,21 +127,21 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override type="System.String" format="ipv4" />
 		public IPEndPoint lastIP {
-			get => this.advanced?.lastIP ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).lastIP;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).lastIP = value;
 		}
 		/// <summary>
 		/// Often changing values like latitude, longitude, speed, wiring state, VBus information, etc...
 		/// </summary>
 		public Dictionary<string, Dictionary<string, ProviderData>> attributes {
-			get => this.advanced?.attributes ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).attributes;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).attributes = value;
 		}
 		/// <summary>
 		/// Store-and-forward information like last sequence number of SnF window
 		/// </summary>
 		public Dictionary<string, string> snf {
-			get => this.advanced?.snf ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).snf;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).snf = value;
 		}
 
@@ -153,7 +153,7 @@ namespace trakit.objects {
 		/// Collection of commands for this provider.
 		/// </summary>
 		public Dictionary<ProviderCommandType, ProviderCommand> commands {
-			get => this.control?.commands ?? throw new NullReferenceException("control");
+			get => (this.control ?? throw new NullReferenceException("control")).commands;
 			set => (this.control ?? throw new NullReferenceException("control")).commands = value;
 		}
 
@@ -168,14 +168,14 @@ namespace trakit.objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted => this.general?.deleted;
+		public bool? deleted => (this.general ?? throw new NullReferenceException("general")).deleted;
 		/// <summary>
 		/// Indicates whether this object is suspended from event processing.
 		/// </summary>
-		public bool? suspended => this.general?.suspended;
+		public bool? suspended => (this.general ?? throw new NullReferenceException("general")).suspended;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since => this.general?.since;
+		public DateTime? since => (this.general ?? throw new NullReferenceException("general")).since;
 	}
 }

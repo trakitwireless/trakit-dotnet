@@ -49,14 +49,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="100" />
 		public string name {
-			get => this.general?.name ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).name;
 			set => (this.general ?? throw new NullReferenceException("general")).name = value;
 		}
 		/// <summary>
 		/// Notes about it.
 		/// </summary>
 		public string notes {
-			get => this.general?.notes ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).notes;
 			set => (this.general ?? throw new NullReferenceException("general")).notes = value;
 		}
 		/// <summary>
@@ -64,7 +64,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Icon.id" />
 		public ulong icon {
-			get => this.general?.icon ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).icon;
 			set => (this.general ?? throw new NullReferenceException("general")).icon = value;
 		}
 		/// <summary>
@@ -76,7 +76,7 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public string[] labels {
-			get => this.general?.labels ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).labels;
 			set => (this.general ?? throw new NullReferenceException("general")).labels = value;
 		}
 		/// <summary>
@@ -88,7 +88,7 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public ulong[] pictures {
-			get => this.general?.pictures ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).pictures;
 			set => (this.general ?? throw new NullReferenceException("general")).pictures = value;
 		}
 		/// <summary>
@@ -96,7 +96,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="254" />
 		public string messagingAddress {
-			get => this.general?.messagingAddress ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).messagingAddress;
 			set => (this.general ?? throw new NullReferenceException("general")).messagingAddress = value;
 		}
 		/// <summary>
@@ -107,7 +107,7 @@ namespace trakit.objects {
 		/// <values max-length="100" />
 		/// </override>
 		public Dictionary<string, string> references {
-			get => this.general?.references ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).references;
 			set => (this.general ?? throw new NullReferenceException("general")).references = value;
 		}
 
@@ -120,14 +120,14 @@ namespace trakit.objects {
 		/// The things GPS coordinates including speed, bearing, and street information.
 		/// </summary>
 		public Position position {
-			get => this.advanced?.position ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).position;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).position = value;
 		}
 		/// <summary>
 		/// The cumulative distance travelled in kilometres.
 		/// </summary>
 		public double odometer {
-			get => this.advanced?.odometer ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).odometer;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).odometer = value;
 		}
 		/// <summary>
@@ -139,7 +139,7 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public string[] tags {
-			get => this.advanced?.tags ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).tags;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).tags = value;
 		}
 		/// <summary>
@@ -151,7 +151,7 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<string, AssetAttribute> attributes {
-			get => this.advanced?.attributes ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).attributes;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).attributes = value;
 		}
 		/// <summary>
@@ -163,7 +163,7 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public string[] providers {
-			get => this.advanced?.providers ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).providers;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).providers = value;
 		}
 		/// <summary>
@@ -175,7 +175,7 @@ namespace trakit.objects {
 		/// </values>
 		/// </override>
 		public ulong[] relationships {
-			get => this.advanced?.relationships ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).relationships;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).relationships = value;
 		}
 		/// <summary>
@@ -187,7 +187,7 @@ namespace trakit.objects {
 		/// </keys>
 		/// </override>
 		public Dictionary<ulong, AssetPlaceStatus> places {
-			get => this.advanced?.places ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).places;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).places = value;
 		}
 
@@ -207,14 +207,14 @@ namespace trakit.objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted => this.general?.deleted;
+		public bool? deleted => (this.general ?? throw new NullReferenceException("general")).deleted;
 		/// <summary>
 		/// Indicates whether this object is suspended from event processing.
 		/// </summary>
-		public bool? suspended => this.general?.suspended;
+		public bool? suspended => (this.general ?? throw new NullReferenceException("general")).suspended;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since => this.general?.since;
+		public DateTime? since => (this.general ?? throw new NullReferenceException("general")).since;
 	}
 }

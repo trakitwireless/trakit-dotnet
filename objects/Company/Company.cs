@@ -57,14 +57,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="100" />
 		public string name {
-			get => this.general?.name ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).name;
 			set => (this.general ?? throw new NullReferenceException("general")).name = value;
 		}
 		/// <summary>
 		/// Notes.
 		/// </summary>
 		public string notes {
-			get => this.general?.notes ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).notes;
 			set => (this.general ?? throw new NullReferenceException("general")).notes = value;
 		}
 		/// <summary>
@@ -75,7 +75,7 @@ namespace trakit.objects {
 		/// <values max-length="100" />
 		/// </override>
 		public Dictionary<string, string> references {
-			get => this.general?.references ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).references;
 			set => (this.general ?? throw new NullReferenceException("general")).references = value;
 		}
 
@@ -87,7 +87,7 @@ namespace trakit.objects {
 		/// The list of Contacts from this and other companies broken down by contact role.
 		/// </summary>
 		public Dictionary<string, ulong[]> employees {
-			get => this.directory?.directory ?? throw new NullReferenceException("directory");
+			get => (this.directory ?? throw new NullReferenceException("directory")).directory;
 			set => (this.directory ?? throw new NullReferenceException("directory")).directory = value;
 		}
 
@@ -99,14 +99,14 @@ namespace trakit.objects {
 		/// The session lifetime policy.
 		/// </summary>
 		public SessionPolicy sessionPolicy {
-			get => this.policies?.sessionPolicy ?? throw new NullReferenceException("policies");
+			get => (this.policies ?? throw new NullReferenceException("policies")).sessionPolicy;
 			set => (this.policies ?? throw new NullReferenceException("policies")).sessionPolicy = value;
 		}
 		/// <summary>
 		/// The password complexity and expiry policy.
 		/// </summary>
 		public PasswordPolicy passwordPolicy {
-			get => this.policies?.passwordPolicy ?? throw new NullReferenceException("policies");
+			get => (this.policies ?? throw new NullReferenceException("policies")).passwordPolicy;
 			set => (this.policies ?? throw new NullReferenceException("policies")).passwordPolicy = value;
 		}
 
@@ -118,14 +118,14 @@ namespace trakit.objects {
 		/// The styles for labels added to Assets, Places, and other things.
 		/// </summary>
 		public Dictionary<string, LabelStyle> labels {
-			get => this.styles?.labels ?? throw new NullReferenceException("styles");
+			get => (this.styles ?? throw new NullReferenceException("styles")).labels;
 			set => (this.styles ?? throw new NullReferenceException("styles")).labels = value;
 		}
 		/// <summary>
 		/// The styles for status tags added to Assets.
 		/// </summary>
 		public Dictionary<string, LabelStyle> tags {
-			get => this.styles?.tags ?? throw new NullReferenceException("styles");
+			get => (this.styles ?? throw new NullReferenceException("styles")).tags;
 			set => (this.styles ?? throw new NullReferenceException("styles")).tags = value;
 		}
 

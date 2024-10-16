@@ -38,14 +38,14 @@ namespace trakit.objects {
 		/// Indicated whether the credentials have expired according to the company's policy.
 		/// </summary>
 		public bool passwordExpired {
-			get => this.general?.passwordExpired ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).passwordExpired;
 			set => (this.general ?? throw new NullReferenceException("general")).passwordExpired = value;
 		}
 		/// <summary>
 		/// Indicates whether system access is disabled.
 		/// </summary>
 		public bool enabled {
-			get => this.general?.enabled ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).enabled;
 			set => (this.general ?? throw new NullReferenceException("general")).enabled = value;
 		}
 		/// <summary>
@@ -53,7 +53,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="100" />
 		public string nickname {
-			get => this.general?.nickname ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).nickname;
 			set => (this.general ?? throw new NullReferenceException("general")).nickname = value;
 		}
 		/// <summary>
@@ -61,7 +61,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Contact.id" />
 		public ulong? contact {
-			get => this.general?.contact ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).contact;
 			set => (this.general ?? throw new NullReferenceException("general")).contact = value;
 		}
 		/// <summary>
@@ -69,7 +69,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
 		public Timezone timezone {
-			get => this.general?.timezone ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).timezone;
 			set => (this.general ?? throw new NullReferenceException("general")).timezone = value;
 		}
 		/// <summary>
@@ -78,7 +78,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override min-length="2" max-length="5" format="codified" />
 		public string language {
-			get => this.general?.language ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).language;
 			set => (this.general ?? throw new NullReferenceException("general")).language = value;
 		}
 		/// <summary>
@@ -89,7 +89,7 @@ namespace trakit.objects {
 		/// <values max-length="20" format="datetimetemplate" />
 		/// </override>
 		public Dictionary<string, string> formats {
-			get => this.general?.formats ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).formats;
 			set => (this.general ?? throw new NullReferenceException("general")).formats = value;
 		}
 		/// <summary>
@@ -99,7 +99,7 @@ namespace trakit.objects {
 		/// <keys format="codified" />
 		/// </override>
 		public Dictionary<string, SystemsOfUnits> measurements {
-			get => this.general?.measurements ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).measurements;
 			set => (this.general ?? throw new NullReferenceException("general")).measurements = value;
 		}
 		/// <summary>
@@ -110,7 +110,7 @@ namespace trakit.objects {
 		/// <values max-length="20" />
 		/// </override>
 		public Dictionary<string, string> options {
-			get => this.general?.options ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).options;
 			set => (this.general ?? throw new NullReferenceException("general")).options = value;
 		}
 		/// <summary>
@@ -118,7 +118,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-count="7" />
 		public UserNotifications[] notify {
-			get => this.general?.notify ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).notify;
 			set => (this.general ?? throw new NullReferenceException("general")).notify = value;
 		}
 
@@ -131,14 +131,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="UserGroup.id" />
 		public ulong[] groups {
-			get => this.advanced?.groups ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).groups;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).groups = value;
 		}
 		/// <summary>
 		/// Individual permission rules which override the group rules.
 		/// </summary>
 		public Permission[] permissions {
-			get => this.advanced?.permissions ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).permissions;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).permissions = value;
 		}
 
@@ -153,10 +153,10 @@ namespace trakit.objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted => this.general?.deleted;
+		public bool? deleted => (this.general ?? throw new NullReferenceException("general")).deleted;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since => this.general?.since;
+		public DateTime? since => (this.general ?? throw new NullReferenceException("general")).since;
 	}
 }

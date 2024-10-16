@@ -18,7 +18,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string vin {
-			get => this.general?.serial ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).serial;
 			set => (this.general ?? throw new NullReferenceException("general")).serial = value;
 		}
 		/// <summary>
@@ -26,7 +26,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string plate {
-			get => this.general?.plate ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).plate;
 			set => (this.general ?? throw new NullReferenceException("general")).plate = value;
 		}
 		/// <summary>
@@ -34,7 +34,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string make {
-			get => this.general?.make ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).make;
 			set => (this.general ?? throw new NullReferenceException("general")).make = value;
 		}
 		/// <summary>
@@ -42,14 +42,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string model {
-			get => this.general?.model ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).model;
 			set => (this.general ?? throw new NullReferenceException("general")).model = value;
 		}
 		/// <summary>
 		/// Year of manufacturing.
 		/// </summary>
 		public ushort year {
-			get => this.general?.year ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).year;
 			set => (this.general ?? throw new NullReferenceException("general")).year = value;
 		}
 		/// <summary>
@@ -57,7 +57,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="22" format="colour" />
 		public string colour {
-			get => this.general?.colour ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).colour;
 			set => (this.general ?? throw new NullReferenceException("general")).colour = value;
 		}
 	}

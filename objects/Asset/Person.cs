@@ -18,7 +18,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <seealso cref="Contact.id" />
 		public ulong contact {
-			get => this.general?.contact ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).contact;
 			set => (this.general ?? throw new NullReferenceException("general")).contact = value;
 		}
 	}

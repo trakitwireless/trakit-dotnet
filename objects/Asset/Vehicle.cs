@@ -27,7 +27,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string vin {
-			get => this.general?.vin ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).vin;
 			set => (this.general ?? throw new NullReferenceException("general")).vin = value;
 		}
 		/// <summary>
@@ -35,7 +35,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string plate {
-			get => this.general?.plate ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).plate;
 			set => (this.general ?? throw new NullReferenceException("general")).plate = value;
 		}
 		/// <summary>
@@ -43,7 +43,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string make {
-			get => this.general?.make ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).make;
 			set => (this.general ?? throw new NullReferenceException("general")).make = value;
 		}
 		/// <summary>
@@ -51,14 +51,14 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="50" />
 		public string model {
-			get => this.general?.model ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).model;
 			set => (this.general ?? throw new NullReferenceException("general")).model = value;
 		}
 		/// <summary>
 		/// Year of manufacturing.
 		/// </summary>
 		public ushort year {
-			get => this.general?.year ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).year;
 			set => (this.general ?? throw new NullReferenceException("general")).year = value;
 		}
 		/// <summary>
@@ -66,7 +66,7 @@ namespace trakit.objects {
 		/// </summary>
 		/// <override max-length="22" format="colour" />
 		public string colour {
-			get => this.general?.colour ?? throw new NullReferenceException("general");
+			get => (this.general ?? throw new NullReferenceException("general")).colour;
 			set => (this.general ?? throw new NullReferenceException("general")).colour = value;
 		}
 
@@ -74,7 +74,7 @@ namespace trakit.objects {
 		/// The cumulative duration that the vehicle's engine has been running (in decimal hours).
 		/// </summary>
 		public double engineHours {
-			get => this.advanced?.engineHours ?? throw new NullReferenceException("advanced");
+			get => (this.advanced ?? throw new NullReferenceException("advanced")).engineHours;
 			set => (this.advanced ?? throw new NullReferenceException("advanced")).engineHours = value;
 		}
 	}

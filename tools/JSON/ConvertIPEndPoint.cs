@@ -9,16 +9,17 @@ namespace trakit.tools {
 	/// </summary>
 	public class ConvertIPEndPoint : TrakitConverter<IPEndPoint> {
 		public override IPEndPoint deconvert(JsonReader reader, Type type, IPEndPoint ipEnd, bool existing, JsonSerializer serializer) {
-			switch (reader.TokenType) {
-				case JsonToken.StartObject:
-					var obj = JObject.Load(reader);
+			var token = JToken.Load(reader);
+			switch (token.Type) {
+				case JTokenType.Object:
+					var obj = (JObject)token;
 					ipEnd = new IPEndPoint(
 						obj["address"].ToObject<IPAddress>(serializer),
 						obj["port"].Value<int>()
 					);
 					break;
-				case JsonToken.String:
-					string[] addressPort = reader.Value.ToString().Split(':');
+				case JTokenType.String:
+					string[] addressPort = token.Value<string>().Split(':');
 					ipEnd = new IPEndPoint(
 						IPAddress.Parse(addressPort[0]),
 						int.Parse(addressPort[1])
@@ -27,9 +28,6 @@ namespace trakit.tools {
 			}
 			return ipEnd;
 		}
-		public override void convert(JsonWriter writer, IPEndPoint value, JsonSerializer serializer) {
-			var obj = new JValue(value.ToString());
-			obj.WriteTo(writer);
-		}
+		public override void convert(JsonWriter writer, IPEndPoint value, JsonSerializer serializer) => writer.WriteValue(value.ToString());
 	}
 }
