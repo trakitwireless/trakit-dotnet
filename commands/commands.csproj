@@ -30,4 +30,8 @@
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Providers\Configuration\" />
+	  <Folder Include="Providers\Config\" />
+	</ItemGroup>
 </Project>
