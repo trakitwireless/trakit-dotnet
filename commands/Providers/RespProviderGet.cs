@@ -4,7 +4,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container for the <see cref="Provider"/>.
 	/// </summary>
-	public class RespGetProvider : Response {
+	public class RespProviderGet : Response {
 		/// <summary>
 		/// The requested <see cref="Provider"/>.
 		/// </summary>

@@ -2,19 +2,19 @@
 
 namespace trakit.commands {
 	/// <summary>
-	/// A container for the requested <see cref="providers"/>.
+	/// A container for the requested <see cref="providerGenerals"/>.
 	/// </summary>
-	public abstract class RespListProvider : Response {
+	public abstract class RespProviderGeneralList : Response {
 		/// <summary>
-		/// The list of requested <see cref="Provider"/>s.
+		/// The list of requested <see cref="ProviderGeneral"/>s.
 		/// </summary>
-		public Provider[] providers;
+		public ProviderGeneral[] providerGenerals;
 	}
 
 	/// <summary>
-	/// Contains the <see cref="Company.id"/> of the collection.
+	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListProviderByCompany : RespListProvider {
+	public class RespProviderGeneralListByCompany : RespProviderGeneralList {
 		/// <summary>
 		/// Identifier of the <see cref="Company"/> to which this collection belongs.
 		/// </summary>
@@ -23,7 +23,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListProviderByConfig : RespListProvider {
+	public class RespProviderGeneralListByConfig : RespProviderGeneralList {
 		/// <summary>
 		/// Identifier of the <see cref="ProviderConfig"/> (or <see cref="ProviderConfiguration"/>) to which this collection belongs.
 		/// </summary>

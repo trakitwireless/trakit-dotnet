@@ -3,19 +3,19 @@ using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
-	/// A container for the requested <see cref="assetAdvanceds"/>.
+	/// A container for the requested <see cref="assetDispatches"/>.
 	/// </summary>
-	public abstract class RespListAssetAdvanced : Response {
+	public abstract class RespAssetDispatchList : Response {
 		/// <summary>
-		/// The list of requested <see cref="AssetAdvanced"/>s.
+		/// The list of requested <see cref="AssetDispatch"/>es.
 		/// </summary>
-		public AssetAdvanced[] assetAdvanceds;
+		public AssetDispatch[] assetDispatches;
 	}
 
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetAdvancedByCompany : RespListAssetAdvanced {
+	public class RespAssetDispatchListByCompany : RespAssetDispatchList {
 		/// <summary>
 		/// Identifier of the <see cref="Company"/> to which this collection belongs.
 		/// </summary>
@@ -24,7 +24,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetAdvancedByCompanyAndLabels : RespListAssetAdvancedByCompany {
+	public class RespAssetDispatchListByCompanyAndLabels : RespAssetDispatchListByCompany {
 		/// <summary>
 		/// The labels given as input.
 		/// </summary>
@@ -34,7 +34,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetAdvancedByCompanyAndRefPairs : RespListAssetAdvancedByCompany {
+	public class RespAssetDispatchListByCompanyAndRefPairs : RespAssetDispatchListByCompany {
 		/// <summary>
 		/// The reference string given as input.
 		/// </summary>

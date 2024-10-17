@@ -2,7 +2,7 @@
 	/// <summary>
 	/// For delete/restore commands, this contains the id, version keys, owning <see cref="Company.id"/>, and deleted state.
 	/// </summary>
-	public class RespDeleted : RespIdCompany {
+	public abstract class RespDeleted : RespIdCompany {
 		/// <summary>
 		/// Flag showing if the object is deleted.
 		/// </summary>

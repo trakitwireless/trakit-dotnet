@@ -4,7 +4,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container for the <see cref="assetGeneral"/>.
 	/// </summary>
-	public class RespGetAssetGeneral : Response {
+	public class RespAssetGeneralGet : Response {
 		/// <summary>
 		/// The requested <see cref="Asset"/>.
 		/// </summary>

@@ -5,7 +5,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container for the requested <see cref="assetGenerals"/>.
 	/// </summary>
-	public abstract class RespListAssetGeneral : Response {
+	public abstract class RespAssetGeneralList : Response {
 		/// <summary>
 		/// The list of requested <see cref="AssetGeneral"/>s.
 		/// </summary>
@@ -15,7 +15,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetGeneralByCompany : RespListAssetGeneral {
+	public class RespAssetGeneralListByCompany : RespAssetGeneralList {
 		/// <summary>
 		/// Identifier of the <see cref="Company"/> to which this collection belongs.
 		/// </summary>
@@ -24,7 +24,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetGeneralByCompanyAndLabels : RespListAssetGeneralByCompany {
+	public class RespAssetGeneralListByCompanyAndLabels : RespAssetGeneralListByCompany {
 		/// <summary>
 		/// The labels given as input.
 		/// </summary>
@@ -34,7 +34,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetGeneralByCompanyAndRefPairs : RespListAssetGeneralByCompany {
+	public class RespAssetGeneralListByCompanyAndRefPairs : RespAssetGeneralListByCompany {
 		/// <summary>
 		/// The reference string given as input.
 		/// </summary>

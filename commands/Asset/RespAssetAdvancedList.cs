@@ -3,19 +3,19 @@ using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
-	/// A container for the requested <see cref="assets"/>.
+	/// A container for the requested <see cref="assetAdvanceds"/>.
 	/// </summary>
-	public abstract class RespListAsset : Response {
+	public abstract class RespAssetAdvancedList : Response {
 		/// <summary>
-		/// The list of requested <see cref="Asset"/>s.
+		/// The list of requested <see cref="AssetAdvanced"/>s.
 		/// </summary>
-		public Asset[] assets;
+		public AssetAdvanced[] assetAdvanceds;
 	}
 
 	/// <summary>
-	/// Contains the <see cref="Company.id"/> of the collection.
+	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetByCompany : RespListAsset {
+	public class RespAssetAdvancedListByCompany : RespAssetAdvancedList {
 		/// <summary>
 		/// Identifier of the <see cref="Company"/> to which this collection belongs.
 		/// </summary>
@@ -24,9 +24,9 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetByCompanyAndLabels : RespListAssetByCompany {
+	public class RespAssetAdvancedListByCompanyAndLabels : RespAssetAdvancedListByCompany {
 		/// <summary>
-		/// The parsed labels given as input.
+		/// The labels given as input.
 		/// </summary>
 		/// <seealso cref="AssetGeneral.labels"/>
 		public string[] labels;
@@ -34,9 +34,9 @@ namespace trakit.commands {
 	/// <summary>
 	/// A container owner <see cref="Company"/> of the collection.
 	/// </summary>
-	public class RespListAssetByCompanyAndRefPairs : RespListAssetByCompany {
+	public class RespAssetAdvancedListByCompanyAndRefPairs : RespAssetAdvancedListByCompany {
 		/// <summary>
-		/// The parsed references given as input.
+		/// The reference string given as input.
 		/// </summary>
 		/// <seealso cref="AssetGeneral.references"/>
 		public Dictionary<string, string> references;
