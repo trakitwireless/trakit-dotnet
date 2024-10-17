@@ -5,6 +5,7 @@ namespace trakit.tools {
 	/// <summary>
 	/// 
 	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	/// <remarks>
 	/// Inspiration for this approach was taken from https://github.com/JamesNK/Newtonsoft.Json/issues/719#issuecomment-2103805140
 	/// Which was itself inspired by https://stackoverflow.com/questions/16085805/recursively-call-jsonserializer-in-a-jsonconverter/76705937#76705937
@@ -21,10 +22,6 @@ namespace trakit.tools {
 		[ThreadStatic]
 		static bool _isWriting;
 
-		/// <summary>
-		/// 
-		/// </summary>
-		protected Serializer owner;
 		/// <summary>
 		/// 
 		/// </summary>

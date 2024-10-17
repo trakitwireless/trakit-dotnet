@@ -1,11 +1,12 @@
-﻿using trakit.objects;
+﻿using System.Net.Http;
+using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
 	/// The types of subscriptions available using <see cref="subscribe"/>/<see cref="unsubscribe"/>.
 	/// Each type has a different synchronization messages and objects.
 	/// </summary>
-	public class ReqSubscription : Request {
+	public class ReqSubscriptionMerge : Request {
 		/// <summary>
 		/// An object to contain the "id" key.
 		/// </summary>
@@ -16,5 +17,11 @@ namespace trakit.commands {
 		/// </summary>
 		/// <seealso cref="SubscriptionType"/>
 		public SubscriptionType[] subscriptionTypes;
+
+		public override HttpMethod httpVerb => throw new System.NotImplementedException();
+
+		public override string httpRoute => throw new System.NotImplementedException();
+
+		public override string socketCommand => "subscribe";
 	}
 }
