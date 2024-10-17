@@ -1,4 +1,6 @@
-﻿namespace trakit.commands {
+﻿using System.Net.Http;
+
+namespace trakit.commands {
 	/// <summary>
 	/// Base class for all command parameters.
 	/// All command parameter classes use this as the base.
@@ -12,5 +14,21 @@
 		/// Identifier used by external system to correlate requests to responses.
 		/// </summary>
 		public int? reqId { get; set; }
+
+		///// <summary>
+		///// 
+		///// </summary>
+		///// <returns></returns>
+		//public abstract HttpMethod getHttpVerb();
+		///// <summary>
+		///// 
+		///// </summary>
+		///// <returns></returns>
+		//public abstract string getHttpRoute();
+		///// <summary>
+		///// 
+		///// </summary>
+		///// <returns></returns>
+		//public abstract string getWsCommand();
 	}
 }
