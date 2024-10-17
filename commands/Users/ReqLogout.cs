@@ -1,17 +1,16 @@
-﻿using System;
+﻿using System.Net.Http;
+using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
-	/// The response for a logout operation which is always successful.
+	/// 
 	/// </summary>
-	public class RespLogout : Response {
-		/// <summary>
-		/// Your old, no longer valid, session identifier.
-		/// </summary>
-		public string ghostId;
-		/// <summary>
-		/// The timestamp from when your session expired.
-		/// </summary>
-		public DateTime? expiry;
+	public class ReqLogout : Request {
+
+		public override HttpMethod httpVerb => HttpMethod.Post;
+
+		public override string httpRoute => "self/logout";
+
+		public override string socketCommand => "logout";
 	}
 }

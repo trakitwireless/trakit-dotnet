@@ -1,4 +1,5 @@
-﻿using trakit.objects;
+﻿using System.Net.Http;
+using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
@@ -18,5 +19,11 @@ namespace trakit.commands {
 		/// A string to identify the User-Agent of the login request.
 		/// </summary>
 		public string userAgent;
+
+		public override HttpMethod httpVerb => HttpMethod.Post;
+
+		public override string httpRoute => "self/login";
+
+		public override string socketCommand => "login";
 	}
 }
