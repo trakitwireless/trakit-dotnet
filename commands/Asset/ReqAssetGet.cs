@@ -4,10 +4,10 @@ namespace trakit.commands {
 	/// <summary>
 	/// Gets details of the specified <see cref="Asset"/>.
 	/// </summary>
-	public class ReqAssetGet : RequestIDeletable {
+	public class ReqAssetGet : ReqAsset, IReqIDeletable {
 		/// <summary>
-		/// An object to contain the "id" of the <see cref="Asset"/>.
+		/// When true, the command will also return a deleted <see cref="Asset"/> (if it exists).
 		/// </summary>
-		public ParamId asset { get; set; }
+		public bool includeDeleted { get; set; }
 	}
 }

@@ -4,10 +4,10 @@ namespace trakit.commands {
 	/// <summary>
 	/// Gets details of the specified <see cref="Provider"/>.
 	/// </summary>
-	public class ReqProviderGet : RequestIDeletable {
+	public class ReqProviderGet : ReqProvider, IReqIDeletable {
 		/// <summary>
-		/// An object to contain the "id" of the <see cref="Provider"/>.
+		/// When true, the command will also return a deleted <see cref="Provider"/> (if it exists).
 		/// </summary>
-		public ParamIdentifier provider { get; set; }
+		public bool includeDeleted { get; set; }
 	}
 }
