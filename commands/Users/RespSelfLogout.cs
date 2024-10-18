@@ -4,7 +4,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// The response for a logout operation which is always successful.
 	/// </summary>
-	public class RespLogout : Response {
+	public class RespSelfLogout : Response {
 		/// <summary>
 		/// Your old, no longer valid, session identifier.
 		/// </summary>
