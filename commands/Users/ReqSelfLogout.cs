@@ -2,5 +2,5 @@
 	/// <summary>
 	/// 
 	/// </summary>
-	public class ReqLogout : Request { }
+	public class ReqSelfLogout : Request { }
 }

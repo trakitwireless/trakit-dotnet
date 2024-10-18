@@ -5,7 +5,7 @@ namespace trakit.commands {
 	/// A container class used to house the login identifying a <see cref="User"/>.
 	/// Used specifically to get session details.
 	/// </summary>
-	public class ReqLogin : Request {
+	public class ReqSelfLogin : Request {
 		/// <summary>
 		/// The <see cref="User"/>'s login.
 		/// </summary>

@@ -6,7 +6,7 @@ namespace trakit.commands {
 	/// <summary>
 	/// Gets details of the specified <see cref="contact"/>.
 	/// </summary>
-	public class ReqContactMerge : Request {
+	public class ReqContactMerge : Request, IReqSingle {
 		public class Content {
 			/// <summary>
 			/// The unique identifier of the <see cref="Contact"/> you want to update.
@@ -80,5 +80,11 @@ namespace trakit.commands {
 		/// An object to contain the "id" of the <see cref="Contact"/>.
 		/// </summary>
 		public Content contact { get; set; }
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		public string getKey() => this.contact?.id?.ToString() ?? "";
 	}
 }

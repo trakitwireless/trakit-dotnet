@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Linq;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
 namespace trakit.commands {
@@ -11,10 +12,17 @@ namespace trakit.commands {
 	/// Child classes should contain members required to execute a command.
 	/// </remarks>
 	public abstract class Request {
+		//
+		static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Remove|Restore|Suspend|Revive))(By.+)?", RegexOptions.Compiled);
 		/// <summary>
 		/// 
 		/// </summary>
-		public static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Remove|Restore|Suspend|Revive))(By.+)?", RegexOptions.Compiled);
+		/// <returns></returns>
+		public string[] getNameParts() => SPLITTER.Match(this.GetType().Name).Groups
+																.Cast<Group>()
+																.Skip(1)
+																.Select(g => g.Value ?? "")
+																.ToArray();
 
 		/// <summary>
 		/// Identifier used by external system to correlate requests to responses.

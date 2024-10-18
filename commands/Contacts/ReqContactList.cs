@@ -13,10 +13,10 @@ namespace trakit.commands {
 	/// <summary>
 	/// Contains the <see cref="Company.id"/> of the collection.
 	/// </summary>
-	public class ReqContactListByCompany : ReqContactList {
+	public class ReqContactListByCompany : ReqContactList, IReqListByCompany {
 		/// <summary>
 		/// Identifier of the <see cref="Company"/> to which this collection belongs.
 		/// </summary>
-		public RespId company;
+		public ParamId company { get; set; }
 	}
 }
