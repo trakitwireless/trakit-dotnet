@@ -12,11 +12,5 @@ namespace trakit.commands {
 		/// 
 		/// </summary>
 		public ReqContactMerge.Content[] contacts { get; set; }
-
-		public override HttpMethod httpVerb => throw new NotImplementedException();
-
-		public override string httpRoute => throw new NotImplementedException();
-
-		public override string socketCommand => throw new NotImplementedException();
 	}
 }

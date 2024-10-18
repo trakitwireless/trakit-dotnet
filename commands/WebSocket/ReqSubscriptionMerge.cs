@@ -17,11 +17,5 @@ namespace trakit.commands {
 		/// </summary>
 		/// <seealso cref="SubscriptionType"/>
 		public SubscriptionType[] subscriptionTypes;
-
-		public override HttpMethod httpVerb => throw new System.NotImplementedException();
-
-		public override string httpRoute => throw new System.NotImplementedException();
-
-		public override string socketCommand => "subscribe";
 	}
 }

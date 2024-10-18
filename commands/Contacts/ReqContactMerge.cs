@@ -81,11 +81,5 @@ namespace trakit.commands {
 		/// An object to contain the "id" of the <see cref="Contact"/>.
 		/// </summary>
 		public Content contact { get; set; }
-
-		public override HttpMethod httpVerb => throw new NotImplementedException();
-
-		public override string httpRoute => throw new NotImplementedException();
-
-		public override string socketCommand => throw new NotImplementedException();
 	}
 }

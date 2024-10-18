@@ -10,11 +10,5 @@ namespace trakit.commands {
 		/// When true, the command will also return a deleted <see cref="Contact"/> (if it exists).
 		/// </summary>
 		public bool includeDeleted { get; set; }
-
-		public override HttpMethod httpVerb => throw new System.NotImplementedException();
-
-		public override string httpRoute => throw new System.NotImplementedException();
-
-		public override string socketCommand => throw new System.NotImplementedException();
 	}
 }

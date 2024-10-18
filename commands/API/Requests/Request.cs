@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace trakit.commands {
 	/// <summary>
@@ -16,24 +15,5 @@ namespace trakit.commands {
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public int? reqId { get; set; }
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <returns></returns>
-		[JsonIgnore]
-		public abstract HttpMethod httpVerb { get; }
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <returns></returns>
-		[JsonIgnore]
-		public abstract string httpRoute { get; }
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <returns></returns>
-		[JsonIgnore]
-		public abstract string socketCommand { get; }
 	}
 }

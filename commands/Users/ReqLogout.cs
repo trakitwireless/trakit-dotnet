@@ -6,11 +6,5 @@ namespace trakit.commands {
 	/// 
 	/// </summary>
 	public class ReqLogout : Request {
-
-		public override HttpMethod httpVerb => HttpMethod.Post;
-
-		public override string httpRoute => "self/logout";
-
-		public override string socketCommand => "logout";
 	}
 }

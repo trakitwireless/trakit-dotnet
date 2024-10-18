@@ -10,11 +10,5 @@ namespace trakit.commands {
 		/// 
 		/// </summary>
 		public ParamId[] contacts { get; set; }
-
-		public override HttpMethod httpVerb => throw new System.NotImplementedException();
-
-		public override string httpRoute => throw new System.NotImplementedException();
-
-		public override string socketCommand => throw new System.NotImplementedException();
 	}
 }
