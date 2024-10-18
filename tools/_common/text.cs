@@ -126,5 +126,20 @@ namespace trakit.tools {
 			}
 			return output.ToString(0, dash && output.Length > 0 ? output.Length - 1 : output.Length);
 		}
+
+		/// <summary>
+		/// Returns a plural version of the given word.
+		/// </summary>
+		/// <remarks>
+		/// This obviously doesn't work for every word imaginable, but covers the standard object names in the Trak-iT API.
+		/// </remarks>
+		/// <param name="word"></param>
+		/// <returns></returns>
+		public static string plural(string word)
+			=> word.EndsWith("y")
+				? word.Substring(0, word.Length - 1) + "ies" // company
+				: word.EndsWith("ch")
+					? word + "es"                           // dispatch
+					: word + "s";
 	}
 }
