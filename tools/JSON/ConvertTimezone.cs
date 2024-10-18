@@ -25,12 +25,12 @@ namespace trakit.tools {
 				};
 		}
 
-		public override Timezone deconvert(JsonReader reader, Type type, Timezone tz, bool existing, JsonSerializer serializer) {
+		public override Timezone convertFrom(JsonReader reader, Type type, Timezone tz, bool existing, JsonSerializer serializer) {
 			string code = reader.Value.ToString();
 			return ConvertTimezone.findById(code)
 				?? throw new TimeZoneNotFoundException(code + " not found");
 		}
-		public override void convert(JsonWriter writer, Timezone value, JsonSerializer serializer) {
+		public override void convertTo(JsonWriter writer, Timezone value, JsonSerializer serializer) {
 			var obj = new JValue(text.codify(value.code));
 			obj.WriteTo(writer);
 		}

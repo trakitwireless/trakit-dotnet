@@ -93,7 +93,7 @@ namespace trakit.tools {
 		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
 		/// <param name="token">JSON of the desired <typeparamref name="T">value</typeparamref>.</param>
 		/// <returns>The desired <typeparamref name="T">value</typeparamref>.</returns>
-		public T deconvert<T>(JToken token) => token.ToObject<T>(this.newton);
+		public T convertFrom<T>(JToken token) => token.ToObject<T>(this.newton);
 		/// <summary>
 		/// Attempts to converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
@@ -104,7 +104,7 @@ namespace trakit.tools {
 		public bool tryDeconvert<T>(JToken token, out T value) {
 			bool success;
 			try {
-				value = this.deconvert<T>(token);
+				value = this.convertFrom<T>(token);
 				success = true;
 			} catch {
 				value = default;
@@ -118,7 +118,7 @@ namespace trakit.tools {
 		/// <typeparam name="J">The kind of JSON token being returned.</typeparam>
 		/// <param name="value">The object or struct.</param>
 		/// <returns>The desired <see cref="JToken"/>.</returns>
-		public J convert<J>(object value) where J : JToken => (J)JToken.FromObject(value, this.newton);
+		public J convertTo<J>(object value) where J : JToken => (J)JToken.FromObject(value, this.newton);
 		/// <summary>
 		/// Attempts to converts the given <c>value</c> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
 		/// </summary>
@@ -129,7 +129,7 @@ namespace trakit.tools {
 		public bool tryConvert<J>(object value, out J token) where J : JToken {
 			bool success;
 			try {
-				token = this.convert<J>(value);
+				token = this.convertTo<J>(value);
 				success = true;
 			} catch {
 				token = default;

@@ -8,10 +8,10 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertIPAddress : TrakitConverter<IPAddress> {
-		public override IPAddress deconvert(JsonReader reader, Type type, IPAddress ipEnd, bool existing, JsonSerializer serializer) {
+		public override IPAddress convertFrom(JsonReader reader, Type type, IPAddress ipEnd, bool existing, JsonSerializer serializer) {
 			var token = JToken.Load(reader);
 			return IPAddress.Parse(token.Value<string>());
 		}
-		public override void convert(JsonWriter writer, IPAddress value, JsonSerializer serializer) => writer.WriteValue(value.ToString());
+		public override void convertTo(JsonWriter writer, IPAddress value, JsonSerializer serializer) => writer.WriteValue(value.ToString());
 	}
 }

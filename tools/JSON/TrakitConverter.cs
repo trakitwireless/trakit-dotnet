@@ -54,7 +54,7 @@ namespace trakit.tools {
 			}
 			_isReading = true;
 			try {
-				return this.deconvert(reader, type, value, false, serializer);
+				return this.convertFrom(reader, type, value, false, serializer);
 			} finally {
 				_isReading = false;
 			}
@@ -77,7 +77,7 @@ namespace trakit.tools {
 			}
 			_isWriting = true;
 			try {
-				this.convert(writer, value, serializer);
+				this.convertTo(writer, value, serializer);
 			} finally {
 				_isWriting = false;
 			}
@@ -92,7 +92,7 @@ namespace trakit.tools {
 		/// <param name="existing"></param>
 		/// <param name="serializer"></param>
 		/// <returns></returns>
-		public virtual T deconvert(
+		public virtual T convertFrom(
 			JsonReader reader,
 			Type type,
 			T value,
@@ -105,7 +105,7 @@ namespace trakit.tools {
 		/// <param name="writer"></param>
 		/// <param name="value"></param>
 		/// <param name="serializer"></param>
-		public virtual void convert(
+		public virtual void convertTo(
 			JsonWriter writer,
 			T value,
 			JsonSerializer serializer

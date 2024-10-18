@@ -9,7 +9,7 @@ namespace trakit.tools {
 	/// 
 	/// </summary>
 	public class ConvertCompany : TrakitConverter<Company> {
-		public override Company deconvert(JsonReader reader, Type type, Company company, bool existing, JsonSerializer serializer) {
+		public override Company convertFrom(JsonReader reader, Type type, Company company, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (
 				bool.TryParse(obj["deleted"]?.ToString(), out _)
