@@ -1,7 +1,4 @@
-﻿using System.Net.Http;
-using trakit.objects;
-
-namespace trakit.commands {
+﻿namespace trakit.commands {
 	/// <summary>
 	/// 
 	/// </summary>

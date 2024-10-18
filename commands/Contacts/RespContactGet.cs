@@ -1,14 +1,13 @@
-﻿using System.Net.Http;
-using trakit.objects;
+﻿using trakit.objects;
 
 namespace trakit.commands {
 	/// <summary>
 	/// A container for the <see cref="contact"/>.
 	/// </summary>
-	public class RespContactGet : ReqContact {
+	public class RespContactGet : Response {
 		/// <summary>
-		/// When true, the command will also return a deleted objects (if it exists).
+		/// The requested <see cref="Contact"/>.
 		/// </summary>
-		public bool includeDeleted;
+		public Contact contact;
 	}
 }

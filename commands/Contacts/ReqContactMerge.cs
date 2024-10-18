@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using trakit.objects;
-using System.Net.Http;
 
 namespace trakit.commands {
 	/// <summary>

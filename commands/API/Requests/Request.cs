@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace trakit.commands {
 	/// <summary>
@@ -10,6 +11,11 @@ namespace trakit.commands {
 	/// Child classes should contain members required to execute a command.
 	/// </remarks>
 	public abstract class Request {
+		/// <summary>
+		/// 
+		/// </summary>
+		public static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Remove|Restore|Suspend|Revive))(By.+)?", RegexOptions.Compiled);
+
 		/// <summary>
 		/// Identifier used by external system to correlate requests to responses.
 		/// </summary>

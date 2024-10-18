@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
-using trakit.objects;
-using System.Net.Http;
-
-namespace trakit.commands {
+﻿namespace trakit.commands {
 	/// <summary>
 	/// 
 	/// </summary>
